@@ -10,13 +10,16 @@ const NavigationBar = () => (
         <img src={logo} alt="logo" height="65px" width="180px" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Form className={styles.SearchInput} >
-      <FormControl
-        className="SearchInput"
-        type="text"
-        placeholder="Search posts, profiles & more" />
-      <i className="fas fa-search"></i>
-       </Form>
+        <Form className={styles.SearchForm}>
+          <FormControl
+            className={styles.SearchInput}
+            type="text"
+            placeholder="Search posts, profiles & more"
+          />
+          <button className={styles.SearchButton} aria-label="Search button" type="submit">
+            <i className="fas fa-search"></i>
+          </button>
+        </Form>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Item>

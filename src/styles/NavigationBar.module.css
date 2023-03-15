@@ -3,14 +3,41 @@
     border: 1px solid red;
 }
 
+.SearchForm {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
 
 .SearchInput {
-    font-size: 40px;
-    border: none;
-    border-radius: 50%;
-    width: 100%;
+    font-size: 18px;
+    border-radius: 30px;
+    width: 400px;
+    margin-left: 20px;
+    display: flex;
 }
 
-Form i {
+.SearchButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+.SearchButton i {
     font-size: 15px;
+    margin-left: 5px;
+    margin-top: 2px;
 }
+
+.SearchInput::placeholder {
+    color: #417461;
+  }
+
+  Nav.Link i {
+    color:#043e29
+  }
