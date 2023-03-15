@@ -1,0 +1,16 @@
+.NavigationBar {
+    background-color: #ffffff;
+    border: 1px solid red;
+}
+
+
+.SearchInput {
+    font-size: 40px;
+    border: none;
+    border-radius: 50%;
+    width: 100%;
+}
+
+Form i {
+    font-size: 15px;
+}

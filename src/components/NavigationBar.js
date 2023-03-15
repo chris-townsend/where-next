@@ -1,23 +1,33 @@
 import React from "react";
 import { Nav, Navbar, Form, FormControl, Container } from "react-bootstrap";
-import logo from "../assets/images/where-next-logo.png"
+import logo from "../assets/images/where-next-logo.png";
+import styles from "../styles/NavigationBar.module.css";
 
 const NavigationBar = () => (
-  <Navbar expand="lg" fixed="top">
+  <Navbar className={styles.NavigationBar} expand="lg" fixed="top">
     <Container>
-      <Navbar.Brand> <img src={logo} alt="logo" height="65px" width="180px"/>
+      <Navbar.Brand>
+        <img src={logo} alt="logo" height="65px" width="180px" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Form className="form-center">
-        <FormControl type="text" placeholder="Search" className="" />
-      </Form>
+      <Form className={styles.SearchInput} >
+      <FormControl
+        className="SearchInput"
+        type="text"
+        placeholder="Search posts, profiles & more" />
+      <i className="fas fa-search"></i>
+       </Form>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Item>
-            <Nav.Link><i className="fas fa-sign-in"></i> Sign In</Nav.Link>
+            <Nav.Link>
+              <i className="fas fa-sign-in"></i> Sign In
+            </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link><i className="fas fa-user-plus"></i> Sign Up</Nav.Link>
+            <Nav.Link>
+              <i className="fas fa-user-plus"></i> Sign Up
+            </Nav.Link>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>

@@ -3,3 +3,36 @@
     background-color: #F0F8FF;
     min-height: 100vh;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+    color: #8fbc8f;
+    transition: color ease-in-out 0.3s;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a:hover i {
+    color: #7bb661;
+    transition: color ease-in-out 0.3s;
+  }
+  
+  i {
+    color: #8fbc8f;
+    font-size: 28px;
+    padding: 5px;
+    vertical-align: middle;
+  }
+  
+  i:hover {
+    cursor: pointer;
+    transition: color ease-in-out 0.3s;
+    color: #7bb661;
+  }
