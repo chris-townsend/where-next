@@ -1,10 +1,10 @@
-import './App.css';
+import styles from './App.module.css'
 import NavigationBar from './components/NavigationBar';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       < NavigationBar/>
     </div>
   );
