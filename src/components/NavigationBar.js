@@ -1,10 +1,12 @@
 import React from "react";
 import { Nav, Navbar, Form, FormControl, Container } from "react-bootstrap";
+import logo from "../assets/images/where-next-logo.png"
 
 const NavigationBar = () => (
   <Navbar expand="lg" fixed="top">
     <Container>
-      <Navbar.Brand href="/">App logo</Navbar.Brand>
+      <Navbar.Brand> <img src={logo} alt="logo" height="65px" width="180px"/>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Form className="form-center">
         <FormControl type="text" placeholder="Search" className="" />
