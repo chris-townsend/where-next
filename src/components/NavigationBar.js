@@ -2,7 +2,7 @@ import React from "react";
 import { Nav, Navbar, Form, FormControl, Container } from "react-bootstrap";
 
 const NavigationBar = () => (
-  <Navbar expand="lg">
+  <Navbar expand="lg" fixed="top">
     <Container>
       <Navbar.Brand href="/">App logo</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
