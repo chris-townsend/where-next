@@ -94,6 +94,11 @@ const SignUpForm = () => {
                 We'll never share your information with anyone else.
               </Form.Text>
             </Form.Group>
+            {errors.password2?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               variant="primary"
@@ -101,9 +106,14 @@ const SignUpForm = () => {
             >
               Sign Up
             </Button>
+            {errors.non_field_errors?.map((message, idx) => (
+              <Alert key={idx} variant="warning" className="mt-3">
+                {message}
+              </Alert>
+            ))}
           </Form>
         </Container>
-        <Container className={`mt-3 text-center ${appStyles.Content}`}>
+        <Container className={`mt-2 text-center ${appStyles.Content}`}>
           <Link className={styles.SignInLink} to="/signin">
             Already have an account? <span>Sign in</span>
           </Link>
