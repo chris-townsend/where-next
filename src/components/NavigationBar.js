@@ -22,6 +22,11 @@ const NavigationBar = () => (
         </Form>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
+        <Nav.Item>
+            <Nav.Link>
+              <i className="fas fa-home"></i> Home
+            </Nav.Link>
+          </Nav.Item>
           <Nav.Item>
             <Nav.Link>
               <i className="fas fa-sign-in"></i> Sign In
