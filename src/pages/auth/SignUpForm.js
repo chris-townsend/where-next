@@ -23,7 +23,7 @@ const SignUpForm = () => {
 
   const { username, password1, password2 } = signUpData;
   const [errors, setErrors] = useState({});
-  const history = useHistory;
+  const history = useHistory();
 
   const handleChange = (event) => {
     setSignUpData({
@@ -43,7 +43,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <Row>
+    <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>Sign Up</h1>
@@ -52,7 +52,7 @@ const SignUpForm = () => {
               <Form.Label className="d-none">Username</Form.Label>
               <Form.Control
                 className={styles.Input}
-                type="username"
+                type="text"
                 placeholder="Username"
                 value={username}
                 onChange={handleChange}
