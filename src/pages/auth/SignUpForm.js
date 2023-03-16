@@ -80,7 +80,7 @@ const SignUpForm = () => {
                 {message}
               </Alert>
             ))}
-            <Form.Group className="mb-3" controlId="password1">
+            <Form.Group className="mb-3" controlId="password2">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
                 className={styles.Input}
