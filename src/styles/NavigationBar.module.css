@@ -37,3 +37,11 @@
 .SearchInput::placeholder {
     color: #417461;
   }
+
+.NavLink  {
+    padding: 8px;
+}
+
+.Active i {
+    color: #238764;
+}
