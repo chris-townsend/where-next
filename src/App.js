@@ -2,6 +2,7 @@ import styles from "./App.module.css";
 import NavigationBar from "./components/NavigationBar";
 import { Container } from "react-bootstrap";
 import { Route, Switch } from "react-router-dom";
+import './api/axiosDefaults'
 
 function App() {
   return (
