@@ -41,3 +41,16 @@ a {
     transition: color ease-in-out 0.3s;
     color: #7bb661;
   }
+
+  .SignUpImage {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .Content {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid #8fbc8f;
+  }
