@@ -15,3 +15,14 @@
 .SignUpCol {
   height: 450px;
 }
+
+.Header {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #238764;
+  margin-bottom: 15px;
+}
