@@ -30,19 +30,19 @@ const NavigationBar = () => (
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Item>
-            <Nav.Link>
+            <NavLink to="/">
               <i className="fas fa-home"></i> Home
-            </Nav.Link>
+            </NavLink>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link>
+            <NavLink to="/signin">
               <i className="fas fa-sign-in"></i> Sign In
-            </Nav.Link>
+            </NavLink>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link>
+            <NavLink to="/signup">
               <i className="fas fa-user-plus"></i> Sign Up
-            </Nav.Link>
+            </NavLink>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
