@@ -26,3 +26,13 @@
   color: #238764;
   margin-bottom: 15px;
 }
+
+.SignInLink {
+  text-decoration: none;
+  display: block;
+  margin: auto;
+}
+
+.SignInLink span {
+  color: #238764;
+}
