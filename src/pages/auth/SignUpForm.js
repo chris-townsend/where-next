@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Image, Col, Row, Container, Form, Button } from "react-bootstrap";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/SignInUpForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
 const SignUpForm = () => {
   return (
@@ -41,7 +42,7 @@ const SignUpForm = () => {
                 We'll never share your information with anyone else.
               </Form.Text>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} variant="primary" type="submit">
               Sign Up
             </Button>
           </Form>
@@ -52,7 +53,7 @@ const SignUpForm = () => {
           </Link>
         </Container>
       </Col>
-      <Col md={6} className={`my-auto d-none d-md-block p-2`}>
+      <Col md={6} className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}>
         <Image
           className={`${appStyles.SignUpImage}`}
           src={
