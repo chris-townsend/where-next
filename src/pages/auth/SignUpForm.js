@@ -22,7 +22,9 @@ const SignUpForm = () => {
   });
 
   const { username, password1, password2 } = signUpData;
+
   const [errors, setErrors] = useState({});
+
   const history = useHistory();
 
   const handleChange = (event) => {
@@ -47,15 +49,14 @@ const SignUpForm = () => {
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>Sign Up</h1>
-
           <Form onSubmit={handleSubmit}>
-            
-            <Form.Group className="mb-3" controlId="username">
+            <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
                 placeholder="Username"
+                name="username"
                 value={username}
                 onChange={handleChange}
               />
