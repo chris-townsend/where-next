@@ -1,0 +1,12 @@
+.Row {
+    height: calc(90vh - 81px);
+  }
+  .Input {
+    background: #ffffff;
+    border: 1px solid #f0f1f9;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #7177a1;
+    text-align: center;
+    padding: 12px;
+  }

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Image, Col, Row, Container, Form, Button } from "react-bootstrap";
 import appStyles from "../../App.module.css";
+import styles from "../../styles/SignInUpForm.module.css";
 
 const SignUpForm = () => {
   return (
@@ -12,12 +13,17 @@ const SignUpForm = () => {
           <Form>
             <Form.Group className="mb-3" controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
-              <Form.Control type="username" placeholder="Username" />
+              <Form.Control
+                className={styles.Input}
+                type="username"
+                placeholder="Username"
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="password1">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
+                className={styles.Input}
                 type="password"
                 placeholder="Password"
                 name="password1"
@@ -26,16 +32,17 @@ const SignUpForm = () => {
             <Form.Group className="mb-3" controlId="password1">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
+                className={styles.Input}
                 type="password2"
                 placeholder="Confirm Password"
                 name="password2"
               />
-              <Form.Text className="text-muted">
+              <Form.Text className="text-muted text-center">
                 We'll never share your information with anyone else.
               </Form.Text>
             </Form.Group>
             <Button variant="primary" type="submit">
-              Submit
+              Sign Up
             </Button>
           </Form>
         </Container>
