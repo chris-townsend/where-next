@@ -5,11 +5,13 @@ import { Route, Switch } from "react-router-dom";
 import './api/axiosDefaults'
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
+import SideNavigationBar from "./components/SideNavigationBar";
 
 function App() {
   return (
     <div className={styles.App}>
       <NavigationBar />
+      <SideNavigationBar />
       <Container className={styles.Main}>
         <Switch>
           <Route exact path="/" render={() => <h1>Homepage</h1>} />

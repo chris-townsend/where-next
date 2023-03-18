@@ -1,0 +1,36 @@
+.SideNavigation {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 40px;
+    display: block;
+    justify-content: center;
+    position: fixed;
+}
+  
+  
+  .SideNavigation a {
+    margin-bottom: 10px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .SideNavigation a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+
+.NavLink  {
+    padding: 8px;
+    display: block;
+}
+
+.Active i {
+    color: #238764;
+}
