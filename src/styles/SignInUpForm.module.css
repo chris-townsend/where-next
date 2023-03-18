@@ -16,6 +16,10 @@
   height: 450px;
 }
 
+.SignInCol {
+  height: 380px;
+}
+
 .Header {
   font-weight: bold;
   font-size: 18px;
