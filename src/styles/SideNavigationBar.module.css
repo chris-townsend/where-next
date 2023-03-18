@@ -11,26 +11,48 @@
     display: block;
     justify-content: center;
     position: fixed;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+    margin-left: -25px;
 }
   
-  
-  .SideNavigation a {
+.SideNavigation a {
     margin-bottom: 10px;
-    color: #333;
+    color: #417461;
     text-decoration: none;
     display: block;
   }
   
-  .SideNavigation a:hover {
+.SideNavigation a:hover {
     color: #000;
-    text-decoration: underline;
   }
 
 .NavLink  {
-    padding: 8px;
-    display: block;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 15px;
 }
 
 .Active i {
     color: #238764;
+}
+
+.Hr {
+  margin-left: 20px;
+  height: 1px;
+  background-image: linear-gradient(rgb(2, 121, 26), rgba(56, 198, 70, 0.842), rgba(18, 229, 85, 0));
+}
+
+/* Scrollbar settings */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(179, 179, 179);
 }

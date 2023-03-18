@@ -18,10 +18,7 @@ const SideNavigationBar = () => (
           </NavLink>
         </Nav.Item>
         <Nav.Item>
-          <NavLink
-            className={styles.NavLink}
-            to="/signin"
-          >
+          <NavLink className={styles.NavLink} to="/signin">
             <i className="fas fa-feed"></i> Feed
           </NavLink>
         </Nav.Item>
@@ -31,7 +28,36 @@ const SideNavigationBar = () => (
             activeClassName={styles.Active}
             to="/signup"
           >
-            <i className="fas fa-user-plus"></i> Sign Up
+            <i className="fas fa-bookmark"></i> Bookmarks
+          </NavLink>
+        </Nav.Item>
+        <Nav.Item>
+          <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/signup"
+          >
+            <i className="fas fa-users"></i> Groups
+          </NavLink>
+        </Nav.Item>
+        <Nav.Item>
+          <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/signup"
+          >
+            <i className="fas fa-envelope"></i> Contact
+          </NavLink>
+        </Nav.Item>
+        <br />
+        <hr className={styles.Hr} />
+        <Nav.Item>
+          <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/signup"
+          >
+            <i className="fas fa-sign-out"></i> Sign Out
           </NavLink>
         </Nav.Item>
       </Nav>
