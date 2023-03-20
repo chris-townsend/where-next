@@ -23,19 +23,19 @@ const NavigationBar = (props) => {
             {loggedIn ? (
               <Nav.Item>
                 <NavLink to="/profile" className={styles.NavLink}>
-                <i className="fas fa-user-circle"></i> Profile
+                  <i className="fas fa-user-circle"></i> {currentUser.username}
                 </NavLink>
               </Nav.Item>
             ) : (
               <>
                 <Nav.Item>
                   <NavLink to="/signin" className={styles.NavLink}>
-                  <i className="fas fa-sign-in"></i> Sign In
+                    <i className="fas fa-sign-in"></i> Sign In
                   </NavLink>
                 </Nav.Item>
                 <Nav.Item>
                   <NavLink to="/signup" className={styles.NavLink}>
-                  <i className="fas fa-user-plus"></i>Sign Up
+                    <i className="fas fa-user-plus"></i>Sign Up
                   </NavLink>
                 </Nav.Item>
               </>

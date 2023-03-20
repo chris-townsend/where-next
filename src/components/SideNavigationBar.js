@@ -7,7 +7,6 @@ import NavigationBar from "./NavigationBar";
 
 const SideNavigationBar = () => {
   const currentUser = useContext(CurrentUserContext);
-
   return (
     <Navbar className={styles.SideNavigation}>
       <Container>
@@ -56,6 +55,15 @@ const SideNavigationBar = () => {
           </Nav.Item>
           <br />
           <hr className={styles.Hr} />
+          <Nav.Item>
+            <NavLink
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/signup"
+            >
+              <i className="fas fa-sign-out"></i> Sign Out
+            </NavLink>
+          </Nav.Item>
           {currentUser ? (
             <NavigationBar loggedIn={true} />
           ) : (
