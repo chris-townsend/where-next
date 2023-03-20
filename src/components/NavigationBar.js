@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Nav, Navbar, Form, FormControl, Container } from "react-bootstrap";
+import { Nav, Navbar, Container } from "react-bootstrap";
 import logo from "../assets/images/where-next-logo.png";
 import styles from "../styles/NavigationBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -22,20 +22,20 @@ const NavigationBar = (props) => {
           <Nav className="ml-auto">
             {loggedIn ? (
               <Nav.Item>
-                <NavLink to="/dashboard" className={styles.NavLink}>
-                  Dashboard
+                <NavLink to="/profile" className={styles.NavLink}>
+                <i className="fas fa-user-circle"></i> Profile
                 </NavLink>
               </Nav.Item>
             ) : (
               <>
                 <Nav.Item>
                   <NavLink to="/signin" className={styles.NavLink}>
-                    Sign In
+                  <i className="fas fa-sign-in"></i> Sign In
                   </NavLink>
                 </Nav.Item>
                 <Nav.Item>
                   <NavLink to="/signup" className={styles.NavLink}>
-                    Sign Up
+                  <i className="fas fa-user-plus"></i>Sign Up
                   </NavLink>
                 </Nav.Item>
               </>
