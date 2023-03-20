@@ -17,7 +17,7 @@ function App() {
 
   const handleMount = async () => {
     try {
-      const { data } = axios.get("dj-rest-auth/user/");
+      const { data } = await axios.get("dj-rest-auth/user/");
       setCurrentUser(data);
     } catch (err) {
       console.log(err);
@@ -32,8 +32,12 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <SetCurrentUserContext.Provider value={setCurrentUser}>
         <div className={styles.App}>
-          <NavigationBar />
-          <SideNavigationBar />
+          {currentUser ? (
+            <NavigationBar loggedIn={!!currentUser} />
+          ) : (
+            <NavigationBar loggedIn={false} />
+          )}
+          {currentUser ? <SideNavigationBar /> : null}
           <Container className={styles.Main}>
             <Switch>
               <Route exact path="/" render={() => <h1>Homepage</h1>} />
