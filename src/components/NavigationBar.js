@@ -41,13 +41,6 @@ const NavigationBar = (props) => {
               </>
             )}
           </Nav>
-          <Form className={styles.SearchForm}>
-            <FormControl
-              className={styles.SearchInput}
-              type="text"
-              placeholder="Search posts, profiles & more"
-            />
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
