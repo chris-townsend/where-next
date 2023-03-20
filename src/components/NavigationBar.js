@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
 import logo from "../assets/images/where-next-logo.png";
 import styles from "../styles/NavigationBar.module.css";
 import { NavLink } from "react-router-dom";
-import { CurrentUserContext } from "../App";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const NavigationBar = (props) => {
-  const currentUser = useContext(CurrentUserContext);
+  const currentUser = useCurrentUser();
   const { loggedIn } = props;
 
   return (

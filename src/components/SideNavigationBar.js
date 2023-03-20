@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
 import styles from "../styles/SideNavigationBar.module.css";
 import { NavLink } from "react-router-dom";
-import { CurrentUserContext } from "../App";
 import NavigationBar from "./NavigationBar";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const SideNavigationBar = () => {
-  const currentUser = useContext(CurrentUserContext);
+  const currentUser = useCurrentUser();
   return (
     <Navbar className={styles.SideNavigation}>
       <Container>
