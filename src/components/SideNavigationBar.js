@@ -3,10 +3,24 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 import styles from "../styles/SideNavigationBar.module.css";
 import { NavLink } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
+import axios from "axios";
 
 const SideNavigationBar = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+
+  const handleSignOut = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const addPostIcon = (
     <Nav.Item>
@@ -80,11 +94,7 @@ const SideNavigationBar = () => {
           <br />
           <hr className={styles.Hr} />
           <Nav.Item>
-            <NavLink
-              className={styles.NavLink}
-              to="sign_out"
-              onClick={() => {}}
-            >
+            <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
               <i className="fas fa-sign-out"></i> Sign Out
             </NavLink>
           </Nav.Item>
