@@ -10,17 +10,16 @@ const SideNavigationBar = () => {
 
   const addPostIcon = (
     <Nav.Item>
-            <NavLink
-              exact
-              className={styles.NavLink}
-              activeClassName={styles.Active}
-              to="/"
-            >
-              <i className="fas fa-plus-circle"></i> Add Post
-            </NavLink>
-          </Nav.Item>
-
-  )
+      <NavLink
+        exact
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="add_post"
+      >
+        <i className="fas fa-plus-circle"></i> Add Post
+      </NavLink>
+    </Nav.Item>
+  );
   return (
     <Navbar className={styles.SideNavigation}>
       <Container>
@@ -35,9 +34,10 @@ const SideNavigationBar = () => {
               <i className="fas fa-home"></i> Home
             </NavLink>
           </Nav.Item>
+          {/* Only show the post icon if the current user exists */}
           {currentUser && addPostIcon}
           <Nav.Item>
-            <NavLink className={styles.NavLink} to="/signin">
+            <NavLink className={styles.NavLink} to="/feed">
               <i className="fas fa-feed"></i> Feed
             </NavLink>
           </Nav.Item>
@@ -45,7 +45,7 @@ const SideNavigationBar = () => {
             <NavLink
               className={styles.NavLink}
               activeClassName={styles.Active}
-              to="/signup"
+              to="/bookmarks"
             >
               <i className="fas fa-bookmark"></i> Bookmarks
             </NavLink>
@@ -54,7 +54,7 @@ const SideNavigationBar = () => {
             <NavLink
               className={styles.NavLink}
               activeClassName={styles.Active}
-              to="/signup"
+              to="/groups"
             >
               <i className="fas fa-users"></i> Groups
             </NavLink>
@@ -63,7 +63,16 @@ const SideNavigationBar = () => {
             <NavLink
               className={styles.NavLink}
               activeClassName={styles.Active}
-              to="/signup"
+              to="/liked"
+            >
+              <i className="fas fa-heart"></i> Liked
+            </NavLink>
+          </Nav.Item>
+          <Nav.Item>
+            <NavLink
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/contact"
             >
               <i className="fas fa-envelope"></i> Contact
             </NavLink>
@@ -73,8 +82,8 @@ const SideNavigationBar = () => {
           <Nav.Item>
             <NavLink
               className={styles.NavLink}
-              activeClassName={styles.Active}
-              to="/signup"
+              to="sign_out"
+              onClick={() => {}}
             >
               <i className="fas fa-sign-out"></i> Sign Out
             </NavLink>

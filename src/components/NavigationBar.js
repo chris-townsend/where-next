@@ -22,7 +22,10 @@ const NavigationBar = (props) => {
           <Nav className="ml-auto">
             {loggedIn ? (
               <Nav.Item>
-                <NavLink to="/profile" className={styles.NavLink}>
+                <NavLink
+                  className={styles.NavLink}
+                  to={`/profiles/${currentUser?.profile_id}`}
+                >
                   <i className="fas fa-user-circle"></i> {currentUser.username}
                 </NavLink>
               </Nav.Item>
