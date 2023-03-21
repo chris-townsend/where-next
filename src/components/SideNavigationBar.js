@@ -7,6 +7,20 @@ import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const SideNavigationBar = () => {
   const currentUser = useCurrentUser();
+
+  const addPostIcon = (
+    <Nav.Item>
+            <NavLink
+              exact
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/"
+            >
+              <i className="fas fa-plus-circle"></i> Add Post
+            </NavLink>
+          </Nav.Item>
+
+  )
   return (
     <Navbar className={styles.SideNavigation}>
       <Container>
@@ -21,6 +35,7 @@ const SideNavigationBar = () => {
               <i className="fas fa-home"></i> Home
             </NavLink>
           </Nav.Item>
+          {currentUser && addPostIcon}
           <Nav.Item>
             <NavLink className={styles.NavLink} to="/signin">
               <i className="fas fa-feed"></i> Feed
