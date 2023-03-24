@@ -1,4 +1,4 @@
-import React, { useState, handleChange } from "react";
+import React, { useState } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
 
 import styles from "../../styles/PostCreateUpdate.module.css";
@@ -14,6 +14,23 @@ function PostCreateForm() {
     image: "",
   });
   const { title, content, image } = postData;
+
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image);
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
 
   const textFields = (
     <div className="text-center">
@@ -65,6 +82,12 @@ function PostCreateForm() {
               >
                 <Asset src={Upload} message="Click to upload an image" />
               </Form.Label>
+              <Form.File
+                id="image-upload"
+                accept="image/*"
+                className="d-none"
+                onChange={handleChangeImage}
+              />
             </Form.Group>
           </Container>
         </Col>
