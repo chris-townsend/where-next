@@ -1,4 +1,10 @@
 .Container {
     min-height: 343px;
     margin-left: 105px;
+    margin-top: 10px;
   }
+
+.InputContainer {
+  margin-left: 50px;
+  margin-top: 10px;
+}
