@@ -1,5 +1,13 @@
 import React, { useState, useRef } from "react";
-import { Form, Button, Row, Col, Container, Image } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Row,
+  Col,
+  Container,
+  Image,
+  Alert,
+} from "react-bootstrap";
 
 import styles from "../../styles/PostCreateUpdate.module.css";
 import appStyles from "../../App.module.css";
@@ -69,6 +77,11 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors.title?.map((message, idx) => (
+        <Alert key={idx} variant="warning">
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Content</Form.Label>
         <Form.Control
@@ -79,6 +92,12 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Button
         className={`${btnStyles.Button} ${btnStyles.Green}`}
         onClick={() => history.goBack()}
@@ -133,6 +152,11 @@ function PostCreateForm() {
                 ref={imageInput}
               />
             </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
           </Container>
         </Col>
         <Col md={8} lg={3} className="d-none d-md-block p-0 p-md-2 ml-5">
