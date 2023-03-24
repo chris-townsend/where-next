@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Row, Col, Container } from "react-bootstrap";
+import { Form, Button, Row, Col, Container, Image } from "react-bootstrap";
 
 import styles from "../../styles/PostCreateUpdate.module.css";
 import appStyles from "../../App.module.css";
@@ -76,12 +76,29 @@ function PostCreateForm() {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
-              <Form.Label
-                className="d-flex justify-content-center"
-                htmlFor="image-upload"
-              >
-                <Asset src={Upload} message="Click to upload an image" />
-              </Form.Label>
+              {image ? (
+                <>
+                  <figure>
+                    <Image className={appStyles.Image} src={image} rounded />
+                  </figure>
+                  <div>
+                    <Form.Label
+                      className={`${btnStyles.Button} ${btnStyles.Green} btn`}
+                      htmlFor="image-upload"
+                    >
+                      Change Image
+                    </Form.Label>
+                  </div>
+                </>
+              ) : (
+                <Form.Label
+                  className="d-flex justify-content-center"
+                  htmlFor="image-upload"
+                >
+                  <Asset src={Upload} message="Click to upload an image" />
+                </Form.Label>
+              )}
+
               <Form.File
                 id="image-upload"
                 accept="image/*"
