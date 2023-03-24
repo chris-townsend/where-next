@@ -4,6 +4,9 @@ import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import styles from "../../styles/PostCreateUpdate.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import Asset from "../../components/Asset";
+import Upload from "../../assets/images/upload.png";
+
 
 function PostCreateForm() {
   return (
@@ -18,7 +21,7 @@ function PostCreateForm() {
                 className="d-flex justify-content-center"
                 htmlFor="image-upload"
               >
-                ASSET
+                <Asset src={Upload} message="Click to upload an image" />
               </Form.Label>
               <div className="d-flex justify-content-center">
                 <Button
