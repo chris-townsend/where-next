@@ -36,17 +36,18 @@
     color: #f1fafa;
   }
 
-  .Blue,
-  .BlueOutline:hover,
+  .Green,
+  .GreenOutline:hover,
   .Bright:hover {
     background-color: #21b248;
     color: #ffffff;
   }
   
-  .BlueOutline,
-  .Blue:hover {
+  .GreenOutline,
+  .Green:hover {
     background-color: #ffffff;
     color: #21b248;
+    outline: solid #21b248;
   }
   
   .Black,

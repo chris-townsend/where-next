@@ -32,7 +32,8 @@ const SideNavigationBar = () => {
         exact
         className={styles.NavLink}
         activeClassName={styles.Active}
-        to="add_post"
+        to="/posts/create"
+        
       >
         <i className="fas fa-plus-circle"></i> Add Post
       </NavLink>
