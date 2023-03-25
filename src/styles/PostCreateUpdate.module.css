@@ -4,6 +4,16 @@
     margin-top: 10px;
   }
 
+.CommentContainer {
+  margin-left: 2px;
+  min-height: 100px;
+}
+
+.RowWidth {
+  margin-left: 105px;
+  margin-top: 10px;
+}
+
 .InputContainer {
   margin-left: 50px;
   margin-top: 10px;

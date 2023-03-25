@@ -8,6 +8,7 @@ import SignInForm from "./pages/auth/SignInForm";
 import SideNavigationBar from "./components/SideNavigationBar";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import PostCreateForm from "./pages/posts/PostCreateForm";
+import PostPage from "./pages/posts/PostPage";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+          <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route render={() => <p> 404 Page not found</p>} />
         </Switch>
       </Container>
