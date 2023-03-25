@@ -9,6 +9,7 @@ import SideNavigationBar from "./components/SideNavigationBar";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
+import PostsPage from "./pages/posts/PostsPage";
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
       {currentUser ? <SideNavigationBar /> : null}
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <h1>Homepage</h1>} />
+          <Route exact path="/" render={() => <PostsPage />} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
