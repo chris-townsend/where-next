@@ -23,7 +23,7 @@ const Post = (props) => {
     like_id,
     bookmark_id,
     bookmark_count,
-    setPosts
+    setPosts,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -37,6 +37,22 @@ const Post = (props) => {
         results: prevPosts.results.map((post) => {
           return post.id === id
             ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleUnlike = async () => {
+    try {
+      await axiosRes.delete(`/likes/${like_id}/`);
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, likes_count: post.likes_count - 1, like_id: null }
             : post;
         }),
       }));
@@ -90,7 +106,7 @@ const Post = (props) => {
               <i className={`far fa-heart ${styles.HeartOutline}`} />
             </OverlayTrigger>
           ) : like_id ? (
-            <span className={styles.Heart} onClick={() => {}}>
+            <span className={styles.Heart} onClick={handleUnlike}>
               <i className="fas fa-heart" />
             </span>
           ) : currentUser ? (
