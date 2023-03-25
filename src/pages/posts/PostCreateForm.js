@@ -22,10 +22,10 @@ function PostCreateForm() {
   const [errors, setErrors] = useState({});
   const [postData, setPostData] = useState({
     title: "",
-    content: "",
+    about: "",
     image: "",
   });
-  const { title, content, image } = postData;
+  const { title, about, image } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -35,7 +35,7 @@ function PostCreateForm() {
     const formData = new FormData();
 
     formData.append("title", title);
-    formData.append("content", content);
+    formData.append("about", about);
     formData.append("image", imageInput.current.files[0]);
 
     try {
@@ -54,6 +54,8 @@ function PostCreateForm() {
       ...postData,
       [event.target.name]: event.target.value,
     });
+
+    console.log(about)
   };
 
   const handleChangeImage = (event) => {
@@ -87,12 +89,12 @@ function PostCreateForm() {
         <Form.Control
           as="textarea"
           rows={6}
-          name="content"
-          value={content}
+          name="about"
+          value={about}
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.content?.map((message, idx) => (
+      {errors?.about?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>

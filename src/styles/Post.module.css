@@ -1,9 +1,41 @@
 .Post {
-    background-color: #ffffff;
-    border: 1px solid #dadadf;
-    border-radius: 2px;
-    margin-bottom: 16px;
-    text-align: center;
-  }
+  background-color: #ffffff;
+  border: 1px solid #dadadf;
+  border-radius: 2px;
+  text-align: center;
+  padding: 5px;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
 
- 
+.postImage {
+  object-fit: cover;
+  height: 350px;
+  padding: 8px;
+}
+
+.CardTitle {
+  font-family: 'Karla', sans-serif;
+  color: #0d9331;
+  font-size: 30px;
+  padding: 2px;
+}
+
+.CardText {
+  font-size: 18px;
+}
+
+.Heart {
+  color: #f85032 !important;
+}
+
+.Heart:hover {
+  color: #ea412e !important;
+}
+
+.HeartOutline:hover {
+  color: #f85032 !important;
+}
+
+
+
