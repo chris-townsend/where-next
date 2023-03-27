@@ -58,7 +58,7 @@ function App() {
             render={() => (
               <PostsPage
                 message="No results found. Please adjust search keyword or bookmark the post you are interested in."
-                filter={`bookmark_posts__owner__profile=${profile_id}&ordering=-bookmark_posts__created_date&`}
+                filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_date&`}
               />
             )}
           />

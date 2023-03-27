@@ -81,6 +81,26 @@ const Post = (props) => {
     }
   };
 
+  const handleUnbookmark = async () => {
+    try {
+      await axiosRes.delete(`/bookmarks/${bookmark_id}/`);
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? {
+                ...post,
+                bookmark_count: post.bookmark_count - 1,
+                bookmark_id: null,
+              }
+            : post;
+        }),
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Card className={styles.Post}>
       <Card.Body>
@@ -154,7 +174,7 @@ const Post = (props) => {
               <i className="far fa-bookmark" />
             </OverlayTrigger>
           ) : bookmark_id ? (
-            <span>
+            <span onClick={handleUnbookmark}>
               <i className="fas fa-bookmark" />
             </span>
           ) : currentUser ? (
