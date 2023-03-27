@@ -61,6 +61,26 @@ const Post = (props) => {
     }
   };
 
+  const handleBookmark = async () => {
+    try {
+      const { data } = await axiosRes.post("/bookmarks/", { post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? {
+                ...post,
+                bookmark_count: post.bookmark_count + 1,
+                bookmark_id: data.id,
+              }
+            : post;
+        }),
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Card className={styles.Post}>
       <Card.Body>
@@ -138,7 +158,7 @@ const Post = (props) => {
               <i className="fas fa-bookmark" />
             </span>
           ) : currentUser ? (
-            <span>
+            <span onClick={handleBookmark}>
               <i className="far fa-bookmark" />
             </span>
           ) : (
