@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row, Container, Form } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import Post from "./Post";
 import Asset from "../../components/Asset";
 import { axiosReq } from "../../api/axiosDefaults";
-
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
@@ -34,6 +33,17 @@ function PostsPage({ message, filter = "" }) {
     <Row className={`${styles.RowWidth}`}>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles mobile</p>
+        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        <Form
+          className={styles.SearchInput}
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <Form.Control
+            type="text"
+            className="mr-sm-2"
+            placeholder="Search for posts, profiles and more!"
+          />
+        </Form>
         {hasLoaded ? (
           <>
             {posts.results.length ? (
