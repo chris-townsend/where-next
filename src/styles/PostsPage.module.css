@@ -2,3 +2,22 @@
     margin-left: 105px;
     margin-top: 10px;
   }
+
+.SearchInput input {
+    border-radius: 20px;
+    color: #2ca630ac;
+    padding-left: 15px;
+    margin-bottom: 16px;
+  }
+  
+.SearchIcon {
+    position: absolute;
+    font-size: 1.2rem;
+    padding: 9px;
+    margin-left: 600px;
+  }
+  
+.SearchIcon:hover {
+    cursor: pointer;
+    color: green;
+  }
