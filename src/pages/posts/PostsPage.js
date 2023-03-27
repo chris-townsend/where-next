@@ -13,11 +13,12 @@ function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathName } = useLocation();
+  const [query, setQuery] = useState();
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}`);
+        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
@@ -27,7 +28,7 @@ function PostsPage({ message, filter = "" }) {
 
     setHasLoaded(false);
     fetchPosts();
-  }, [filter, pathName]);
+  }, [filter, query, pathName]);
 
   return (
     <Row className={`${styles.RowWidth}`}>
@@ -39,6 +40,8 @@ function PostsPage({ message, filter = "" }) {
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Control
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
             type="text"
             className="mr-sm-2"
             placeholder="Search for posts, profiles and more!"
