@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 
 import styles from "../../styles/Post.module.css";
+import { PostDropdownBar } from "../../components/PostDropdownBar";
 
 const Post = (props) => {
   const {
@@ -111,7 +112,7 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_date}</span>
-            {is_owner && postPage && "..."}
+            {is_owner && postPage && <PostDropdownBar />}
           </div>
         </Media>
         <hr className={styles.PostHr} />
