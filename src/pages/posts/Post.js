@@ -41,6 +41,10 @@ const Post = (props) => {
     }
   };
 
+  const handleEdit = () => {
+    history.push(`/posts/${id}/edit`);
+  };
+
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
@@ -126,6 +130,7 @@ const Post = (props) => {
             {is_owner && postPage && (
               <PostDropdownBar
                 handleDelete={handleDelete}
+                handleEdit={handleEdit}
               />
             )}
           </div>

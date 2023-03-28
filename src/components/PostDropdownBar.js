@@ -14,7 +14,7 @@ const DropdownMenu = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-export const PostDropdownBar = ({handleDelete}) => {
+export const PostDropdownBar = ({handleDelete, handleEdit}) => {
   return (
     <Dropdown className="ml-3" drop="left">
       <Dropdown.Toggle as={DropdownMenu} />
@@ -25,7 +25,7 @@ export const PostDropdownBar = ({handleDelete}) => {
       >
         <Dropdown.Item
           className={styles.DropdownItem}
-          onClick={() => {}}
+          onClick={handleEdit}
           aria-label="edit"
         >
           <i className="fas fa-edit" />
