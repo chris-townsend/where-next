@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Post from "./Post";
 import Asset from "../../components/Asset";
 import { axiosReq } from "../../api/axiosDefaults";
-
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import NoResults from "../../assets/images/no-results.png";
@@ -13,9 +13,10 @@ import { fetchMoreData } from "../../utils/utils";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
+  const { pathname } = useLocation();
   const [hasLoaded, setHasLoaded] = useState(false);
-  const { pathName } = useLocation();
-  const [query, setQuery] = useState();
+  const currentUser = useCurrentUser();
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -36,7 +37,7 @@ function PostsPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathName]);
+  }, [filter, query, pathname, currentUser]);
 
   return (
     <Row className={`${styles.RowWidth}`}>
