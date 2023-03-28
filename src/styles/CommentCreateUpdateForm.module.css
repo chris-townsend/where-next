@@ -3,14 +3,14 @@
     border-bottom: 1px #11b046 inset;
     padding: 4px;
     margin-left: 5px;
-  }
+}
 
 .Form:focus {
     box-shadow: none;
     border-bottom: 1px #27e165 inset;
 }
   
-  .Button {
+.Button {
     border: none;
     background-color: #229731;
     color: aliceblue;
@@ -18,10 +18,10 @@
     padding: 4px 10px;
     min-width: 75px;
     margin: 5px;
-  }
+}
   
-  .Button:hover {
+.Button:hover {
     cursor: pointer;
     background-color: aliceblue;
     outline: 1px solid green;
-  }
+}
