@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Form,
   Button,
@@ -8,27 +8,39 @@ import {
   Image,
   Alert,
 } from "react-bootstrap";
+import { axiosReq } from "../../api/axiosDefaults";
+import { useHistory, useParams } from "react-router-dom";
 
 import styles from "../../styles/PostCreateUpdate.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Asset from "../../components/Asset";
-import Upload from "../../assets/images/upload.png";
 
-import { axiosReq } from "../../api/axiosDefaults";
-import { useHistory } from "react-router";
-
-const PostCreateForm = () => {
+const PostEditForm = () => {
   const [errors, setErrors] = useState({});
+  const imageInput = useRef(null);
+  const history = useHistory();
+  const { id } = useParams();
+
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const { data } = await axiosReq.get(`/posts/${id}/`);
+        const { title, about, image, is_owner } = data;
+
+        is_owner ? setPostData({ title, about, image }) : history.push("/");
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    handleMount();
+  }, [history, id]);
+
   const [postData, setPostData] = useState({
     title: "",
     about: "",
     image: "",
   });
   const { title, about, image } = postData;
-
-  const imageInput = useRef(null);
-  const history = useHistory();
 
   const handleChange = (event) => {
     setPostData({
@@ -53,11 +65,14 @@ const PostCreateForm = () => {
 
     formData.append("title", title);
     formData.append("about", about);
-    formData.append("image", imageInput.current.files[0]);
+
+    if (imageInput?.current?.files[0]) {
+      formData.append("image", imageInput.current.files[0]);
+    }
 
     try {
-      const { data } = await axiosReq.post("/posts/", formData);
-      history.push(`/posts/${data.id}`);
+      await axiosReq.put(`/posts/${id}/`, formData);
+      history.push(`/posts/${id}`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -108,7 +123,7 @@ const PostCreateForm = () => {
         className={`${btnStyles.Button} ${btnStyles.Green}`}
         type="submit"
       >
-        create
+        update
       </Button>
     </div>
   );
@@ -121,29 +136,17 @@ const PostCreateForm = () => {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
-              {image ? (
-                <>
-                  <figure>
-                    <Image className={appStyles.Image} src={image} rounded />
-                  </figure>
-                  <div>
-                    <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Green} btn`}
-                      htmlFor="image-upload"
-                    >
-                      Change Image
-                    </Form.Label>
-                  </div>
-                </>
-              ) : (
+              <figure>
+                <Image className={appStyles.Image} src={image} rounded />
+              </figure>
+              <div>
                 <Form.Label
-                  className="d-flex justify-content-center"
+                  className={`${btnStyles.Button} ${btnStyles.Green} btn`}
                   htmlFor="image-upload"
                 >
-                  <Asset src={Upload} message="Click to upload an image" />
+                  Change Image
                 </Form.Label>
-              )}
-
+              </div>
               <Form.File
                 id="image-upload"
                 accept="image/*"
@@ -171,4 +174,4 @@ const PostCreateForm = () => {
   );
 };
 
-export default PostCreateForm;
+export default PostEditForm;
