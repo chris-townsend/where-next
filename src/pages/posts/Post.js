@@ -7,6 +7,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 import styles from "../../styles/Post.module.css";
 import { PostDropdownBar } from "../../components/PostDropdownBar";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Post = (props) => {
   const {
@@ -29,6 +30,16 @@ const Post = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const history = useHistory();
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/posts/${id}/`);
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleLike = async () => {
     try {
@@ -112,7 +123,11 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_date}</span>
-            {is_owner && postPage && <PostDropdownBar />}
+            {is_owner && postPage && (
+              <PostDropdownBar
+                handleDelete={handleDelete}
+              />
+            )}
           </div>
         </Media>
         <hr className={styles.PostHr} />
