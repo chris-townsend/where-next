@@ -24,7 +24,6 @@ const Post = (props) => {
     postPage,
     like_id,
     bookmark_id,
-    bookmark_count,
     setPosts,
   } = props;
 
