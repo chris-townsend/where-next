@@ -4,3 +4,10 @@
     float: right;
     margin-right: 20px;
 }
+
+.User {
+    font-weight: bold;
+    color: #117219;
+    margin-right: 7px;
+    margin-top: 2px;
+  }
