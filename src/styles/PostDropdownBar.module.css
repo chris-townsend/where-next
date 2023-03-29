@@ -9,3 +9,8 @@
     right: 0;
     z-index: 99;
 }
+
+.Menu {
+    font-size: 20px;
+    margin-left: 5px;
+}
