@@ -12,7 +12,7 @@ const PopularProfiles = ({ mobile }) => {
   return (
     <Container
       className={`${appStyles.Content} ${
-        mobile && "d-lg-none text-center mb-3"
+        mobile && "d-md-none text-center mb-3"
       }`}
     >
       {popularProfiles.results.length ? (
