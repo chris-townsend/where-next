@@ -54,6 +54,7 @@
   .BlackOutline:hover {
     background-color: #21b248;
     color: aliceblue;
+    outline: solid #21b248;
   }
   
   .Black:hover,
