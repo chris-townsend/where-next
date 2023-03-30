@@ -64,4 +64,14 @@ a {
     border: 1px solid #8fbc8f;
   }
 
+  .ProfileContent {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid #8fbc8f;
+    margin-left: 110px;
+    margin-top: 10px;
+    width: 85%;
+  }
+
   
