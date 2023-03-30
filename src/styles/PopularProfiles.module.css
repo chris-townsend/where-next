@@ -1,0 +1,11 @@
+.PopularProfilesTitle {
+    font-size: 24px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 200;
+    color: #117219;
+}
+
+.Hr {
+    height: 0.8px;
+    background-image: linear-gradient(rgb(2, 121, 26), rgba(56, 198, 70, 0.842), rgba(18, 229, 85, 0));
+}
