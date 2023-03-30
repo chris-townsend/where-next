@@ -6,6 +6,7 @@ import Avatar from "../../components/Avatar";
 
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/Profile.module.css";
+import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
 const Profile = (props) => {
   const { profile, mobile } = props;
@@ -14,13 +15,15 @@ const Profile = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
+  const { handleFollow } = useSetProfileData;
+
   return (
     <div
       className={`my-3 d-flex align-items-center" ${mobile && "flex-column"}`}
     >
       <div>
         <Link className="align-self-center" to={`/profiles/${id}`}>
-        <Avatar src={currentUser?.profile_image} height={40} />
+          <Avatar src={currentUser?.profile_image} height={40} />
         </Link>
       </div>
 
@@ -41,7 +44,7 @@ const Profile = (props) => {
           ) : (
             <Button
               className={`${btnStyles.Button} ${btnStyles.Black}`}
-              onClick={() => {}}
+              onClick={() => handleFollow(profile)}
             >
               follow
             </Button>
