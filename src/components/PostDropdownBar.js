@@ -14,7 +14,7 @@ const DropdownMenu = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-export const PostDropdownBar = ({handleDelete, handleEdit}) => {
+export const PostDropdownBar = ({ handleDelete, handleEdit }) => {
   return (
     <Dropdown className="ml-3" drop="left">
       <Dropdown.Toggle as={DropdownMenu} />

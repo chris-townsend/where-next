@@ -13,6 +13,7 @@ import { fetchMoreData } from "../../utils/utils";
 import Post from "../posts/Post";
 import InfiniteScroll from "react-infinite-scroll-component";
 import NoResults from "../../assets/images/no-results.png";
+import { ProfileEditDropdown } from "../../components/ProfileDropdownBar";
 
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -51,6 +52,7 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
+      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row className="px-3 text-center">
         <Col lg={12}>
           <Image
