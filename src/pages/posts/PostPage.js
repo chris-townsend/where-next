@@ -12,6 +12,7 @@ import { fetchMoreData } from "../../utils/utils";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostCreateUpdate.module.css";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostPage() {
   const { id } = useParams();
@@ -41,7 +42,7 @@ function PostPage() {
   return (
     <Row className={`${styles.RowWidth}`}>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular profiles for mobile</p>
+        <PopularProfiles mobile />
         <Post {...post.results[0]} setPosts={setPost} postPage />
         <Container
           className={`${appStyles.Content} ${styles.CommentContainer}`}
@@ -80,7 +81,7 @@ function PostPage() {
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        Popular profiles for desktop
+        <PopularProfiles />
       </Col>
     </Row>
   );
