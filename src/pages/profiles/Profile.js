@@ -15,7 +15,7 @@ const Profile = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
-  const { handleFollow } = useSetProfileData;
+  const { handleFollow } = useSetProfileData();
 
   return (
     <div
