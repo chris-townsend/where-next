@@ -33,7 +33,6 @@ const SideNavigationBar = () => {
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/posts/create"
-        
       >
         <i className="fas fa-plus-circle"></i> Add Post
       </NavLink>
@@ -53,13 +52,14 @@ const SideNavigationBar = () => {
               <i className="fas fa-home"></i> Home
             </NavLink>
           </Nav.Item>
-          {/* Only show the post icon if the current user exists */}
-          {currentUser && addPostIcon}
+
           <Nav.Item>
             <NavLink className={styles.NavLink} to="/feed">
               <i className="fas fa-feed"></i> Feed
             </NavLink>
           </Nav.Item>
+          {/* Only show the post icon if the current user exists */}
+          {currentUser && addPostIcon}
           <Nav.Item>
             <NavLink
               className={styles.NavLink}
