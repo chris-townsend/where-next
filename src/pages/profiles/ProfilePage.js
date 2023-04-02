@@ -23,7 +23,7 @@ function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const currentUser = useCurrentUser();
   const { id } = useParams();
-  const {setProfileData, handleFollow, handleUnfollow} = useSetProfileData();
+  const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
@@ -99,7 +99,50 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        {profile?.content && <Col className="p-3">{profile.content}</Col>}
+        {profile && (
+          <Col className="p-3">
+            <div>
+              <span>Name:</span>
+              {profile.hasOwnProperty("name") && profile.name ? (
+                profile.name
+              ) : (
+                <i className="fa-solid fa-ban" />
+              )}
+            </div>
+            <div>
+              <span>Date of Birth:</span>
+              {profile.date_of_birth === "" ? (
+                profile.date_of_birth
+              ) : (
+                <i className="fa-solid fa-ban" />
+              )}
+            </div>
+            <div>
+              <span>Location:</span>
+              {profile.location === "" ? (
+                <i className="fa-solid fa-ban" />
+              ) : (
+                profile?.location
+              )}
+            </div>
+            <div>
+              <span>Favourite Location:</span>
+              {profile.favourite_location === "" ? (
+                <i className="fa-solid fa-ban" />
+              ) : (
+                profile?.favourite_location
+              )}
+            </div>
+            <div>
+              <span>Bio:</span>
+              {profile.hasOwnProperty("bio") && profile.bio ? (
+                profile.bio
+              ) : (
+                <i className="fa-solid fa-ban" />
+              )}
+            </div>
+          </Col>
+        )}
       </Row>
     </>
   );
