@@ -3,14 +3,14 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
+import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/Profile.module.css";
-import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
 const Profile = (props) => {
   const { profile, mobile } = props;
-  const { id, following_id, owner } = profile;
+  const { id, following_id, owner, image } = profile;
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
@@ -23,7 +23,7 @@ const Profile = (props) => {
     >
       <div>
         <Link className="align-self-center" to={`/profiles/${id}`}>
-          <Avatar src={currentUser?.profile_image} height={40} />
+          <Avatar src={image} height={40} />
         </Link>
       </div>
 

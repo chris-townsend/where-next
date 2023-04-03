@@ -17,7 +17,6 @@ import {
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
@@ -78,6 +77,7 @@ const ProfileEditForm = () => {
     setProfileData({
       ...profileData,
       [event.target.name]: event.target.value,
+      
     });
   };
 
@@ -341,10 +341,9 @@ const ProfileEditForm = () => {
       <Form.Group>
         <Form.Label>Date of birth</Form.Label>
         <DatePicker
-          selected={date_of_birth}
-          value={date_of_birth}
-          onChange={handleDateChange}
           name="date_of_birth"
+          selected={profileData.date_of_birth}
+          onChange={handleDateChange}
           rows={7}
         />
       </Form.Group>
