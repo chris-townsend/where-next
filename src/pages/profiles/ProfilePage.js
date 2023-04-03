@@ -112,9 +112,9 @@ function ProfilePage() {
             <div>
               <span>Date of Birth:</span>
               {profile.date_of_birth === "" ? (
-                profile.date_of_birth
-              ) : (
                 <i className="fa-solid fa-ban" />
+              ) : (
+                profile.date_of_birth
               )}
             </div>
             <div>

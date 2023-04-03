@@ -17,6 +17,7 @@ import {
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
@@ -39,6 +40,8 @@ const ProfileEditForm = () => {
     profileData;
 
   const [errors, setErrors] = useState({});
+
+  const [dateOfBirth, setDateOfBirth] = useState(new Date());
 
   useEffect(() => {
     const handleMount = async () => {
@@ -77,16 +80,16 @@ const ProfileEditForm = () => {
     setProfileData({
       ...profileData,
       [event.target.name]: event.target.value,
-      
     });
   };
 
   const handleDateChange = (date) => {
-    console.log(date);
+    setDateOfBirth(date);
     setProfileData({
       ...profileData,
       date_of_birth: date,
     });
+    setDateOfBirth(date);
   };
 
   const handleSubmit = async (event) => {
@@ -95,13 +98,13 @@ const ProfileEditForm = () => {
     formData.append("name", name);
     formData.append("location", location);
     formData.append("favourite_location", favourite_location);
-    formData.append("date_of_birth", date_of_birth);
+    const formattedDateOfBirth = date_of_birth.toISOString().split("T")[0];
+    formData.append("date_of_birth", formattedDateOfBirth);
     formData.append("bio", bio);
 
     if (imageFile?.current?.files[0]) {
       formData.append("image", imageFile?.current?.files[0]);
     }
-
     try {
       const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
       setCurrentUser((currentUser) => ({
@@ -111,6 +114,7 @@ const ProfileEditForm = () => {
       history.goBack();
     } catch (err) {
       console.log(err);
+      console.log(err.response.data);
       setErrors(err.response?.data);
     }
   };
@@ -341,9 +345,11 @@ const ProfileEditForm = () => {
       <Form.Group>
         <Form.Label>Date of birth</Form.Label>
         <DatePicker
+          selected={dateOfBirth}
           name="date_of_birth"
-          selected={profileData.date_of_birth}
+          value={date_of_birth}
           onChange={handleDateChange}
+          dateFormat="yyyy-MM-dd"
           rows={7}
         />
       </Form.Group>
