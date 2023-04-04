@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Form, Button, Container, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import useRedirect from "../../hooks/UseRedirect";
 
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/ContactCreateForm.module.css";
 
 const ContactCreateForm = () => {
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [contactData, setContactData] = useState({
