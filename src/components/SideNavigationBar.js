@@ -91,7 +91,7 @@ const SideNavigationBar = () => {
             <NavLink
               className={styles.NavLink}
               activeClassName={styles.Active}
-              to="/contact"
+              to="/contact/create"
             >
               <i className="fas fa-envelope"></i> Contact
             </NavLink>

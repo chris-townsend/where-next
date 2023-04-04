@@ -13,6 +13,7 @@ import PostsPage from "./pages/posts/PostsPage";
 import PostEditForm from "./pages/posts/PostEditForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import ContactCreateForm from "./pages/contact/ContactCreateForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -75,6 +76,11 @@ function App() {
             exact
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
+          />
+          <Route
+            exact
+            path="/contact/create/"
+            render={() => <ContactCreateForm />}
           />
           <Route render={() => <p> 404 Page not found</p>} />
         </Switch>
