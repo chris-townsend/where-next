@@ -1,7 +1,7 @@
 .App {
-    font-family: 'Karla', sans-serif;
-    background-color: #F0F8FF;
-    min-height: 100vh;
+  font-family: 'Karla', sans-serif;
+  background-color: #F0F8FF;
+  min-height: 100vh;
 }
 
 * {
@@ -15,63 +15,76 @@
 }
 
 a {
-    color: #8fbc8f;
-    transition: color ease-in-out 0.3s;
-  }
+  color: #8fbc8f;
+  transition: color ease-in-out 0.3s;
+}
   
-  a:hover {
-    color: #417461;
-    text-decoration: none;
-  }
+a:hover {
+  color: #417461;
+  text-decoration: none;
+}
   
-  a:hover i {
-    color: #7bb661;
-    transition: color ease-in-out 0.3s;
-  }
+a:hover i {
+  color: #7bb661;
+  transition: color ease-in-out 0.3s;
+}
   
-  i {
-    color: #8fbc8f;
-    font-size: 28px;
-    padding: 5px;
-    vertical-align: middle;
-  }
+i {
+  color: #8fbc8f;
+  font-size: 28px;
+  padding: 5px;
+  vertical-align: middle;
+}
   
-  i:hover {
-    cursor: pointer;
-    transition: color ease-in-out 0.3s;
-    color: #7bb661;
-  }
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #7bb661;
+}
 
-  .SignUpImage {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    border-radius: 15px;
-  }
+.SignUpImage {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
 
-  .Image {
-    max-height: 50vh;
-    max-width: 100%;
-    object-fit: contain;
-    margin-top: 20px;
-  }
+.Image {
+  max-height: 50vh;
+  max-width: 100%;
+  object-fit: contain;
+  margin-top: 20px;
+}
   
 
-  .Content {
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 14px;
-    border: 1px solid #8fbc8f;
-  }
+.Content {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid #8fbc8f;
+}
 
-  .ProfileContent {
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 14px;
-    border: 1px solid #8fbc8f;
-    margin-left: 110px;
-    margin-top: 10px;
-    width: 85%;
-  }
+.ProfileContent {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid #8fbc8f;
+  margin-left: 110px;
+  margin-top: 10px;
+  width: 85%;
+}
 
+.TextColor {
+  color: #547799;
+}
+
+.Input {
+  background-color: aliceblue;
+  box-sizing: border-box;
+  border-radius: 14px;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 20px;
+  border: 1.5px solid #8fbc8f;
+}
   
