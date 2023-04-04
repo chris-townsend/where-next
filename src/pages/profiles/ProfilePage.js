@@ -63,8 +63,8 @@ function ProfilePage() {
         </Col>
 
         <Col lg={12}>
-          <h3 className="m-2">{profile?.owner}</h3>
-          <Row className="justify-content-center no-gutters">
+          <h3 className="m-2 mt-4">{profile?.owner}</h3>
+          <Row className="justify-content-center no-gutters mt-3">
             <Col xs={3} className="my-2">
               <div>{profile?.posts_count}</div>
               <div>posts</div>
@@ -80,7 +80,7 @@ function ProfilePage() {
           </Row>
         </Col>
         <br />
-        <Col lg={7} className="text-lg-right">
+        <Col lg={12} className="text-lg-center align-items-center mt-2">
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
@@ -99,9 +99,15 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
+
         {profile && (
-          <Col className="p-3">
-            <div>
+          <Col lg={12} className="p-3 mt-1">
+            <Col className="text-center">
+              <hr />
+              <h3 className="mb-2">Personal Information</h3>
+              <hr />
+            </Col>
+            <div className={styles.ProfileTextContent}>
               <span>Name:</span>
               {profile.hasOwnProperty("name") && profile.name ? (
                 profile.name
@@ -109,7 +115,7 @@ function ProfilePage() {
                 <i className="fa-solid fa-ban" />
               )}
             </div>
-            <div>
+            <div className={styles.ProfileTextContent}>
               <span>Date of Birth:</span>
               {profile.date_of_birth === "" ? (
                 <i className="fa-solid fa-ban" />
@@ -117,7 +123,7 @@ function ProfilePage() {
                 profile.date_of_birth
               )}
             </div>
-            <div>
+            <div className={styles.ProfileTextContent}>
               <span>Location:</span>
               {profile.location === "" ? (
                 <i className="fa-solid fa-ban" />
@@ -125,7 +131,7 @@ function ProfilePage() {
                 profile?.location
               )}
             </div>
-            <div>
+            <div className={styles.ProfileTextContent}>
               <span>Favourite Location:</span>
               {profile.favourite_location === "" ? (
                 <i className="fa-solid fa-ban" />
@@ -133,7 +139,9 @@ function ProfilePage() {
                 profile?.favourite_location
               )}
             </div>
-            <div>
+            <div
+              className={`${styles.ProfileTextContent} ${styles.ProfileBioContent}`}
+            >
               <span>Bio:</span>
               {profile.hasOwnProperty("bio") && profile.bio ? (
                 profile.bio
@@ -150,7 +158,7 @@ function ProfilePage() {
   const mainProfilePosts = (
     <>
       <hr />
-      <p className="text-center">{profile?.owner}'s posts</p>
+      <h4 className="text-center">{profile?.owner}'s posts</h4>
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
