@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import Group from "./Group";
 
 const GroupPage = () => {
   const [group, setGroup] = useState([]);
@@ -23,14 +24,8 @@ const GroupPage = () => {
 
   return (
     <div>
-      <h1>Groups</h1>
-      {group.results &&
-        group.results.map((group) => (
-          <div key={group.id}>
-            <h2>{group.name}</h2>
-            <p>{group.description}</p>
-          </div>
-        ))}
+      <h1>Group Page</h1>
+      {group.results && <Group {...group.results[0]} />}
     </div>
   );
 };
