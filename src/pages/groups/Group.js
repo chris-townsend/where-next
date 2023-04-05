@@ -1,14 +1,17 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 const Group = (props) => {
   const { id, owner, group_name, description, members } = props;
 
   return (
-    <div>
-      <h2>{group_name}</h2>
-      <p>{description}</p>
-      <p>{members.length} members</p>
-    </div>
+    <Container>
+      <div>
+        <h3 className="text-center mt-2">{group_name}</h3>
+        <p className="text-center">{description}</p>
+        <p className="text-center">{members.length} members</p>
+      </div>
+    </Container>
   );
 };
 

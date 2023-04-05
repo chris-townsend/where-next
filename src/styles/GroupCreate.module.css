@@ -1,10 +1,10 @@
 .RowWidth {
-    margin-left: 105px;
+    margin-left: 10px;
     margin-top: 10px;
 }
 
 .Container {
-    min-height: 343px;
+    min-height: 350px;
     margin-left: 105px;
     margin-top: 10px;
 }
@@ -17,13 +17,59 @@
 .GroupHeader {
     font-style: normal;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 32px;
     line-height: 19px;
-    margin-left: 345px;
     letter-spacing: 0.14em;
     color: #138d2f;
     padding-bottom: 10px;
     margin-bottom: 10px;
     margin-top: 30px;
+}
+.GroupCreateHeader {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 19px;
+    letter-spacing: 0.14em;
+    color: #138d2f;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-left: -150px;
+}
+
+.Button {
+    font-size: 1rem;
+    align-self: center;
+    border-radius: 80px;
+    border-color: transparent;
+    padding: 4px 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    min-width: 45px;
+}
+
+.Button:hover {
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.Button:hover:active {
+    background-color: #21b248 !important;
+}
+  
+.Button:active {
+    background-color: #21b248 !important;
+}
+
+.Button:focus {
+    background-color: #21b248;
+}
+
+.Hr {
+    margin: auto;
+    height: 1.8px;
+    width: 50%;
+    background-image: linear-gradient(rgb(2, 121, 26), rgba(56, 198, 70, 0.842), rgba(18, 229, 85, 0));
 }
 

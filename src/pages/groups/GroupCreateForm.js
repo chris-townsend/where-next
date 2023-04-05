@@ -87,7 +87,9 @@ const GroupCreateForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h1 className={styles.GroupHeader}>Create Group</h1>
+      <h1 className={`text-center ${styles.GroupCreateHeader}`}>
+        Create Group
+      </h1>
       {errors && <div>{errors.message}</div>}
 
       <Row>

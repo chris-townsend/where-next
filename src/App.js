@@ -16,7 +16,6 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ContactCreateForm from "./pages/contact/ContactCreateForm";
 import UsernameEditForm from "./pages/profiles/UsernameEditForm";
 import PasswordEditForm from "./pages/profiles/PasswordEditForm";
-import GroupPage from "./pages/groups/GroupPage";
 import GroupCreateForm from "./pages/groups/GroupCreateForm";
 import GroupList from "./pages/groups/GroupList";
 

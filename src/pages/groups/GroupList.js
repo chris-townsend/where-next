@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Row, Col, Container, Card } from "react-bootstrap";
 import Group from "./Group";
+import btnStyles from "../../styles/Button.module.css";
+
+import styles from "../../styles/GroupCreate.module.css";
+
 const GroupList = () => {
   const [groups, setGroups] = useState([]);
   const [nextPageUrl, setNextPageUrl] = useState(null);
@@ -44,29 +48,51 @@ const GroupList = () => {
   };
 
   return (
-    <div>
-      <h1>Groups</h1>
-      {groups.map((group) => (
-        <li key={group.id}>
-          <Group
-            id={group.id}
-            owner={group.owner}
-            group_name={group.group_name}
-            description={group.description}
-            members={group.members}
-          />
-          <button onClick={() => handleDeleteGroup(group.id)}>Delete</button>
-        </li>
-      ))}
-      {nextPageUrl && (
-        <Button variant="primary" onClick={loadMoreGroups}>
-          Load More Groups
-        </Button>
-      )}
-      <Link to="/groups/create">
-        <Button variant="primary">Create Group</Button>
-      </Link>
-    </div>
+    <Row className={styles.RowWidth}>
+      <Container
+        className={`${styles.Container} d-flex flex-column justify-content-center`}
+      >
+        <Col className="py-2 p-0 p-md-2" md={5} lg={12}>
+          <Link to="/groups/create">
+            <Button
+              className={`ml-4 ${styles.Button} ${btnStyles.Green}`}
+              variant="primary"
+            >
+              Create Group
+            </Button>
+          </Link>
+          <h1 className={`text-center ${styles.GroupHeader}`}>Groups</h1>
+          <hr className={styles.Hr} />
+          <br />
+          {groups.map((group) => (
+            <Card className="pb-1 mb-2" key={group.id}>
+              <Group
+                id={group.id}
+                owner={group.owner}
+                group_name={group.group_name}
+                description={group.description}
+                members={group.members}
+              />
+              <Button
+                className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
+                onClick={() => handleDeleteGroup(group.id)}
+              >
+                Delete
+              </Button>
+            </Card>
+          ))}
+          {nextPageUrl && (
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
+              variant="primary"
+              onClick={loadMoreGroups}
+            >
+              Load More Groups
+            </Button>
+          )}
+        </Col>
+      </Container>
+    </Row>
   );
 };
 
