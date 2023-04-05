@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Group from "./Group";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
+
+import styles from "../../styles/GroupCreate.module.css";
 
 const GroupPage = () => {
   const [group, setGroup] = useState([]);
@@ -25,6 +27,8 @@ const GroupPage = () => {
   }, [id]);
 
   return (
+    <Row className={`${styles.RowWidth}`}>
+
     <div>
       <h1>Group Page</h1>
       <Link to="/groups/create">
@@ -32,6 +36,7 @@ const GroupPage = () => {
       </Link>
       {group.results && <Group {...group.results[0]} />}
     </div>
+    </Row>
   );
 };
 

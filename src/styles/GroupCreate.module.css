@@ -1,0 +1,29 @@
+.RowWidth {
+    margin-left: 105px;
+    margin-top: 10px;
+}
+
+.Container {
+    min-height: 343px;
+    margin-left: 105px;
+    margin-top: 10px;
+}
+
+.GroupCreateHeader {
+    margin-left: 105px;
+    margin-top: 20px;
+}
+
+.GroupHeader {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 19px;
+    margin-left: 345px;
+    letter-spacing: 0.14em;
+    color: #138d2f;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
