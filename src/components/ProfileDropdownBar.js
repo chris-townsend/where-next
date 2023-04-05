@@ -21,10 +21,16 @@ export function ProfileEditDropdown({ id }) {
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={ProfileDropdown} />
       <Dropdown.Menu>
-        <Dropdown.Item onClick={() => history.push(`/profiles/${id}/edit`)} aria-label="edit-profile">
+        <Dropdown.Item
+          onClick={() => history.push(`/profiles/${id}/edit`)}
+          aria-label="edit-profile"
+        >
           <i className="fas fa-edit" /> Edit profile
         </Dropdown.Item>
-        <Dropdown.Item onClick={() => {}} aria-label="edit-username">
+        <Dropdown.Item
+          onClick={() => history.push(`/profiles/${id}/edit/username`)}
+          aria-label="edit-username"
+        >
           <i className="far fa-id-card" />
           Change Username
         </Dropdown.Item>
