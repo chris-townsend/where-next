@@ -26,10 +26,9 @@ const GroupCreateForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-
-    formData.append("group_name", group_name);
-    formData.append("description", description);
+    const groupData = new FormData();
+    groupData.append("group_name", group_name);
+    groupData.append("description", description);
 
     try {
       const { data } = await axiosReq.post("/groups/", groupData);
