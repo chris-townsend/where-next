@@ -34,7 +34,10 @@ export function ProfileEditDropdown({ id }) {
           <i className="far fa-id-card" />
           Change Username
         </Dropdown.Item>
-        <Dropdown.Item onClick={() => {}} aria-label="edit-password">
+        <Dropdown.Item
+          onClick={() => history.push(`/profiles/${id}/edit/password`)}
+          aria-label="edit-password"
+        >
           <i className="fas fa-key" />
           Change Password
         </Dropdown.Item>

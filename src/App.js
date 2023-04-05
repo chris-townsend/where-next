@@ -15,6 +15,7 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ContactCreateForm from "./pages/contact/ContactCreateForm";
 import UsernameEditForm from "./pages/profiles/UsernameEditForm";
+import PasswordEditForm from "./pages/profiles/PasswordEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -77,6 +78,11 @@ function App() {
             exact
             path="/profiles/:id/edit/username"
             render={() => <UsernameEditForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit/password"
+            render={() => <PasswordEditForm />}
           />
           <Route
             exact
