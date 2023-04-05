@@ -17,6 +17,7 @@ import ContactCreateForm from "./pages/contact/ContactCreateForm";
 import UsernameEditForm from "./pages/profiles/UsernameEditForm";
 import PasswordEditForm from "./pages/profiles/PasswordEditForm";
 import GroupPage from "./pages/groups/GroupPage";
+import GroupCreateForm from "./pages/groups/GroupCreateForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -90,11 +91,8 @@ function App() {
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
           />
-          <Route
-            exact
-            path="/groups"
-            render={() => <GroupPage />}
-          />
+          <Route exact path="/groups" render={() => <GroupPage />} />
+          <Route exact path="/groups/create" component={GroupCreateForm} />
 
           <Route
             exact

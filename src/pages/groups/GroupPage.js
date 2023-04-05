@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Group from "./Group";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const GroupPage = () => {
   const [group, setGroup] = useState([]);
@@ -25,6 +27,9 @@ const GroupPage = () => {
   return (
     <div>
       <h1>Group Page</h1>
+      <Link to="/groups/create">
+        <Button variant="primary">Create Group</Button>
+      </Link>
       {group.results && <Group {...group.results[0]} />}
     </div>
   );
