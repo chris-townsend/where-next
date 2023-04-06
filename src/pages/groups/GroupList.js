@@ -3,8 +3,10 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
 import { Button, Row, Col, Container, Card } from "react-bootstrap";
 import Group from "./Group";
-import btnStyles from "../../styles/Button.module.css";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
 
+import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/GroupCreate.module.css";
 
 const GroupList = () => {
@@ -36,7 +38,7 @@ const GroupList = () => {
     }
   };
 
-  const loadMoreGroups = async () => {
+  const fetchMoreGroups = async () => {
     try {
       const { data } = await axiosReq.get(nextPageUrl);
       console.log(data);
@@ -64,32 +66,30 @@ const GroupList = () => {
           <h1 className={`text-center ${styles.GroupHeader}`}>Groups</h1>
           <hr className={styles.Hr} />
           <br />
-          {groups.map((group) => (
-            <Card className="pb-1 mb-2" key={group.id}>
-              <Group
-                id={group.id}
-                owner={group.owner}
-                group_name={group.group_name}
-                description={group.description}
-                members={group.members}
-              />
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
-                onClick={() => handleDeleteGroup(group.id)}
-              >
-                Delete
-              </Button>
-            </Card>
-          ))}
-          {nextPageUrl && (
-            <Button
-              className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
-              variant="primary"
-              onClick={loadMoreGroups}
-            >
-              Load More Groups
-            </Button>
-          )}
+          <InfiniteScroll
+            dataLength={groups.length}
+            next={fetchMoreGroups}
+            hasMore={nextPageUrl !== null}
+            loader={<Asset spinner />}
+          >
+            {groups.map((group) => (
+              <Card className="pb-1 mb-2" key={group.id}>
+                <Group
+                  id={group.id}
+                  owner={group.owner}
+                  group_name={group.group_name}
+                  description={group.description}
+                  members={group.members}
+                />
+                <Button
+                  className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
+                  onClick={() => handleDeleteGroup(group.id)}
+                >
+                  Delete
+                </Button>
+              </Card>
+            ))}
+          </InfiniteScroll>
         </Col>
       </Container>
     </Row>
