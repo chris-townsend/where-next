@@ -18,6 +18,7 @@ import UsernameEditForm from "./pages/profiles/UsernameEditForm";
 import PasswordEditForm from "./pages/profiles/PasswordEditForm";
 import GroupCreateForm from "./pages/groups/GroupCreateForm";
 import GroupList from "./pages/groups/GroupList";
+import GroupDetail from "./pages/groups/GroupDetail";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -97,6 +98,12 @@ function App() {
             path="/groups/create"
             render={() => <GroupCreateForm />}
           />
+          <Route
+            exact
+            path="/groups/:id"
+            render={() => <GroupDetail />}
+          />
+
           <Route
             exact
             path="/contact/create/"
