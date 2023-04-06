@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
-import { Form, Button, Row, Col, Container, Alert } from "react-bootstrap";
+import { Form, Button, Col, Alert } from "react-bootstrap";
 
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -86,22 +86,26 @@ const GroupCreateForm = () => {
   );
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <h1 className={`text-center ${styles.GroupCreateHeader}`}>
-        Create Group
-      </h1>
-      {errors && <div>{errors.message}</div>}
+    <div className="text-center">
+      <Form
+        className={`d-flex flex-column justify-content-center align-items-center text-center ${styles.Form}`}
+        onSubmit={handleSubmit}
+      >
+        <h1 className={`display-4 text-center ${styles.GroupCreateHeader}`}>
+          Create Group
+        </h1>
+        <hr className={`${styles.Hr} w-25 mb-4`} />
+        {errors && <div>{errors.message}</div>}
 
-      <Row>
-        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-          <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-          >
-            <div>{textFields}</div>
-          </Container>
+        <Col
+          md={8}
+          lg={10}
+          className={`py-2 p-0 p-md-2 ${appStyles.Content}`}
+        >
+          <div>{textFields}</div>
         </Col>
-      </Row>
-    </Form>
+      </Form>
+    </div>
   );
 };
 

@@ -63,8 +63,10 @@ const GroupList = () => {
               Create Group
             </Button>
           </Link>
-          <h1 className={`text-center ${styles.GroupHeader}`}>Groups</h1>
-          <hr className={styles.Hr} />
+          <h1 className={`text-center display-4 ${styles.GroupHeader}`}>
+            Groups
+          </h1>
+          <hr className={`${styles.Hr} w-25 mx-auto mb-4`} />
           <br />
           <InfiniteScroll
             dataLength={groups.length}

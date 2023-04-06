@@ -1,41 +1,27 @@
-.RowWidth {
-    margin-left: 10px;
+.Form {
+    min-height: 320px;
+    margin-left: 105px;
     margin-top: 10px;
 }
 
 .Container {
-    min-height: 350px;
+    min-height: 300px;
     margin-left: 105px;
     margin-top: 10px;
 }
 
-.GroupCreateHeader {
-    margin-left: 105px;
-    margin-top: 20px;
-}
-
 .GroupHeader {
     font-style: normal;
-    font-weight: bold;
     font-size: 32px;
-    line-height: 19px;
     letter-spacing: 0.14em;
     color: #138d2f;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    margin-top: 30px;
 }
+
 .GroupCreateHeader {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 19px;
+    font-size: 32px;
     letter-spacing: 0.14em;
     color: #138d2f;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    margin-top: 30px;
-    margin-left: -150px;
+    margin-top: 1.8rem;
 }
 
 .Button {
@@ -69,7 +55,6 @@
 .Hr {
     margin: auto;
     height: 1.8px;
-    width: 50%;
     background-image: linear-gradient(rgb(2, 121, 26), rgba(56, 198, 70, 0.842), rgba(18, 229, 85, 0));
 }
 

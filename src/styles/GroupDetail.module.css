@@ -1,0 +1,22 @@
+.RowWidth {
+    margin-left: 115px;
+    margin-top: 10px;
+}
+
+
+.Hr {
+    margin: auto;
+    height: 1.8px;
+    background-image: linear-gradient(rgb(2, 121, 26), rgba(56, 198, 70, 0.842), rgba(18, 229, 85, 0));
+}
+
+.GroupDetailHeader {
+    font-size: 32px;
+    letter-spacing: 0.14em;
+    color: #138d2f;
+}
+
+.GroupDetailDescription {
+    padding: 40px;
+    background-color: aliceblue;
+}
