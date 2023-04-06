@@ -208,8 +208,6 @@ Initial wireframes were created for the original ideas, and as functionality was
 
 <details>
 
-<details>
-
 <summary>Post Detail</summary>
 
 ![Desktop - Post detail]()
