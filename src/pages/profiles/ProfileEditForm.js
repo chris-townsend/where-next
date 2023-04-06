@@ -64,6 +64,7 @@ const ProfileEditForm = () => {
             bio,
             image,
           });
+          setDateOfBirth(new Date(date_of_birth));
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -87,7 +88,7 @@ const ProfileEditForm = () => {
     setDateOfBirth(date);
     setProfileData({
       ...profileData,
-      date_of_birth: date,
+      date_of_birth: date.toISOString().split("T")[0],
     });
     setDateOfBirth(date);
   };
@@ -98,8 +99,7 @@ const ProfileEditForm = () => {
     formData.append("name", name);
     formData.append("location", location);
     formData.append("favourite_location", favourite_location);
-    const formattedDateOfBirth = date_of_birth.toISOString().split("T")[0];
-    formData.append("date_of_birth", formattedDateOfBirth);
+    formData.append("date_of_birth", date_of_birth);
     formData.append("bio", bio);
 
     if (imageFile?.current?.files[0]) {
