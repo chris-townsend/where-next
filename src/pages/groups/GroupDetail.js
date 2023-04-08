@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Row, Col, Card, Container, Button } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 import styles from "../../styles/GroupDetail.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -13,6 +14,8 @@ function GroupDetail() {
   const [isJoined, setIsJoined] = useState(false);
   const [groups, setGroups] = useState([]);
   const { id } = useParams();
+
+  const { currentUser } = useContext(CurrentUserContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,11 +30,11 @@ function GroupDetail() {
     };
 
     fetchData();
-  }, [id]);
+  }, [id, groups]);
 
   const handleJoinGroup = async (groupId) => {
     try {
-      await axiosReq.post(`/groups/${groupId}/join/`);
+      await axiosReq.post(`/groups/${groupId}/join`);
       const updatedGroups = groups.map((group) => {
         if (group.id === groupId) {
           return {
@@ -51,8 +54,14 @@ function GroupDetail() {
 
   const handleLeaveGroup = async () => {
     try {
-      await axiosReq.post(`/groups/${id}/leave`);
+      await axiosReq.delete(`/groups/${id}/leave`);
       setIsJoined(false);
+      setGroup((prevGroup) => ({
+        ...prevGroup,
+        members: prevGroup.members.filter(
+          (member) => member.id !== currentUser.id
+        ),
+      }));
     } catch (err) {
       console.log(err);
     }
