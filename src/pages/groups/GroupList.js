@@ -5,6 +5,7 @@ import { Button, Row, Col, Container, Card } from "react-bootstrap";
 import Group from "./Group";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/GroupCreate.module.css";
@@ -12,6 +13,7 @@ import styles from "../../styles/GroupCreate.module.css";
 const GroupList = () => {
   const [groups, setGroups] = useState([]);
   const [nextPageUrl, setNextPageUrl] = useState(null);
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchGroups = async () => {
@@ -49,6 +51,11 @@ const GroupList = () => {
     }
   };
 
+  const isOwner = (groupId) => {
+    const group = groups.find((group) => group.id === groupId);
+    return currentUser && group && currentUser.username === group.owner;
+  };
+
   return (
     <Row className={styles.RowWidth}>
       <Container
@@ -83,12 +90,27 @@ const GroupList = () => {
                   description={group.description}
                   members={group.members}
                 />
-                <Button
-                  className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
-                  onClick={() => handleDeleteGroup(group.id)}
-                >
-                  Delete
-                </Button>
+                {console.log("isOwner:", isOwner(group.id))}
+                {isOwner(group.id) ? (
+                  <div className="d-flex justify-content-center">
+                    <Button
+                      className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
+                      onClick={() => handleDeleteGroup(group.id)}
+                    >
+                      Delete
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="d-flex justify-content-center">
+                    <Link to={`/groups/${group.id}`}>
+                      <Button
+                        className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
+                      >
+                        View Group
+                      </Button>
+                    </Link>
+                  </div>
+                )}
               </Card>
             ))}
           </InfiniteScroll>
