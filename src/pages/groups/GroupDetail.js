@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
-import { Row, Col, Card, Container } from "react-bootstrap";
+import { Row, Col, Card, Container, Button } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
 
 import styles from "../../styles/GroupDetail.module.css";
+import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 
 function GroupDetail() {
   const [group, setGroup] = useState(null);
+  const [isJoined, setIsJoined] = useState(false);
+  const [groups, setGroups] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -17,6 +20,7 @@ function GroupDetail() {
         const response = await axiosReq.get(`/groups/${id}`);
         setGroup(response.data);
         console.log(response.data);
+        setIsJoined(response.data.is_member);
       } catch (err) {
         console.log(err);
       }
@@ -24,6 +28,35 @@ function GroupDetail() {
 
     fetchData();
   }, [id]);
+
+  const handleJoinGroup = async (groupId) => {
+    try {
+      await axiosReq.post(`/groups/${groupId}/join/`);
+      const updatedGroups = groups.map((group) => {
+        if (group.id === groupId) {
+          return {
+            ...group,
+            members: group.members + 1,
+          };
+        } else {
+          return group;
+        }
+      });
+      setGroups(updatedGroups);
+      setIsJoined(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleLeaveGroup = async () => {
+    try {
+      await axiosReq.post(`/groups/${id}/leave`);
+      setIsJoined(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   if (!group) {
     return <p loader={<Asset spinner />}> Loading group information...</p>;
@@ -66,6 +99,20 @@ function GroupDetail() {
               ) : (
                 <p>No members yet.</p>
               )}
+              <div className="mt-3">
+                {isJoined ? (
+                  <Button variant="danger" onClick={handleLeaveGroup}>
+                    Leave Group
+                  </Button>
+                ) : (
+                  <Button
+                    className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
+                    onClick={() => handleJoinGroup(group.id)}
+                  >
+                    Join
+                  </Button>
+                )}
+              </div>
             </Card.Body>
           </Card>
         </Container>
