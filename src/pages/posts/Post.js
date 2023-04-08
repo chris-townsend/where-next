@@ -7,7 +7,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 import styles from "../../styles/Post.module.css";
 import { PostDropdownBar } from "../../components/PostDropdownBar";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 
 const Post = (props) => {
   const {
