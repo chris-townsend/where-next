@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Row, Col, Card, Container, Button } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import styles from "../../styles/GroupDetail.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -12,43 +12,45 @@ import Asset from "../../components/Asset";
 function GroupDetail() {
   const [group, setGroup] = useState(null);
   const [isJoined, setIsJoined] = useState(false);
-  const [groups, setGroups] = useState([]);
   const { id } = useParams();
 
-  const { currentUser } = useContext(CurrentUserContext);
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axiosReq.get(`/groups/${id}`);
-        setGroup(response.data);
-        console.log(response.data);
-        setIsJoined(response.data.is_member);
+        const { data: group } = await axiosReq.get(`/groups/${id}`);
+        setGroup(group);
+        setIsJoined(group.is_member);
       } catch (err) {
         console.log(err);
       }
     };
 
     fetchData();
-  }, [id, groups]);
+  }, [id]);
 
   const handleJoinGroup = async (groupId) => {
     try {
-      await axiosReq.post(`/groups/${groupId}/join`);
-      const updatedGroups = groups.map((group) => {
-        if (group.id === groupId) {
-          return {
-            ...group,
-            members: group.members + 1,
-          };
-        } else {
-          return group;
-        }
-      });
-      setGroups(updatedGroups);
+      console.log("Before axiosReq.post");
+      await axiosReq.post(`/groups/${groupId}/join`, {});
+      const newMember = {
+        id: currentUser.id,
+        username: currentUser.username,
+        avatar: currentUser.avatar,
+      };
+      const updatedMembers = [...group.members, newMember];
+      console.log(updatedMembers);
+      setGroup((prevGroup) => ({
+        ...prevGroup,
+        members: updatedMembers,
+        members_count: prevGroup.members_count + 1,
+        is_member: true,
+      }));
       setIsJoined(true);
+      console.log(group)
     } catch (err) {
-      console.log(err);
+      console.log(err.response.data);
     }
   };
 
@@ -68,7 +70,14 @@ function GroupDetail() {
   };
 
   if (!group) {
-    return <p loader={<Asset spinner />}> Loading group information...</p>;
+    return (
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "100vh" }}
+      >
+        <Asset spinner />
+      </div>
+    );
   }
 
   return (
