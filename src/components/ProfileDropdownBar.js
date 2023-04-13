@@ -1,18 +1,20 @@
 import React from "react";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useHistory } from "react-router";
 
 import styles from "../styles/PostDropdownBar.module.css";
 
 const ProfileDropdown = React.forwardRef(({ onClick }, ref) => (
-  <i
-    className={`${styles.ProfileMenu} fas fa-ellipsis-h`}
-    ref={ref}
-    onClick={(e) => {
-      e.preventDefault();
-      onClick(e);
-    }}
-  />
+  <OverlayTrigger placement="top" overlay={<Tooltip>Settings</Tooltip>}>
+    <i
+      className={`${styles.ProfileMenu} fas fa-ellipsis-h`}
+      ref={ref}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick(e);
+      }}
+    />
+  </OverlayTrigger>
 ));
 
 export function ProfileEditDropdown({ id }) {
