@@ -87,6 +87,7 @@ const GroupDetail = () => {
                 <div className="d-flex justify-content-center">
                   {group.members.map((member) => (
                     <Avatar
+                      src={member.image}
                       id={member.id}
                       user={member.user}
                       height={45}
