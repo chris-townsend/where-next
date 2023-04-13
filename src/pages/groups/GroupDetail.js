@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Row, Col, Card, Container, Button } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import styles from "../../styles/GroupDetail.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -13,7 +13,7 @@ const GroupDetail = () => {
   const [isJoined, setIsJoined] = useState(false);
   const { id } = useParams();
 
-  const currentUser = useContext(CurrentUserContext);
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchData = async () => {
