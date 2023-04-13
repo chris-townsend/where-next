@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Row, Col, Card, Container, Button } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 import styles from "../../styles/GroupDetail.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Asset from "../../components/Asset";
 
-function GroupDetail() {
-  const [group, setGroup] = useState(null);
+const GroupDetail = () => {
+  const [group, setGroup] = useState({ members: [], is_member: false });
   const [isJoined, setIsJoined] = useState(false);
   const { id } = useParams();
 
-  const currentUser = useCurrentUser();
+  const currentUser = useContext(CurrentUserContext);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data: group } = await axiosReq.get(`/groups/${id}`);
-        setGroup(group);
-        setIsJoined(group.is_member);
+        const { data } = await axiosReq.get(`/groups/${id}`);
+        setGroup({ ...data, members: data.members, is_member: data.is_member });
+        setIsJoined(data.is_member);
+        console.log({ ...data, members: data.members });
       } catch (err) {
         console.log(err);
       }
@@ -30,55 +30,35 @@ function GroupDetail() {
     fetchData();
   }, [id]);
 
-  const handleJoinGroup = async (groupId) => {
+  const handleJoinGroup = async (id) => {
     try {
-      console.log("Before axiosReq.post");
-      await axiosReq.post(`/groups/${groupId}/join`, {});
-      const newMember = {
-        id: currentUser.id,
-        username: currentUser.username,
-        avatar: currentUser.avatar,
-      };
-      const updatedMembers = [...group.members, newMember];
-      console.log(updatedMembers);
+      await axiosReq.post(`/groups/${id}/join`);
       setGroup((prevGroup) => ({
         ...prevGroup,
-        members: updatedMembers,
-        members_count: prevGroup.members_count + 1,
+        members: [...prevGroup.members, currentUser],
         is_member: true,
       }));
       setIsJoined(true);
-      console.log(group)
-    } catch (err) {
-      console.log(err.response.data);
-    }
-  };
-
-  const handleLeaveGroup = async () => {
-    try {
-      await axiosReq.delete(`/groups/${id}/leave`);
-      setIsJoined(false);
-      setGroup((prevGroup) => ({
-        ...prevGroup,
-        members: prevGroup.members.filter(
-          (member) => member.id !== currentUser.id
-        ),
-      }));
     } catch (err) {
       console.log(err);
     }
   };
 
-  if (!group) {
-    return (
-      <div
-        className="d-flex justify-content-center align-items-center"
-        style={{ height: "100vh" }}
-      >
-        <Asset spinner />
-      </div>
-    );
-  }
+  const handleLeaveGroup = async (id) => {
+    try {
+      await axiosReq.delete(`/groups/${id}/leave/`);
+      setGroup((prevGroup) => ({
+        ...prevGroup,
+        members: prevGroup.members.filter(
+          (member) => member.id !== currentUser.id
+        ),
+        is_member: false,
+      }));
+      setIsJoined(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <Row className={`${styles.RowWidth} text-center`}>
@@ -97,8 +77,8 @@ function GroupDetail() {
                 <hr className={`${styles.Hr} w-25 mx-auto mb-4`} />
               </div>
               <div>
+                <h2 className="text-center mt-1">Group Description</h2>
                 <p className={`${styles.GroupDetailDescription} text-center`}>
-                  <h2 className="text-center mt-1">Group Description</h2>
                   {group.description}
                 </p>
               </div>
@@ -107,10 +87,11 @@ function GroupDetail() {
                 <div className="d-flex justify-content-center">
                   {group.members.map((member) => (
                     <Avatar
-                      key={member.id}
-                      src={member.avatar}
+                      id={member.id}
+                      user={member.user}
                       height={45}
-                      text={member.username}
+                      alt={member.username}
+                      key={member.id}
                     />
                   ))}
                 </div>
@@ -118,17 +99,24 @@ function GroupDetail() {
                 <p>No members yet.</p>
               )}
               <div className="mt-3">
-                {isJoined ? (
-                  <Button variant="danger" onClick={handleLeaveGroup}>
-                    Leave Group
-                  </Button>
-                ) : (
-                  <Button
-                    className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
-                    onClick={() => handleJoinGroup(group.id)}
-                  >
-                    Join
-                  </Button>
+                {currentUser && (
+                  <>
+                    {isJoined ? (
+                      <Button
+                        className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
+                        onClick={() => handleLeaveGroup(group.id)}
+                      >
+                        Leave Group
+                      </Button>
+                    ) : (
+                      <Button
+                        className={`${btnStyles.Button} ${btnStyles.Green} mb-2`}
+                        onClick={() => handleJoinGroup(group.id)}
+                      >
+                        Join
+                      </Button>
+                    )}
+                  </>
                 )}
               </div>
             </Card.Body>
@@ -137,6 +125,6 @@ function GroupDetail() {
       </Col>
     </Row>
   );
-}
+};
 
 export default GroupDetail;
