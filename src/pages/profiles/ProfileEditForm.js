@@ -14,10 +14,10 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
-
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+import styles from "../../styles/ProfileEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
@@ -371,12 +371,12 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Green}`}
         onClick={() => history.goBack()}
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Green}`} type="submit">
         save
       </Button>
     </>
@@ -385,8 +385,8 @@ const ProfileEditForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
-          <Container className={appStyles.Content}>
+        <Col className="py-2 p-0 p-md-2 text-center" md={5} lg={5}>
+          <Container className={`${appStyles.Content} ${styles.Container}`}>
             <Form.Group>
               {image && (
                 <figure>
@@ -420,11 +420,11 @@ const ProfileEditForm = () => {
                 }}
               />
             </Form.Group>
-            <div className="d-md-none">{textFields}</div>
+            <div className={`${styles.TextFieldsContainer} d-md-none`}>{textFields}</div>
           </Container>
         </Col>
         <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
-          <Container className={appStyles.Content}>{textFields}</Container>
+          <Container className={`${styles.TextFieldsContainer} ${appStyles.Content}`}>{textFields}</Container>
         </Col>
       </Row>
     </Form>

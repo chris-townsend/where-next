@@ -1,0 +1,10 @@
+.Container {
+    min-height: 343px;
+    margin-left: 105px;
+    margin-top: 10px;
+  }
+
+.TextFieldsContainer {
+    margin-left: 100px;
+    margin-top: 10px;
+}
