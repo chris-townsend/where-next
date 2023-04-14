@@ -25,6 +25,7 @@ const Post = (props) => {
     like_id,
     bookmark_id,
     setPosts,
+    groups_count,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -170,9 +171,14 @@ const Post = (props) => {
               <i className="fas fa-heart" />
             </span>
           ) : currentUser ? (
-            <span onClick={handleLike}>
-              <i className={`far fa-heart ${styles.HeartOutline}`} />
-            </span>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Click to like post</Tooltip>}
+            >
+              <span onClick={handleLike}>
+                <i className={`far fa-heart ${styles.HeartOutline}`} />
+              </span>
+            </OverlayTrigger>
           ) : (
             <OverlayTrigger
               placement="top"
@@ -182,10 +188,45 @@ const Post = (props) => {
             </OverlayTrigger>
           )}
           {likes_count}
-          <Link to={`/posts/${id}`}>
-            <i className="far fa-comments" />
-          </Link>
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>View comments</Tooltip>}
+          >
+            <Link to={`/posts/${id}`}>
+              <i className="far fa-comments" />
+            </Link>
+          </OverlayTrigger>
           {comments_count}
+
+          {is_owner ? (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Add a group from the groups tab</Tooltip>}
+            >
+              <i className="fas fa-users" />
+            </OverlayTrigger>
+          ) : currentUser ? (
+            <OverlayTrigger
+              placement="top"
+              overlay={
+                <Tooltip>
+                  Create & join groups from the{" "}
+                  <span className={styles.GroupTooltip}>Groups</span> tab{" "}
+                  <i class="fas fa-arrow-left"></i>{" "}
+                </Tooltip>
+              }
+            >
+              <i className="fas fa-users" />
+            </OverlayTrigger>
+          ) : (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Log in to create & join groups!</Tooltip>}
+            >
+              <i className="fas fa-users" />
+            </OverlayTrigger>
+          )}
+          {groups_count}
           {is_owner ? (
             <OverlayTrigger
               placement="top"
@@ -200,7 +241,7 @@ const Post = (props) => {
           ) : currentUser ? (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>click to save post</Tooltip>}
+              overlay={<Tooltip>Click to save post</Tooltip>}
             >
               <span className={styles.BookmarkIcon} onClick={handleBookmark}>
                 <i className="far fa-bookmark" />
