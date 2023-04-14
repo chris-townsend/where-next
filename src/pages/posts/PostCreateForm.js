@@ -14,13 +14,14 @@ import Upload from "../../assets/images/upload.png";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useHistory } from "react-router";
 import useRedirect from "../../hooks/UseRedirect";
+import { NotificationManager } from "react-notifications";
 
 import styles from "../../styles/PostCreateUpdate.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 const PostCreateForm = () => {
-  useRedirect("loggedOut")
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [postData, setPostData] = useState({
     title: "",
@@ -60,11 +61,10 @@ const PostCreateForm = () => {
     try {
       const { data } = await axiosReq.post("/posts/", formData);
       history.push(`/posts/${data.id}`);
-    } catch (err) {
-      console.log(err);
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
-      }
+      NotificationManager.success("Post Created", "Success!");
+    } catch (error) {
+      setErrors(error.response?.data);
+      NotificationManager.error("There was an issue adding your post", "Error");
     }
   };
 

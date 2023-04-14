@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useHistory, useParams } from "react-router-dom";
+import { NotificationManager } from "react-notifications";
 
 import styles from "../../styles/PostCreateUpdate.module.css";
 import appStyles from "../../App.module.css";
@@ -73,11 +74,10 @@ const PostEditForm = () => {
     try {
       await axiosReq.put(`/posts/${id}/`, formData);
       history.push(`/posts/${id}`);
-    } catch (err) {
-      console.log(err);
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
-      }
+      NotificationManager.success("Post Updated", "Success!");
+    } catch (error) {
+      setErrors(error.response?.data);
+      NotificationManager.error("There was an issue updating your post", "Error");
     }
   };
 

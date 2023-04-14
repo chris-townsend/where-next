@@ -38,7 +38,7 @@ const Post = (props) => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
       history.goBack();
-      NotificationManager.info("Removed post", "Success!");
+      NotificationManager.info("Post Removed");
     } catch (error) {
       setErrors(error.response?.data);
       NotificationManager.error(
