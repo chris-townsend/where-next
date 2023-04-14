@@ -2,45 +2,94 @@
     background-color: #ffffff;
 }
 
-.SearchForm {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-}
-
-.SearchInput {
-    font-size: 18px;
-    border-radius: 30px;
-    width: 400px;
-    margin-left: 20px;
-    display: flex;
-}
-
-.SearchButton {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    outline: none;
-  }
-
-.SearchButton i {
-    font-size: 15px;
-    margin-left: 5px;
-    margin-top: 2px;
-}
-
-.SearchInput::placeholder {
-    color: #417461;
-  }
-
 .NavLink  {
     padding: 8px;
 }
 
 .Active i {
     color: #238764;
+}
+
+.InfoIcon {
+    margin-left: 8px;
+}
+
+.ModalBox {
+    font-size: 35px;
+    font-weight: 300;
+    text-shadow: none;
+    position: absolute;
+    background-color: aliceblue;
+    margin: 50px 0;
+}
+
+.Title {
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 30px;
+    color: #238764;
+    padding: 20px;
+    font-style: bold;
+}
+
+.Description {
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    padding: 30px;
+    line-height: 32px;
+}
+
+.DescriptionFooter {
+    font-size: 20px;
+    font-family: 'Karla', sans-serif;
+    font-style: bold;
+    color:#238764;
+}
+
+.Links {
+    padding: 20px 0;
+}
+
+.Links li { 
+    display: inline-block;   
+    margin: 0 15px;
+    text-align: center;
+}
+
+.Links li i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.Links li h5 {
+    font-size: 16px;
+}
+
+.Links li a {
+    color: #B7BCC4;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+.Links li a:hover {
+    color:#95B0D2;
+    box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px, rgb(0 0 0 / 5%) 0px 4px 6px -2px;
+}
+
+.ModalButton {
+    float: right;
+    font-size: 0.8rem;
+    align-self: center;
+    border-radius: 95%;
+    border-color: transparent;
+    padding: 4px 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.ModalButton:hover {
+    border-color: transparent;
+    cursor: pointer;
 }
