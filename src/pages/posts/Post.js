@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Avatar from "../../components/Avatar";
@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { PostDropdownBar } from "../../components/PostDropdownBar";
 import { useHistory } from "react-router-dom";
+import { NotificationManager } from "react-notifications";
 
 import styles from "../../styles/Post.module.css";
 
@@ -28,6 +29,7 @@ const Post = (props) => {
     groups_count,
   } = props;
 
+  const [errors, setErrors] = useState({});
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
@@ -36,8 +38,13 @@ const Post = (props) => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
       history.goBack();
-    } catch (err) {
-      console.log(err);
+      NotificationManager.info("Removed post", "Success!");
+    } catch (error) {
+      setErrors(error.response?.data);
+      NotificationManager.error(
+        "There was an issue deleting your post",
+        "Error"
+      );
     }
   };
 
