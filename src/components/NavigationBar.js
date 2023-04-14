@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Nav, Navbar, Container, Modal, Button } from "react-bootstrap";
+import {
+  Nav,
+  Navbar,
+  Container,
+  Modal,
+  Button,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
 import logo from "../assets/images/where-next-logo.png";
 import { NavLink } from "react-router-dom";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
@@ -23,11 +31,16 @@ const NavigationBar = (props) => {
             <img src={logo} alt="logo" height="65px" width="180px" />
           </Navbar.Brand>
         </NavLink>
-        <Nav.Item className={styles.InfoIcon}>
-          <NavLink to="/" onClick={handleShow}>
-            <i class="fa fa-info-circle fa-lg"></i>
-          </NavLink>
-        </Nav.Item>
+        <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Information</Tooltip>}
+        >
+          <Nav.Item className={styles.InfoIcon}>
+            <NavLink to="/" onClick={handleShow}>
+              <i class="fa fa-info-circle fa-lg"></i>
+            </NavLink>
+          </Nav.Item>
+        </OverlayTrigger>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
