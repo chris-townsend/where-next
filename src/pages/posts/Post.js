@@ -63,11 +63,12 @@ const Post = (props) => {
             : post;
         }),
       }));
-    } catch (err) {
-      console.log(err);
+      NotificationManager.success("Post Liked", "Success!");
+    } catch (error) {
+      setErrors(error.response?.data);
+      NotificationManager.error("There was an issue liking the post", "Error");
     }
   };
-
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
@@ -79,8 +80,13 @@ const Post = (props) => {
             : post;
         }),
       }));
-    } catch (err) {
-      console.log(err);
+      NotificationManager.info("Post Unliked");
+    } catch (error) {
+      setErrors(error.response?.data);
+      NotificationManager.error(
+        "There was an issue unliking the post",
+        "Error"
+      );
     }
   };
 
@@ -99,8 +105,10 @@ const Post = (props) => {
             : post;
         }),
       }));
+      NotificationManager.success("Post Saved", "Success!");
     } catch (error) {
-      console.log(error);
+      setErrors(error.response?.data);
+      NotificationManager.error("There was an issue saving the post", "Error");
     }
   };
 
@@ -119,11 +127,15 @@ const Post = (props) => {
             : post;
         }),
       }));
+      NotificationManager.info("Post Removed");
     } catch (error) {
-      console.log(error);
+      setErrors(error.response?.data);
+      NotificationManager.error(
+        "There was an issue removing the post",
+        "Error"
+      );
     }
   };
-
   return (
     <Card className={styles.Post}>
       <Card.Body>
@@ -189,7 +201,7 @@ const Post = (props) => {
           ) : (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>Log in to like posts!</Tooltip>}
+              overlay={<Tooltip>Log in to like posts</Tooltip>}
             >
               <i className="far fa-heart" />
             </OverlayTrigger>
@@ -228,7 +240,7 @@ const Post = (props) => {
           ) : (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>Log in to create & join groups!</Tooltip>}
+              overlay={<Tooltip>Log in to create & join groups</Tooltip>}
             >
               <i className="fas fa-users" />
             </OverlayTrigger>
