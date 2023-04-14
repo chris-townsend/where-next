@@ -56,3 +56,27 @@
 ::-webkit-scrollbar-thumb {
   background-color: rgb(179, 179, 179);
 }
+
+.Title {
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 30px;
+  color: #238764;
+  padding: 20px;
+  font-style: bold;
+  margin-left: 140px;
+}
+
+.Description {
+  font-family: 'Karla', sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  padding: 30px;
+  line-height: 32px;
+  color: #238764;
+  background-color: aliceblue;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}

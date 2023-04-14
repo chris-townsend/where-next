@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Nav, Navbar, Container, Modal, Button } from "react-bootstrap";
-import styles from "../styles/SideNavigationBar.module.css";
 import { NavLink } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import {
@@ -8,6 +7,9 @@ import {
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import axios from "axios";
+
+import styles from "../styles/SideNavigationBar.module.css";
+import btnStyles from "../styles/Button.module.css";
 
 const SideNavigationBar = () => {
   const [show, setShow] = useState(false);
@@ -113,14 +115,24 @@ const SideNavigationBar = () => {
       {/* Modal */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Sign Out</Modal.Title>
+          <Modal.Title className={`${styles.Title} text-center`}>
+            Sign Out
+          </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are you sure you want to sign out?</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
+        <div className={styles.Description}>
+          Are you sure you want to sign out?
+        </div>
+        <Modal.Footer className="text-center align-items-center">
+          <Button
+            className={`${btnStyles.Button} ${btnStyles.Bright}`}
+            onClick={handleClose}
+          >
+            Cancel
           </Button>
-          <Button variant="primary" onClick={handleSignOut}>
+          <Button
+            className={`${btnStyles.Button} ${btnStyles.Green}`}
+            onClick={handleSignOut}
+          >
             Sign Out
           </Button>
         </Modal.Footer>
