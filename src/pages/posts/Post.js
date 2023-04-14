@@ -4,10 +4,10 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Avatar from "../../components/Avatar";
 import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
-
-import styles from "../../styles/Post.module.css";
 import { PostDropdownBar } from "../../components/PostDropdownBar";
 import { useHistory } from "react-router-dom";
+
+import styles from "../../styles/Post.module.css";
 
 const Post = (props) => {
   const {
@@ -194,13 +194,18 @@ const Post = (props) => {
               <i className="far fa-bookmark" />
             </OverlayTrigger>
           ) : bookmark_id ? (
-            <span onClick={handleUnbookmark}>
+            <span className={styles.BookmarkIcon} onClick={handleUnbookmark}>
               <i className="fas fa-bookmark" />
             </span>
           ) : currentUser ? (
-            <span onClick={handleBookmark}>
-              <i className="far fa-bookmark" />
-            </span>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>click to save post</Tooltip>}
+            >
+              <span className={styles.BookmarkIcon} onClick={handleBookmark}>
+                <i className="far fa-bookmark" />
+              </span>
+            </OverlayTrigger>
           ) : (
             <OverlayTrigger
               placement="top"
