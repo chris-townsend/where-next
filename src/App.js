@@ -19,6 +19,9 @@ import PasswordEditForm from "./pages/profiles/PasswordEditForm";
 import GroupCreateForm from "./pages/groups/GroupCreateForm";
 import GroupList from "./pages/groups/GroupList";
 import GroupDetail from "./pages/groups/GroupDetail";
+// Notifications
+import { NotificationContainer } from "react-notifications";
+import "react-notifications/lib/notifications.css";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -33,6 +36,7 @@ function App() {
       )}
       {currentUser ? <SideNavigationBar /> : null}
       <Container className={styles.Main}>
+        < NotificationContainer />
         <Switch>
           <Route
             exact
