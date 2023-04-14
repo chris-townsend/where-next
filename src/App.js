@@ -36,7 +36,7 @@ function App() {
       )}
       {currentUser ? <SideNavigationBar /> : null}
       <Container className={styles.Main}>
-        < NotificationContainer />
+        <NotificationContainer />
         <Switch>
           <Route
             exact
@@ -102,11 +102,7 @@ function App() {
             path="/groups/create"
             render={() => <GroupCreateForm />}
           />
-          <Route
-            exact
-            path="/groups/:id"
-            render={() => <GroupDetail />}
-          />
+          <Route exact path="/groups/:id" render={() => <GroupDetail />} />
 
           <Route
             exact

@@ -14,6 +14,8 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
 import useRedirect from "../../hooks/UseRedirect";
+// Notifications
+import { NotificationManager } from "react-notifications";
 
 const SignUpForm = () => {
   useRedirect("loggedIn");
@@ -41,8 +43,10 @@ const SignUpForm = () => {
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
       history.push("/signin");
-    } catch (err) {
-      setErrors(err.response?.data);
+      NotificationManager.success("Account created successfully", "Success!");
+    } catch (error) {
+      setErrors(error.response?.data);
+      NotificationManager.error("There was an issue with sign up", "Error");
     }
   };
 

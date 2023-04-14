@@ -18,6 +18,7 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import useRedirect from "../../hooks/UseRedirect";
+import { NotificationManager } from "react-notifications";
 
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
@@ -37,8 +38,13 @@ function SignInForm() {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
       history.goBack();
-    } catch (err) {
-      setErrors(err.response?.data);
+      NotificationManager.success(
+        "Welcome " + username + ". You are now signed in",
+        "Success!"
+      );
+    } catch (error) {
+      setErrors(error.response?.data);
+      NotificationManager.error("There was an issue logging you in", "Error");
     }
   };
 
