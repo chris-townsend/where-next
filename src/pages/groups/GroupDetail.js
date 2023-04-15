@@ -4,7 +4,9 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Row, Col, Card, Container, Button } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Styles
 import styles from "../../styles/GroupDetail.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
@@ -39,11 +41,17 @@ const GroupDetail = () => {
         is_member: true,
       }));
       setIsJoined(true);
+      NotificationManager.success(
+        "You are now a member of the group",
+        "Success!"
+      );
     } catch (err) {
-      console.log(err);
+      NotificationManager.error(
+        "There was an issue joining the group",
+        "Error"
+      );
     }
   };
-
   const handleLeaveGroup = async (id) => {
     try {
       await axiosReq.delete(`/groups/${id}/leave/`);
@@ -55,8 +63,12 @@ const GroupDetail = () => {
         is_member: false,
       }));
       setIsJoined(false);
+      NotificationManager.info("You are no longer a member of the group");
     } catch (err) {
-      console.log(err);
+      NotificationManager.error(
+        "There was an issue leaving the group",
+        "Error"
+      );
     }
   };
 

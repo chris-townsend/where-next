@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Form, Button, Col, Alert } from "react-bootstrap";
-
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Styles
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/GroupCreate.module.css";
@@ -33,11 +35,12 @@ const GroupCreateForm = () => {
     try {
       const { data } = await axiosReq.post("/groups/", groupData);
       history.push(`/groups/${data.id}`);
+      NotificationManager.success("Group Created", "Success!");
     } catch (err) {
-      console.log(err);
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
-      }
+      NotificationManager.error(
+        "There was an issue removing your group",
+        "Error"
+      );
     }
   };
   const textFields = (
@@ -97,11 +100,7 @@ const GroupCreateForm = () => {
         <hr className={`${styles.Hr} w-25 mb-4`} />
         {errors && <div>{errors.message}</div>}
 
-        <Col
-          md={8}
-          lg={10}
-          className={`py-2 p-0 p-md-2 ${appStyles.Content}`}
-        >
+        <Col md={8} lg={10} className={`py-2 p-0 p-md-2 ${appStyles.Content}`}>
           <div>{textFields}</div>
         </Col>
       </Form>

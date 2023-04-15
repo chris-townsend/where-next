@@ -6,7 +6,9 @@ import Group from "./Group";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Styles
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/GroupCreate.module.css";
 
@@ -35,11 +37,14 @@ const GroupList = () => {
     try {
       await axiosReq.delete(`/groups/${groupId}`);
       setGroups(groups.filter((group) => group.id !== groupId));
+      NotificationManager.info("Group Removed", "Success!");
     } catch (err) {
-      console.log(err);
+      NotificationManager.error(
+        "There was an issue removing your group",
+        "Error"
+      );
     }
   };
-
   const fetchMoreGroups = async () => {
     try {
       const { data } = await axiosReq.get(nextPageUrl);
