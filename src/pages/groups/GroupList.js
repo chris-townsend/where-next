@@ -1,11 +1,18 @@
+// React / router
 import React, { useState, useEffect } from "react";
-import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
-import { Button, Row, Col, Container, Card } from "react-bootstrap";
-import Group from "./Group";
-import InfiniteScroll from "react-infinite-scroll-component";
-import Asset from "../../components/Asset";
+// API
+import { axiosReq } from "../../api/axiosDefaults";
+// Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// React Bootstrap components
+import { Button, Row, Col, Container, Card } from "react-bootstrap";
+// React infinite scroll component
+import InfiniteScroll from "react-infinite-scroll-component";
+// Components
+import Asset from "../../components/Asset";
+// Other pages
+import Group from "./Group";
 // Notifications
 import { NotificationManager } from "react-notifications";
 // Styles
@@ -13,38 +20,50 @@ import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/GroupCreate.module.css";
 
 const GroupList = () => {
+  // Define state variables
   const [groups, setGroups] = useState([]);
   const [nextPageUrl, setNextPageUrl] = useState(null);
+  // Get the current user from CurrentUserContext.js
   const currentUser = useCurrentUser();
 
   useEffect(() => {
+    // Fetch the list of groups from the API endpoint "/groups/" when the component mounts
     const fetchGroups = async () => {
       try {
+        // Call the API endpoint using axiosReq.get()
         const { data } = await axiosReq.get("/groups/");
         console.log(data);
+        // If there are results in the data object, update the groups state variable with the results
         if (data.results) {
           setGroups(data.results);
           setNextPageUrl(data.next);
         }
       } catch (err) {
+        // For any errors, log it to the console for debugging purposes
         console.log(err);
       }
     };
+    // Call the fetchGroups function
     fetchGroups();
+    // Empty dependency array [] ensures that the hook only runs once when the component mounts
   }, []);
 
+  // Handle the deletion of a group
   const handleDeleteGroup = async (groupId) => {
     try {
       await axiosReq.delete(`/groups/${groupId}`);
       setGroups(groups.filter((group) => group.id !== groupId));
-      NotificationManager.info("Group Removed", "Success!");
+      // Show a success notification
+      NotificationManager.info("Group Removed");
     } catch (err) {
+      // Show an error notification
       NotificationManager.error(
         "There was an issue removing your group",
         "Error"
       );
     }
   };
+  // Fetch more groups when the user scrolls to the bottom of the page
   const fetchMoreGroups = async () => {
     try {
       const { data } = await axiosReq.get(nextPageUrl);
@@ -55,7 +74,7 @@ const GroupList = () => {
       console.log(err);
     }
   };
-
+  // Check if the current user is the owner of a group
   const isOwner = (groupId) => {
     const group = groups.find((group) => group.id === groupId);
     return currentUser && group && currentUser.username === group.owner;
@@ -67,6 +86,7 @@ const GroupList = () => {
         className={`${styles.Container} d-flex flex-column justify-content-center`}
       >
         <Col className="py-2 p-0 p-md-2" md={5} lg={12}>
+          {/* Link to create a new group */}
           <Link to="/groups/create">
             <Button
               className={`ml-4 ${styles.Button} ${btnStyles.Green}`}
@@ -80,6 +100,7 @@ const GroupList = () => {
           </h1>
           <hr className={`${styles.Hr} w-25 mx-auto mb-4`} />
           <br />
+          {/* Use the InfiniteScroll component to display groups */}
           <InfiniteScroll
             dataLength={groups.length}
             next={fetchMoreGroups}

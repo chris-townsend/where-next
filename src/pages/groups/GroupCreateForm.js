@@ -1,6 +1,9 @@
+// React / router
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+// API
 import { axiosReq } from "../../api/axiosDefaults";
+// React Bootstrap components
 import { Form, Button, Col, Alert } from "react-bootstrap";
 // Notifications
 import { NotificationManager } from "react-notifications";
@@ -10,22 +13,26 @@ import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/GroupCreate.module.css";
 
 const GroupCreateForm = () => {
+  // Setting the initial state of the errors object to an empty object
   const [errors, setErrors] = useState({});
+  // Using the useHistory hook to handle navigation history
+  const history = useHistory();
+  // Setting the initial state of the groupData object with empty strings for group_name and description
   const [groupData, setGroupData] = useState({
     group_name: "",
     description: "",
   });
+  // Destructuring the values of group_name and description from the groupData object
   const { group_name, description } = groupData;
 
-  const history = useHistory();
-
+  // Handling input changes and updating the groupData object
   const handleChange = (e) => {
     setGroupData({
       ...groupData,
       [e.target.name]: e.target.value,
     });
   };
-
+  // Handling the form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     const groupData = new FormData();
@@ -33,12 +40,15 @@ const GroupCreateForm = () => {
     groupData.append("description", description);
 
     try {
+      // Sending a post request to the backend with the groupData object
       const { data } = await axiosReq.post("/groups/", groupData);
       history.push(`/groups/${data.id}`);
+      // Show a success notification
       NotificationManager.success("Group Created", "Success!");
     } catch (err) {
+      // Show an error notification if there was an issue creating the group
       NotificationManager.error(
-        "There was an issue removing your group",
+        "There was an issue creating your group",
         "Error"
       );
     }
@@ -54,6 +64,7 @@ const GroupCreateForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {/* Displaying group_name errors */}
       {errors.group_name?.map((message, idx) => (
         <Alert key={idx} variant="warning">
           {message}
@@ -68,6 +79,7 @@ const GroupCreateForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {/* Displaying description errors */}
       {errors?.description?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}

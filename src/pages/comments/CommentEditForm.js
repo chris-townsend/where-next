@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // API
 import { axiosRes } from "../../api/axiosDefaults";
 // React Bootstrap components
-import Form from "react-bootstrap";
+import { Form } from "react-bootstrap";
 // Notifications
 import { NotificationManager } from "react-notifications";
 // Styles
