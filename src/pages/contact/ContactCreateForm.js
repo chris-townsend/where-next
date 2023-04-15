@@ -4,6 +4,9 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import useRedirect from "../../hooks/UseRedirect";
 
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Styles
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/ContactCreateForm.module.css";
@@ -38,13 +41,17 @@ const ContactCreateForm = () => {
     try {
       await axiosReq.post("/contact/", formData);
       history.push("/");
+      NotificationManager.success(
+        "Thank you, your message has been recieved",
+        "Success!"
+      );
     } catch (err) {
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
-      }
+      NotificationManager.error(
+        "There was an issue sending your message",
+        "Error"
+      );
     }
   };
-
   const textFields = (
     <div className="text-center pt-0 pt-lg-4">
       <Form.Group>
