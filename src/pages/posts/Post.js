@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { PostDropdownBar } from "../../components/PostDropdownBar";
 import { useHistory } from "react-router-dom";
+// Notifications
 import { NotificationManager } from "react-notifications";
 
 import styles from "../../styles/Post.module.css";
@@ -127,7 +128,7 @@ const Post = (props) => {
             : post;
         }),
       }));
-      NotificationManager.info("Post Removed");
+      NotificationManager.info("Post Removed from Bookmarks");
     } catch (error) {
       setErrors(error.response?.data);
       NotificationManager.error(

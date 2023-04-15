@@ -6,6 +6,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+// Notifications
+import { NotificationManager } from "react-notifications";
 
 import styles from "../../styles/CommentCreateUpdateForm.module.css";
 
@@ -37,11 +39,14 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
+      NotificationManager.success("Comment Added", "Success!");
     } catch (err) {
-      console.log(err);
+      NotificationManager.error(
+        "There was an issue adding your comment",
+        "Error"
+      );
     }
   };
-
   return (
     <Form className="mt-2" onSubmit={handleSubmit}>
       <Form.Group>

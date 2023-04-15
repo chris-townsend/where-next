@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
+// Notifications
+import { NotificationManager } from "react-notifications";
 
 import styles from "../../styles/CommentCreateUpdateForm.module.css";
 
@@ -33,8 +35,12 @@ function CommentEditForm(props) {
         }),
       }));
       setShowEditForm(false);
+      NotificationManager.info("Comment Updated");
     } catch (err) {
-      console.log(err);
+      NotificationManager.error(
+        "There was an issue updating your comment",
+        "Error"
+      );
     }
   };
 

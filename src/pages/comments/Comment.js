@@ -6,6 +6,8 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { PostDropdownBar } from "../../components/PostDropdownBar";
 import { axiosRes } from "../../api/axiosDefaults";
 import CommentEditForm from "./CommentEditForm";
+// Notifications
+import { NotificationManager } from "react-notifications";
 
 import styles from "../../styles/Comment.module.css";
 
@@ -41,7 +43,13 @@ const Comment = (props) => {
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
-    } catch (err) {}
+      NotificationManager.info("Comment Removed");
+    } catch (err) {
+      NotificationManager.error(
+        "There was an issue removing your comment",
+        "Error"
+      );
+    }
   };
 
   return (
