@@ -6,7 +6,9 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
-
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Styles
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
@@ -39,9 +41,12 @@ const UsernameEditForm = () => {
         username,
       }));
       history.goBack();
+      NotificationManager.success("Username Updated", "Success!");
     } catch (err) {
-      console.log(err);
-      setErrors(err.response?.data);
+      NotificationManager.error(
+        "There was an issue updating your username",
+        "Error"
+      );
     }
   };
 

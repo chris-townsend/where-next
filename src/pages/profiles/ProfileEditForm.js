@@ -16,7 +16,9 @@ import {
 } from "../../contexts/CurrentUserContext";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Styles
 import styles from "../../styles/ProfileEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
@@ -112,10 +114,12 @@ const ProfileEditForm = () => {
         profile_image: data.image,
       }));
       history.goBack();
+      NotificationManager.success("Profile Updated", "Success!");
     } catch (err) {
-      console.log(err);
-      console.log(err.response.data);
-      setErrors(err.response?.data);
+      NotificationManager.error(
+        "There was an issue updating your profile",
+        "Error"
+      );
     }
   };
 
@@ -376,7 +380,10 @@ const ProfileEditForm = () => {
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Green}`} type="submit">
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Green}`}
+        type="submit"
+      >
         save
       </Button>
     </>
@@ -420,11 +427,17 @@ const ProfileEditForm = () => {
                 }}
               />
             </Form.Group>
-            <div className={`${styles.TextFieldsContainer} d-md-none`}>{textFields}</div>
+            <div className={`${styles.TextFieldsContainer} d-md-none`}>
+              {textFields}
+            </div>
           </Container>
         </Col>
         <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
-          <Container className={`${styles.TextFieldsContainer} ${appStyles.Content}`}>{textFields}</Container>
+          <Container
+            className={`${styles.TextFieldsContainer} ${appStyles.Content}`}
+          >
+            {textFields}
+          </Container>
         </Col>
       </Row>
     </Form>

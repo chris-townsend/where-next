@@ -3,7 +3,9 @@ import { Alert, Button, Container, Row, Col, Form } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Styles
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
@@ -39,10 +41,12 @@ const PasswordEditForm = () => {
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
       history.goBack();
+      NotificationManager.success("Password Updated", "Success!");
     } catch (err) {
-      console.log(err);
-      console.log(err.response.data);
-      setErrors(err.response?.data);
+      NotificationManager.error(
+        "There was an issue updating your password",
+        "Error"
+      );
     }
   };
 

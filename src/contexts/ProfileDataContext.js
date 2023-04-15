@@ -2,6 +2,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useCurrentUser } from "./CurrentUserContext";
 import { followHelper, unfollowHelper } from "../utils/utils";
+// Notifications
+import { NotificationManager } from "react-notifications";
 
 export const ProfileDataContext = createContext();
 export const SetProfileDataContext = createContext();
@@ -37,8 +39,12 @@ export const ProfileDataProvider = ({ children }) => {
           ),
         },
       }));
+      NotificationManager.success("Following user", "Success!");
     } catch (err) {
-      console.log(err);
+      NotificationManager.error(
+        "There was an issue following this user",
+        "Error"
+      );
     }
   };
 
@@ -59,8 +65,12 @@ export const ProfileDataProvider = ({ children }) => {
           ),
         },
       }));
+      NotificationManager.info("Unfollowed user");
     } catch (err) {
-      console.log(err);
+      NotificationManager.error(
+        "There was an issue unfollowing this user",
+        "Error"
+      );
     }
   };
 
@@ -83,7 +93,9 @@ export const ProfileDataProvider = ({ children }) => {
 
   return (
     <ProfileDataContext.Provider value={profileData}>
-      <SetProfileDataContext.Provider value={{ setProfileData, handleFollow, handleUnfollow }}>
+      <SetProfileDataContext.Provider
+        value={{ setProfileData, handleFollow, handleUnfollow }}
+      >
         {children}
       </SetProfileDataContext.Provider>
     </ProfileDataContext.Provider>
