@@ -1,9 +1,12 @@
+// React / router
 import React, { useState } from "react";
-import { Form, Button, Container, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+// API
 import { axiosReq } from "../../api/axiosDefaults";
+// Hooks
 import useRedirect from "../../hooks/UseRedirect";
-
+// React Bootstrap components
+import { Form, Button, Container, Alert } from "react-bootstrap";
 // Notifications
 import { NotificationManager } from "react-notifications";
 // Styles
@@ -12,18 +15,21 @@ import appStyles from "../../App.module.css";
 import styles from "../../styles/ContactCreateForm.module.css";
 
 const ContactCreateForm = () => {
+  // Using the useHistory hook to handle navigation history
+  const history = useHistory();
+  // Using the useRedirect hook to redirect if the user is logged out
   useRedirect("loggedOut");
+  // Setting the initial state of the errors object to an empty object
   const [errors, setErrors] = useState({});
-
+  // Setting the initial state of the contactData object with empty strings for subject and message
   const [contactData, setContactData] = useState({
     subject: "",
     message: "",
   });
-
+  // Destructuring the values of subject and message from the contactData object
   const { subject, message } = contactData;
 
-  const history = useHistory();
-
+  // Handling input changes and updating the formData object
   const handleChange = (event) => {
     setContactData({
       ...contactData,
@@ -31,6 +37,7 @@ const ContactCreateForm = () => {
     });
   };
 
+  // Handling the form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -39,13 +46,17 @@ const ContactCreateForm = () => {
     formData.append("message", message);
 
     try {
+      // Sending a post request to the backend with the formData object
       await axiosReq.post("/contact/", formData);
       history.push("/");
+
+      // Displaying a success notification to the user
       NotificationManager.success(
         "Thank you, your message has been recieved",
         "Success!"
       );
     } catch (err) {
+      // Displaying an error notification to the user
       NotificationManager.error(
         "There was an issue sending your message",
         "Error"
@@ -64,6 +75,7 @@ const ContactCreateForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {/* Displaying subject errors */}
       {errors?.subject?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
@@ -80,6 +92,7 @@ const ContactCreateForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {/* Displaying message errors */}
       {errors?.message?.map((message, idx) => (
         <Alert variant="danger" key={idx}>
           {message}
