@@ -1,5 +1,11 @@
+// React / router
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+// API
+import axios from "axios";
+// Hooks
+import useRedirect from "../../hooks/UseRedirect";
+// React Bootstrap components
 import {
   Image,
   Col,
@@ -9,28 +15,30 @@ import {
   Button,
   Alert,
 } from "react-bootstrap";
+// Styles
 import appStyles from "../../App.module.css";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import axios from "axios";
-import useRedirect from "../../hooks/UseRedirect";
 // Notifications
 import { NotificationManager } from "react-notifications";
 
 const SignUpForm = () => {
+  // Setting the initial state of the errors object to an empty object
+  const [errors, setErrors] = useState({});
+  // Using the useHistory hook to handle navigation history
+  const history = useHistory();
+  // Using the useRedirect hook to redirect if the user is already logged in
   useRedirect("loggedIn");
+  // Setting the initial state of the signUpData object with empty strings for the username and passwords
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
     password2: "",
   });
-
+  // Destructuring the values of username and password from the signUpData object
   const { username, password1, password2 } = signUpData;
 
-  const [errors, setErrors] = useState({});
-
-  const history = useHistory();
-
+  // Handling input changes and updating the signUpData object
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
@@ -38,6 +46,7 @@ const SignUpForm = () => {
     });
   };
 
+  // Handling the form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -67,6 +76,7 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {/* Displaying username errors */}
             {errors.username?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
@@ -84,6 +94,7 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {/* Displaying password errors */}
             {errors.password1?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
@@ -103,6 +114,7 @@ const SignUpForm = () => {
                 We'll never share your information with anyone else.
               </Form.Text>
             </Form.Group>
+            {/* Displaying password errors */}
             {errors.password2?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}

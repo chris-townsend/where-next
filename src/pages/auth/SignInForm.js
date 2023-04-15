@@ -1,6 +1,13 @@
+// React / router
 import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+// API
 import axios from "axios";
-
+// Contexts
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+// Hooks
+import useRedirect from "../../hooks/UseRedirect";
+// React Bootstrap components
 import {
   Image,
   Col,
@@ -10,44 +17,52 @@ import {
   Button,
   Alert,
 } from "react-bootstrap";
-
-import { Link, useHistory } from "react-router-dom";
-
+// Styles
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
-import useRedirect from "../../hooks/UseRedirect";
+// Notifications
 import { NotificationManager } from "react-notifications";
 
-function SignInForm() {
+const SignInForm = () => {
+  // Using the useSetCurrentUser hook to set the current user
   const setCurrentUser = useSetCurrentUser();
+  // Setting the initial state of the errors object to an empty object
+  const [errors, setErrors] = useState({});
+  // Using the useHistory hook to handle navigation history
+  const history = useHistory();
+  // Using the useRedirect hook to redirect if the user is already logged in
   useRedirect("loggedIn");
+  // Setting the initial state of the signInData object with empty strings for the username and password
   const [signInData, setSignInData] = useState({
     username: "",
     password: "",
   });
+  // Destructuring the values of username and password from the signInData object
   const { username, password } = signInData;
 
-  const [errors, setErrors] = useState({});
-
-  const history = useHistory();
+  // Handling the form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Sending a post request to the backend with the signInData object
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
+      // Setting the current user with the data returned from the backend
       setCurrentUser(data.user);
+      // Navigating to the previous page in the navigation history
       history.goBack();
+      // Displaying a success notification to the user
       NotificationManager.success(
         "Welcome " + username + ". You are now signed in",
         "Success!"
       );
     } catch (error) {
       setErrors(error.response?.data);
+      // Displaying an error notification to the user
       NotificationManager.error("There was an issue logging you in", "Error");
     }
   };
-
+  // Handling input changes and updating the signInData object
   const handleChange = (event) => {
     setSignInData({
       ...signInData,
@@ -72,6 +87,7 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
+            {/* Displaying username errors */}
             {errors.username?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
@@ -89,6 +105,7 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
+            {/* Displaying password errors */}
             {errors.password?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
@@ -126,6 +143,6 @@ function SignInForm() {
       </Col>
     </Row>
   );
-}
+};
 
 export default SignInForm;
