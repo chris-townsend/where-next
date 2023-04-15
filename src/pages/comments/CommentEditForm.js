@@ -1,27 +1,33 @@
+// React
 import React, { useState } from "react";
-
-import Form from "react-bootstrap/Form";
+// API
 import { axiosRes } from "../../api/axiosDefaults";
+// React Bootstrap components
+import Form from "react-bootstrap";
 // Notifications
 import { NotificationManager } from "react-notifications";
-
+// Styles
 import styles from "../../styles/CommentCreateUpdateForm.module.css";
 
-function CommentEditForm(props) {
+const CommentEditForm = (props) => {
+  // Destructure the props object
   const { id, content, setShowEditForm, setComments } = props;
-
+  // Define state variables
   const [formContent, setFormContent] = useState(content);
 
+  // Event handler for input change
   const handleChange = (event) => {
     setFormContent(event.target.value);
   };
-
+  // Event handler for form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Make an API call to edit the comment by id
       await axiosRes.put(`/comments/${id}/`, {
         comment: formContent.trim(),
       });
+      // Update the comments state with the updated comment
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.map((comment) => {
@@ -35,8 +41,10 @@ function CommentEditForm(props) {
         }),
       }));
       setShowEditForm(false);
+      // Show a success notification
       NotificationManager.info("Comment Updated");
     } catch (err) {
+      // Show an error notification if there was an issue updating the comment
       NotificationManager.error(
         "There was an issue updating your comment",
         "Error"
@@ -73,6 +81,6 @@ function CommentEditForm(props) {
       </div>
     </Form>
   );
-}
+};
 
 export default CommentEditForm;

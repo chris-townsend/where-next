@@ -1,24 +1,28 @@
+// React / router
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-
-import Avatar from "../../components/Avatar";
+// API
 import { axiosRes } from "../../api/axiosDefaults";
+// React Bootstrap components
+import { Form, InputGroup } from "react-bootstrap";
+// Components
+import Avatar from "../../components/Avatar";
 // Notifications
 import { NotificationManager } from "react-notifications";
-
+// Styles
 import styles from "../../styles/CommentCreateUpdateForm.module.css";
 
-function CommentCreateForm(props) {
+const CommentCreateForm = (props) => {
+  // Destructure the props object
   const { post, setPost, setComments, profileImage, profile_id } = props;
+  // Define state variables
   const [content, setContent] = useState("");
 
+  // Event handler for input change
   const handleChange = (event) => {
     setContent(event.target.value);
   };
-
+  // Event handler for form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -26,6 +30,7 @@ function CommentCreateForm(props) {
         comment: content,
         post,
       });
+      // Update the comments state by adding the comment to the array
       setComments((prevComments) => ({
         ...prevComments,
         results: [data, ...prevComments.results],
@@ -39,8 +44,10 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
+      // Show a success notification
       NotificationManager.success("Comment Added", "Success!");
     } catch (err) {
+      // Show an error notification if there was an issue creating the comment
       NotificationManager.error(
         "There was an issue adding your comment",
         "Error"
@@ -51,6 +58,7 @@ function CommentCreateForm(props) {
     <Form className="mt-2" onSubmit={handleSubmit}>
       <Form.Group>
         <InputGroup>
+          {/* Link to the user's profile */}
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profileImage} />
           </Link>
@@ -73,6 +81,6 @@ function CommentCreateForm(props) {
       </button>
     </Form>
   );
-}
+};
 
 export default CommentCreateForm;
