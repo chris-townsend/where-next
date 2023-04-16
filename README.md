@@ -55,57 +55,119 @@ The target audience for Where next
 
 ### Epics 
 
-5 Epics were created as Milestones which were then further developed into - User Stories. The details on each epic, along with the user stories linked to each one can be found [here](https://github.com/chris-townsend/where-next/milestones).
+6 Epics were created as Milestones which were then further developed into - User Stories. The details on each epic, along with the user stories linked to each one can be found [here](https://github.com/chris-townsend/where-next/milestones).
 
 
-[EPIC 1]() **-**
+[EPIC 1](https://github.com/chris-townsend/where-next/milestone/1) **Navigation**
 
-[EPIC 2]() **-**
+[EPIC 2](https://github.com/chris-townsend/where-next/milestone/2) **User Account Management**
 
-[EPIC 3]() **-**
+[EPIC 3](https://github.com/chris-townsend/where-next/milestone/3) **Posts**
 
-[EPIC 4]() **-**
+[EPIC 4](https://github.com/chris-townsend/where-next/milestone/4) **Comments**
 
-[EPIC 5]() **-**
+[EPIC 5](https://github.com/chris-townsend/where-next/milestone/6) **Features**
 
-[EPIC 6]() **-**
-
+[EPIC 6](https://github.com/chris-townsend/where-next/milestone/7) **Groups**
 
 #
 
 ### User Stories
 
 
-#### EPIC | ****
+#### EPIC | **Navigation**
 
+[#1](https://github.com/chris-townsend/where-next/issues/1) - *As a **User**, I can **access a navigation bar on every page** so that **I can easily view desired content***
 
-#
-
-#### EPIC | ****
-
+[#29](https://github.com/chris-townsend/where-next/issues/29) - *As a **User**, I would like to **use the app on my mobile**, so that **I don't have to rely on having my laptop/desktop with me***
 
 #
 
-#### EPIC | 
+#### EPIC | **User Account Mangement**
+
+[#2](https://github.com/chris-townsend/where-next/issues/2) - *As a **User**, I can **register for an account** so that **I can gain access to all the features that are available exclusively to registered users***
+
+[#3](https://github.com/chris-townsend/where-next/issues/3) - *As a **User,** I can **register for an account by using one of my social media accounts** so that **I can use an alternative method of signing up***
+
+[#6](https://github.com/chris-townsend/where-next/issues/6) - *As a **User**, I can **log into my account** so that **I can access functionality for logged in users***
+
+[#7](https://github.com/chris-townsend/where-next/issues/7) - *As a **User**, I can **safely log out of my account** so that **I can disconnect from the site***
+
+[#8](https://github.com/chris-townsend/where-next/issues/8) - *As a **logged-in User**, I can **see my login status** so that **I know if I am logged in or out of my account***
+
+[#10](https://github.com/chris-townsend/where-next/issues/10) - *As a **logged-in User**, I would like **the option to delete my account** so that **I can remove myself from the app.***
+
+[#11](https://github.com/chris-townsend/where-next/issues/11) - *As a **logged-in User**, I can **change my password** so that **I can keep my account secure***
 
 #
 
-#### EPIC | Navigation
+#### EPIC | Posts
+
+[#4](https://github.com/chris-townsend/where-next/issues/4) - *As a **User**, I can **view posts**, without **having to sign-up to enjoy the site's content***
+
+[#5](https://github.com/chris-townsend/where-next/issues/5) - *As a **logged-in User**, I can **create posts** so that **I can add content to the site***
+
+[#12](https://github.com/chris-townsend/where-next/issues/12) - *As a **logged-in User**, I can edit my post so that I can fix or update my existing content*
+
+[#13](https://github.com/chris-townsend/where-next/issues/13) - As a **logged in User**, I would like the **ability to delete posts** so that I can **remove any post that I don't want to share**
+
+[#20](https://github.com/chris-townsend/where-next/issues/20) - As a **logged-in User**, I want to **express my appreciation for posts that interest me by liking them**, so that I can **engage with the content and show support for the author**
+
+[#25](https://github.com/chris-townsend/where-next/issues/25) - *As a **User**, I would like to **see the newest posts at the top, ordered by most recently created** so that I am **up to date with the latest content***
 
 #
 
-#### EPIC | 
+#### EPIC | Comments
+
+[#9](https://github.com/chris-townsend/where-next/issues/9) - *As a **User**, I can **view comments on posts** so that **I can read other user's feedback***
+
+[#18](https://github.com/chris-townsend/where-next/issues/18) - *As a **logged-in User**, I want to be able to **leave comments on a post**, so that I can **express my opinions or ideas related to the post***
+
+[#22](https://github.com/chris-townsend/where-next/issues/22) - *As a **logged-in User** who is the **owner of the comment**, I can **update my comment** so that I can **fix any mistakes***
+
+[#23](https://github.com/chris-townsend/where-next/issues/23) - *As a **logged-in User** who is the **owner of the comment**, I can **delete my comment** so that I can **remove any unwanted comments from the site***
+
+[#27](https://github.com/chris-townsend/where-next/issues/27) - *As a **User**, I can **see the date of when the comment has been published** so that I know **how old the comment is***
 
 #
 
-#### EPIC | 
+#### EPIC | Features
 
+[#14](https://github.com/chris-townsend/where-next/issues/14) - *As a **User**, I can **view other user's profiles** so that I can **see their bio and learn more about them***
 
-# 
+[#15](https://github.com/chris-townsend/where-next/issues/15) - *As a **logged-in User**, I can **customise my profile with an avatar** so that my profile is **easy to identify within the site***
+
+[#16](https://github.com/chris-townsend/where-next/issues/16) - *As a **logged-in User**, I would like the ability to **update my profile** so that I can **keep my information up to date***
+
+[#17](https://github.com/chris-townsend/where-next/issues/17) - *As a **logged-in User**, I would like the ability to **follow/unfollow users** so I can **keep track of their content and revisit their profiles easily***
+
+[#19](https://github.com/chris-townsend/where-next/issues/19) - *As a **logged-in User**, I can **save a post to a personal list** so that I can **easily return to it later***
+
+[#21](https://github.com/chris-townsend/where-next/issues/21) - *As a **User**, I can **search for posts or profiles by keyword** so that I can **find what I'm looking for more efficiently***
+
+[#24](https://github.com/chris-townsend/where-next/issues/24) - *As a **User**, I would like the ability to **print a post** so that **I can have a paper copy of the information I require***
+
+[#26](https://github.com/chris-townsend/where-next/issues/26) - *As a **User**, I can keep **scrolling through my feed of posts which load automatically**, so that **I don't have to change pages***
+
+[#28](https://github.com/chris-townsend/where-next/issues/28) - *As a **User**, I can **contact the site owner** so that **I can request any information that I might need***
+
+[#30](https://github.com/chris-townsend/where-next/issues/30) - *As a **Site owner**, I can **add a favicon** so that **the site looks more distinguishable***
+
+#
+
+#### EPIC | Groups
+
+#
 
 #### User stories not yet implemented
 
 The following user stories were scoped out of the project due to time constraints and its intended that these user stories will be implemented at a later date. 
+
+- [3](https://github.com/chris-townsend/where-next/issues/3) - *As a **User,** I can **register for an account by using one of my social media accounts** so that **I can use an alternative method of signing up***
+
+- [10](https://github.com/chris-townsend/where-next/issues/10) - *As a **logged-in User**, I would like **the option to delete my account** so that **I can remove myself from the app.***
+
+- [24](https://github.com/chris-townsend/where-next/issues/24) - *As a **User**, I would like the ability to **print a post** so that **I can have a paper copy of the information I require***
 
 [Back to top ⇧](#where-next)
 
