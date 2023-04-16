@@ -1,17 +1,22 @@
+// React / router
 import React, { useState } from "react";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import Avatar from "../../components/Avatar";
-import { Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+// API
 import { axiosRes } from "../../api/axiosDefaults";
+// Contexts
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// React Bootstrap components
+import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+// Components
 import { PostDropdownBar } from "../../components/PostDropdownBar";
-import { useHistory } from "react-router-dom";
+import Avatar from "../../components/Avatar";
 // Notifications
 import { NotificationManager } from "react-notifications";
-
+// Styles
 import styles from "../../styles/Post.module.css";
 
 const Post = (props) => {
+  // Destructure the props object
   const {
     id,
     owner,
@@ -29,19 +34,27 @@ const Post = (props) => {
     setPosts,
     groups_count,
   } = props;
-
+  // Setting the initial state of the errors object to an empty object
   const [errors, setErrors] = useState({});
+  // Get the current user from CurrentUserContext.js
   const currentUser = useCurrentUser();
-  const is_owner = currentUser?.username === owner;
+  // Using the useHistory hook to handle navigation history
   const history = useHistory();
+  // Declare is_owner
+  const is_owner = currentUser?.username === owner;
 
+  // Handle deleting a post
   const handleDelete = async () => {
     try {
+      // Send a request to delete a post by its ID
       await axiosRes.delete(`/posts/${id}/`);
+      // Navigating to the previous page in the navigation history
       history.goBack();
+      // Display a success notification
       NotificationManager.info("Post Removed");
     } catch (error) {
       setErrors(error.response?.data);
+      // Display error notification
       NotificationManager.error(
         "There was an issue deleting your post",
         "Error"
@@ -53,6 +66,7 @@ const Post = (props) => {
     history.push(`/posts/${id}/edit`);
   };
 
+  // Like a post functionality
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
@@ -64,12 +78,16 @@ const Post = (props) => {
             : post;
         }),
       }));
+      // Display success notification
       NotificationManager.success("Post Liked", "Success!");
     } catch (error) {
       setErrors(error.response?.data);
+      // Display error notification
       NotificationManager.error("There was an issue liking the post", "Error");
     }
   };
+
+  // Unlike a post functionality
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
@@ -81,9 +99,11 @@ const Post = (props) => {
             : post;
         }),
       }));
+      // Display a notification
       NotificationManager.info("Post Unliked");
     } catch (error) {
       setErrors(error.response?.data);
+      // Display error notification
       NotificationManager.error(
         "There was an issue unliking the post",
         "Error"
@@ -91,6 +111,7 @@ const Post = (props) => {
     }
   };
 
+  // Bookmark a post functionality
   const handleBookmark = async () => {
     try {
       const { data } = await axiosRes.post("/bookmarks/", { post: id });
@@ -106,13 +127,16 @@ const Post = (props) => {
             : post;
         }),
       }));
+      // Displaying a success notification
       NotificationManager.success("Post Saved", "Success!");
     } catch (error) {
       setErrors(error.response?.data);
+      // Displaying a error notification
       NotificationManager.error("There was an issue saving the post", "Error");
     }
   };
 
+  // Unbookmark a post functionality
   const handleUnbookmark = async () => {
     try {
       await axiosRes.delete(`/bookmarks/${bookmark_id}/`);
@@ -128,9 +152,11 @@ const Post = (props) => {
             : post;
         }),
       }));
+      // Display a notification
       NotificationManager.info("Post Removed from Bookmarks");
     } catch (error) {
       setErrors(error.response?.data);
+      // If error display error notification
       NotificationManager.error(
         "There was an issue removing the post",
         "Error"
@@ -141,12 +167,15 @@ const Post = (props) => {
     <Card className={styles.Post}>
       <Card.Body>
         <Media className="align-items-center justify-content-between">
+          {/* Link to profile id of post */}
           <Link to={`/profiles/${profile_id}`}>
+            {/* Display Avatar component */}
             <Avatar src={profile_image} height={55} />
             <span className="ml-1">{owner}</span>
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_date}</span>
+            {/* If the user is the owner of the post display PostDropdownBar component */}
             {is_owner && postPage && (
               <PostDropdownBar
                 handleDelete={handleDelete}
@@ -179,6 +208,7 @@ const Post = (props) => {
         )}
 
         <div className={`${styles.PostBar} text-center align-items-center`}>
+          {/* If the user is the owner of the post display message */}
           {is_owner ? (
             <OverlayTrigger
               placement="top"

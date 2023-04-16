@@ -1,4 +1,9 @@
+// React / router
 import React, { useState, useRef, useEffect } from "react";
+import { useHistory, useParams } from "react-router-dom";
+// API
+import { axiosReq } from "../../api/axiosDefaults";
+// React Bootstrap components
 import {
   Form,
   Button,
@@ -8,18 +13,20 @@ import {
   Image,
   Alert,
 } from "react-bootstrap";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useHistory, useParams } from "react-router-dom";
+// Notifications
 import { NotificationManager } from "react-notifications";
-
+// Styles
 import styles from "../../styles/PostCreateUpdate.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 const PostEditForm = () => {
+  // Setting the initial state of the errors object to an empty object
   const [errors, setErrors] = useState({});
   const imageInput = useRef(null);
+  // Using the useHistory hook to handle navigation history
   const history = useHistory();
+  // get id from the URL parameter
   const { id } = useParams();
 
   useEffect(() => {
@@ -27,7 +34,7 @@ const PostEditForm = () => {
       try {
         const { data } = await axiosReq.get(`/posts/${id}/`);
         const { title, about, image, is_owner } = data;
-
+        // If the user is not the owner of the post, redirect to the home page
         is_owner ? setPostData({ title, about, image }) : history.push("/");
       } catch (err) {
         console.log(err);
@@ -36,6 +43,7 @@ const PostEditForm = () => {
     handleMount();
   }, [history, id]);
 
+  // Setting the initial state of the post data object
   const [postData, setPostData] = useState({
     title: "",
     about: "",
@@ -43,6 +51,7 @@ const PostEditForm = () => {
   });
   const { title, about, image } = postData;
 
+  // Handle input changes
   const handleChange = (event) => {
     setPostData({
       ...postData,
@@ -50,6 +59,7 @@ const PostEditForm = () => {
     });
   };
 
+  // Handle image changes
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -59,7 +69,7 @@ const PostEditForm = () => {
       });
     }
   };
-
+  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -72,15 +82,22 @@ const PostEditForm = () => {
     }
 
     try {
+      // Submit updated formdata to the API
       await axiosReq.put(`/posts/${id}/`, formData);
+      // Redirect to the updated post page
       history.push(`/posts/${id}`);
+      // Show success notification
       NotificationManager.success("Post Updated", "Success!");
     } catch (error) {
       setErrors(error.response?.data);
-      NotificationManager.error("There was an issue updating your post", "Error");
+      // Show error notification
+      NotificationManager.error(
+        "There was an issue updating your post",
+        "Error"
+      );
     }
   };
-
+  // Text input fields for the post title and content
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -92,6 +109,7 @@ const PostEditForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {/* Display any title errors */}
       {errors.title?.map((message, idx) => (
         <Alert key={idx} variant="warning">
           {message}
@@ -107,6 +125,7 @@ const PostEditForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {/* Display any about errors */}
       {errors?.about?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
@@ -155,6 +174,7 @@ const PostEditForm = () => {
                 ref={imageInput}
               />
             </Form.Group>
+            {/* Display any image errors */}
             {errors?.image?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
