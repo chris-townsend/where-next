@@ -1,21 +1,31 @@
-import styles from "./App.module.css";
-import NavigationBar from "./components/NavigationBar";
-import { Container } from "react-bootstrap";
+// React / router
 import { Route, Switch } from "react-router-dom";
+// API
 import "./api/axiosDefaults";
+// Contexts
+import { useCurrentUser } from "./contexts/CurrentUserContext";
+// React Bootstrap components
+import { Container } from "react-bootstrap";
+// Components
+import NavigationBar from "./components/NavigationBar";
+import SideNavigationBar from "./components/SideNavigationBar";
+// Styles
+import styles from "./App.module.css";
+// Auth pages
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
-import SideNavigationBar from "./components/SideNavigationBar";
-import { useCurrentUser } from "./contexts/CurrentUserContext";
+// Posts pages
 import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
 import PostsPage from "./pages/posts/PostsPage";
 import PostEditForm from "./pages/posts/PostEditForm";
+// Profiles pages
 import ProfilePage from "./pages/profiles/ProfilePage";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ContactCreateForm from "./pages/contact/ContactCreateForm";
 import UsernameEditForm from "./pages/profiles/UsernameEditForm";
 import PasswordEditForm from "./pages/profiles/PasswordEditForm";
+// Groups pages
 import GroupCreateForm from "./pages/groups/GroupCreateForm";
 import GroupList from "./pages/groups/GroupList";
 import GroupDetail from "./pages/groups/GroupDetail";
@@ -24,20 +34,27 @@ import { NotificationContainer } from "react-notifications";
 import "react-notifications/lib/notifications.css";
 
 function App() {
+  // getting the current user from the CurrentUserContext
   const currentUser = useCurrentUser();
+  // getting the profile ID of the current user or setting it to an empty string if there's no user
   const profile_id = currentUser?.profile_id || "";
 
   return (
     <div className={styles.App}>
+      {/* Rendering the NavigationBar component */}
       {currentUser ? (
         <NavigationBar loggedIn={!!currentUser} />
       ) : (
         <NavigationBar loggedIn={false} />
       )}
+      {/* Rendering the SideNavigationBar component if there's a current user */}
       {currentUser ? <SideNavigationBar /> : null}
       <Container className={styles.Main}>
+        {/* Rendering the NotificationContainer component */}
         <NotificationContainer />
+        {/* Defining the routes using Switch and Route components */}
         <Switch>
+          {/* Defining the route for the home page */}
           <Route
             exact
             path="/"
@@ -45,6 +62,7 @@ function App() {
               <PostsPage message="No results found. Please adjust search keyword." />
             )}
           />
+          {/* Defining the route for the user's feed */}
           <Route
             exact
             path="/feed"
@@ -55,6 +73,7 @@ function App() {
               />
             )}
           />
+          {/* Defining the route for the user's liked posts */}
           <Route
             exact
             path="/liked"
@@ -65,6 +84,7 @@ function App() {
               />
             )}
           />
+          {/* Defining the route for the user's bookmarks */}
           <Route
             exact
             path="/bookmarks"
@@ -75,11 +95,14 @@ function App() {
               />
             )}
           />
+          {/* Defining the routes for the auth pages */}
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
+          {/* Defining the routes for the post pages */}
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
+          {/* Defining the routes for the profiles pages */}
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route
             exact
@@ -96,6 +119,7 @@ function App() {
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
           />
+          {/* Defining the routes for the groups pages */}
           <Route exact path="/groups" render={() => <GroupList />} />
           <Route
             exact
@@ -103,12 +127,13 @@ function App() {
             render={() => <GroupCreateForm />}
           />
           <Route exact path="/groups/:id" render={() => <GroupDetail />} />
-
+          {/* Defining the route for the contact page */}
           <Route
             exact
             path="/contact/create/"
             render={() => <ContactCreateForm />}
           />
+          {/* Defining the route for the 404 page */}
           <Route render={() => <p> 404 Page not found</p>} />
         </Switch>
       </Container>
