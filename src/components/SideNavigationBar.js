@@ -1,33 +1,44 @@
+// React / router
 import React, { useState } from "react";
-import { Nav, Navbar, Container, Modal, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import NavigationBar from "./NavigationBar";
+// API
+import axios from "axios";
+// Contexts
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
-import axios from "axios";
-
+// React Bootstrap components
+import { Nav, Navbar, Container, Modal, Button } from "react-bootstrap";
+// Components
+import NavigationBar from "./NavigationBar";
+// Styles
 import styles from "../styles/SideNavigationBar.module.css";
 import btnStyles from "../styles/Button.module.css";
 
 const SideNavigationBar = () => {
+  // State for controlling the sign out confirmation modal
   const [show, setShow] = useState(false);
-
+  // Handler for closing the sign out confirmation modal
   const handleClose = () => setShow(false);
+  // Handler for opening the sign out confirmation modal
   const handleShow = () => setShow(true);
+  // Get the current user from the CurrentUserContext
   const currentUser = useCurrentUser();
+  // Getting the setCurrentUser function from the CurrentUserContext
   const setCurrentUser = useSetCurrentUser();
 
+  // Function to handle sign out
   const handleSignOut = async () => {
     try {
+      // Sending a POST request to log the user out
       await axios.post("dj-rest-auth/logout/");
-      setCurrentUser(null);
+      setCurrentUser(null); // Setting the current user to null to log them out
     } catch (err) {
       console.log(err);
     }
   };
-
+  // Add post icon
   const addPostIcon = (
     <Nav.Item>
       <NavLink
@@ -42,8 +53,10 @@ const SideNavigationBar = () => {
   );
   return (
     <Navbar className={styles.SideNavigation}>
+      {/* Navigation items */}
       <Container>
         <Nav className="ml-auto flex-column">
+          {/* Home Icon */}
           <Nav.Item>
             <NavLink
               exact
@@ -54,14 +67,15 @@ const SideNavigationBar = () => {
               <i className="fas fa-home"></i> Home
             </NavLink>
           </Nav.Item>
-
+          {/* Feed Icon */}
           <Nav.Item>
             <NavLink className={styles.NavLink} to="/feed">
               <i className="fas fa-feed"></i> Feed
             </NavLink>
           </Nav.Item>
-          {/* Only show the post icon if the current user exists */}
+          {/* Only show the post icon if the current user is logged in*/}
           {currentUser && addPostIcon}
+          {/* Bookmark Icon */}
           <Nav.Item>
             <NavLink
               className={styles.NavLink}
@@ -71,6 +85,7 @@ const SideNavigationBar = () => {
               <i className="fas fa-bookmark"></i> Bookmarks
             </NavLink>
           </Nav.Item>
+          {/* Groups Icon */}
           <Nav.Item>
             <NavLink
               className={styles.NavLink}
@@ -80,6 +95,7 @@ const SideNavigationBar = () => {
               <i className="fas fa-users"></i> Groups
             </NavLink>
           </Nav.Item>
+          {/* Liked posts (heart) Icon */}
           <Nav.Item>
             <NavLink
               className={styles.NavLink}
@@ -89,6 +105,7 @@ const SideNavigationBar = () => {
               <i className="fas fa-heart"></i> Liked
             </NavLink>
           </Nav.Item>
+          {/* Contact Icon */}
           <Nav.Item>
             <NavLink
               className={styles.NavLink}
@@ -100,11 +117,13 @@ const SideNavigationBar = () => {
           </Nav.Item>
           <br />
           <hr className={styles.Hr} />
+          {/* Sign out Icon */}
           <Nav.Item>
             <NavLink className={styles.NavLink} to="/" onClick={handleShow}>
               <i className="fas fa-sign-out"></i> Sign Out
             </NavLink>
           </Nav.Item>
+          {/* Import NavigationBar component for logged in/out users */}
           {currentUser ? (
             <NavigationBar loggedIn={true} />
           ) : (
@@ -112,7 +131,7 @@ const SideNavigationBar = () => {
           )}
         </Nav>
       </Container>
-      {/* Modal */}
+      {/* Modal for sign out confirmation */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title className={`${styles.Title} text-center`}>

@@ -1,4 +1,9 @@
+// React / router
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+// Contexts
+import { useCurrentUser } from "../contexts/CurrentUserContext";
+// React Bootstrap components
 import {
   Nav,
   Navbar,
@@ -8,17 +13,19 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
-import logo from "../assets/images/where-next-logo.png";
-import { NavLink } from "react-router-dom";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+// Components
 import Avatar from "./Avatar";
-
+// Styles
 import styles from "../styles/NavigationBar.module.css";
 import btnStyles from "../styles/Button.module.css";
+// Images
+import logo from "../assets/images/where-next-logo.png";
 
 const NavigationBar = (props) => {
+  // Get the current user from the CurrentUserContext
   const currentUser = useCurrentUser();
   const { loggedIn } = props;
+  // State to handle the visibility of the modal
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -26,11 +33,13 @@ const NavigationBar = (props) => {
   return (
     <Navbar className={styles.NavigationBar} expand="lg" fixed="top">
       <Container>
+        {/* WHERE NEXT logo with redirect to home */}
         <NavLink to="/">
           <Navbar.Brand>
             <img src={logo} alt="logo" height="65px" width="180px" />
           </Navbar.Brand>
         </NavLink>
+        {/* Info Icon */}
         <OverlayTrigger
           placement="top"
           overlay={<Tooltip>Information</Tooltip>}
@@ -41,9 +50,12 @@ const NavigationBar = (props) => {
             </NavLink>
           </Nav.Item>
         </OverlayTrigger>
+        {/* Navbar toggle button */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        {/* Navbar content */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
+            {/* If the user is logged in */}
             {loggedIn ? (
               <Nav.Item>
                 <NavLink
@@ -59,6 +71,7 @@ const NavigationBar = (props) => {
                 </NavLink>
               </Nav.Item>
             ) : (
+              /* If the user is not logged in */
               <>
                 <Nav.Item>
                   <NavLink to="/signin" className={styles.NavLink}>
@@ -75,8 +88,10 @@ const NavigationBar = (props) => {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      {/* Modal for info icon */}
       <Modal show={show} onHide={handleClose}>
         <div className={styles.ModalBody}>
+          {/* Modal close button */}
           <Button
             className={`${styles.ModalButton} ${btnStyles.Bright}`}
             onClick={handleClose}
@@ -84,6 +99,7 @@ const NavigationBar = (props) => {
             <i class="far fa-times-circle fa-lg"></i>
           </Button>
           <h3 className={styles.Title}>Welcome..</h3>
+          {/* Modal description */}
           <p className={`${styles.Description} text-center`}>
             Welcome to Where Next, a travel social media platform that connects
             people with their passion for travel. Our website is designed to
@@ -98,7 +114,7 @@ const NavigationBar = (props) => {
             So why wait? Sign up today and start exploring all that Where Next
             has to offer!
           </h4>
-
+          {/* Modal icons */}
           <ul className={`align-items-center text-center ${styles.Links}`}>
             <li>
               <i className="fas fa-globe"></i>
