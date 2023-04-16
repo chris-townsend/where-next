@@ -1,5 +1,14 @@
+// React / router
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
+// API
+import { axiosReq } from "../../api/axiosDefaults";
+// Contexts
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../../contexts/CurrentUserContext";
+// React Bootstrap components
 import {
   Form,
   Button,
@@ -9,11 +18,7 @@ import {
   Container,
   Alert,
 } from "react-bootstrap";
-import { axiosReq } from "../../api/axiosDefaults";
-import {
-  useCurrentUser,
-  useSetCurrentUser,
-} from "../../contexts/CurrentUserContext";
+// React components
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 // Notifications
@@ -24,12 +29,19 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 const ProfileEditForm = () => {
+  // Get current user from contexts
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+  // get id from the URL parameter
   const { id } = useParams();
+  // Setting the initial state of the errors object to an empty object
+  const [errors, setErrors] = useState({});
+  // Using the useHistory hook to handle navigation history
   const history = useHistory();
+  // Set state for the dateOfBirth field
+  const [dateOfBirth, setDateOfBirth] = useState(new Date());
   const imageFile = useRef();
-
+  // Setting the initial state of the profileData object with empty strings
   const [profileData, setProfileData] = useState({
     name: "",
     location: "",
@@ -38,15 +50,13 @@ const ProfileEditForm = () => {
     bio: "",
     image: "",
   });
+  // Destructuring the values from the profileData object
   const { name, location, favourite_location, date_of_birth, bio, image } =
     profileData;
 
-  const [errors, setErrors] = useState({});
-
-  const [dateOfBirth, setDateOfBirth] = useState(new Date());
-
   useEffect(() => {
     const handleMount = async () => {
+      // If the current user is logged in
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
@@ -79,13 +89,14 @@ const ProfileEditForm = () => {
     handleMount();
   }, [currentUser, history, id]);
 
+  // Handling input changes and updating the profileData object
   const handleChange = (event) => {
     setProfileData({
       ...profileData,
       [event.target.name]: event.target.value,
     });
   };
-
+  // Handle updating the date and format string to date
   const handleDateChange = (date) => {
     setDateOfBirth(date);
     setProfileData({
@@ -95,6 +106,7 @@ const ProfileEditForm = () => {
     setDateOfBirth(date);
   };
 
+  // Handling the form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -114,8 +126,10 @@ const ProfileEditForm = () => {
         profile_image: data.image,
       }));
       history.goBack();
+      // Display success notification
       NotificationManager.success("Profile Updated", "Success!");
     } catch (err) {
+      // Display error notification
       NotificationManager.error(
         "There was an issue updating your profile",
         "Error"
@@ -136,6 +150,7 @@ const ProfileEditForm = () => {
           aria-label="name"
         />
       </Form.Group>
+      {/* Displaying any name errors */}
       {errors?.name?.map((message, idx) => (
         <Alert variant="danger" key={idx}>
           {message}
@@ -326,6 +341,7 @@ const ProfileEditForm = () => {
           <option value="Zimbabwe">Zimbabwe</option>
         </Form.Control>
       </Form.Group>
+      {/* Displaying any location errors */}
       {errors?.location?.map((message, idx) => (
         <Alert variant="danger" key={idx}>
           {message}
@@ -341,6 +357,7 @@ const ProfileEditForm = () => {
           rows={7}
         />
       </Form.Group>
+      {/* Displaying any favourite_location errors */}
       {errors?.favourite_location?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
@@ -368,7 +385,7 @@ const ProfileEditForm = () => {
           rows={7}
         />
       </Form.Group>
-
+      {/* Displaying any bio errors */}
       {errors?.bio?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
@@ -400,6 +417,7 @@ const ProfileEditForm = () => {
                   <Image src={image} fluid />
                 </figure>
               )}
+              {/* Displaying any errors with the image */}
               {errors?.image?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}

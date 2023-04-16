@@ -1,31 +1,44 @@
+// React / router
 import React, { useEffect, useState } from "react";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router";
-import { Col, Row, Container, Button, Image } from "react-bootstrap";
-import Asset from "../../components/Asset";
-import PopularProfiles from "./PopularProfiles";
+// API
+import { axiosReq } from "../../api/axiosDefaults";
+// Contexts
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import {
   useProfileData,
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
+// Utils
 import { fetchMoreData } from "../../utils/utils";
-import Post from "../posts/Post";
+// React Bootstrap components
+import { Col, Row, Container, Button, Image } from "react-bootstrap";
+// React components
 import InfiniteScroll from "react-infinite-scroll-component";
-import NoResults from "../../assets/images/no-results.png";
+// Components
 import { ProfileEditDropdown } from "../../components/ProfileDropdownBar";
-
+import Asset from "../../components/Asset";
+// Other pages
+import PopularProfiles from "./PopularProfiles";
+import Post from "../posts/Post";
+// Images
+import NoResults from "../../assets/images/no-results.png";
+// Styles
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/ProfilePage.module.css";
 
 function ProfilePage() {
+  // Set state variables
   const [hasLoaded, setHasLoaded] = useState(false);
+  // Get the current user from CurrentUserContext.js
   const currentUser = useCurrentUser();
+  // get id from the URL parameter
   const { id } = useParams();
   const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
   const [profile] = pageProfile.results;
+  // Determine if the current user is the owner of the profile
   const is_owner = currentUser?.username === profile?.owner;
   const [profilePosts, setProfilePosts] = useState({ results: [] });
 
@@ -34,9 +47,11 @@ function ProfilePage() {
       try {
         const [{ data: pageProfile }, { data: profilePosts }] =
           await Promise.all([
+            // Retrieve the profile id & posts created by the user from the API
             axiosReq.get(`/profiles/${id}/`),
             axiosReq.get(`/posts/?owner__profile=${id}`),
           ]);
+        // Update state
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
@@ -52,6 +67,7 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
+      {/* If the user is the owner of the profile display ProfileEditDropdown component */}
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row className="px-3 text-center">
         <Col lg={12}>
@@ -66,21 +82,26 @@ function ProfilePage() {
           <h3 className="m-2 mt-4">{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters mt-3">
             <Col xs={3} className="my-2">
+              {/* Owner's post count */}
               <div>{profile?.posts_count}</div>
               <div>posts</div>
             </Col>
             <Col xs={3} className="my-2">
+              {/* Owner's followers count */}
               <div>{profile?.followers_count}</div>
               <div>followers</div>
             </Col>
             <Col xs={3} className="my-2">
+              {/* Owner's following count */}
               <div>{profile?.following_count}</div>
               <div>following</div>
             </Col>
           </Row>
         </Col>
         <br />
+        {/* Follow/unfollow buttons */}
         <Col lg={12} className="text-lg-center align-items-center mt-2">
+          {/* Show the button only if the current user is not the owner */}
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
@@ -99,7 +120,7 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-
+        {/* Display Profile, if no information has been added, display icon */}
         {profile && (
           <Col lg={12} className="p-3 mt-1">
             <Col className="text-center">
@@ -160,6 +181,7 @@ function ProfilePage() {
       <hr />
       <h4 className="text-center">{profile?.owner}'s posts</h4>
       <hr />
+      {/* Display total posts from the logged in user using InfiniteScroll component */}
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((post) => (

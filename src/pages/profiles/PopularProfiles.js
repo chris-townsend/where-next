@@ -1,13 +1,19 @@
+// React / router
 import React from "react";
-import { Container } from "react-bootstrap";
+// Contexts
 import { useProfileData } from "../../contexts/ProfileDataContext";
-import Profile from "./Profile";
+// React Bootstrap components
+import { Container } from "react-bootstrap";
+// Components
 import Asset from "../../components/Asset";
-
+// Other pages
+import Profile from "./Profile";
+// Styles
 import appStyles from "../../App.module.css";
-import styles from "../../styles/PopularProfiles.module.css"
+import styles from "../../styles/PopularProfiles.module.css";
 
 const PopularProfiles = ({ mobile }) => {
+  // Get popular profiles data from contexts
   const { popularProfiles } = useProfileData();
 
   return (
@@ -16,9 +22,13 @@ const PopularProfiles = ({ mobile }) => {
         mobile && "d-md-none text-center mb-3"
       }`}
     >
+      {/* Check if the popular profiles data has been loaded */}
       {popularProfiles.results.length ? (
         <>
-          <div className={`text-center mt-1 ${styles.PopularProfilesTitle}`}> Most followed</div>
+          <div className={`text-center mt-1 ${styles.PopularProfilesTitle}`}>
+            {" "}
+            Most followed
+          </div>
           <hr className={styles.Hr} />
           {mobile ? (
             <div className="d-flex justify-content-around">
