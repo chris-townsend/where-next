@@ -1,3 +1,5 @@
+/* App styles */
+
 .App {
   font-family: 'Karla', sans-serif;
   background-color: #F0F8FF;
@@ -55,7 +57,6 @@ i:hover {
   object-fit: contain;
   margin-top: 20px;
 }
-  
 
 .Content {
   background-color: #ffffff;
