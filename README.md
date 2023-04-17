@@ -291,23 +291,24 @@ A light colour scheme was chosen to provide good contrast with the text and crea
 
 #### Imagery
 
-The imagery used throughout the site is intended to inspire users to travel and share places, and all the static images are sourced from either [Pexels](https://www.pexels.com/) or [Unsplash](https://unsplash.com/), which are both royalty-free. A list of images used is available in the credits section.
+The imagery used throughout the site is intended to inspire users to explore and share unique places, I have carefully selected imagery throughout my site, sourced from a combination of user uploads and reputable, royalty-free sites such as [Pexels](https://www.pexels.com/) and [Unsplash](https://unsplash.com/). While most of the images on the site are user-uploaded, the static images currently in use have been sourced from royalty-free sites to ensure quality and consistency. A comprehensive list of the royalty-free images used can be found in the credits section.
 
 ***
 
 #### Typography 
 
-When selecting typefaces for the site, I aimed to choose fonts that evoke a relaxing and elegant theme, for easy reading and complement the overall feel and style of the site. One of the fonts used on the homepage, "Italiana," has a cursive style that adds elegance and sophistication to the site, while still being easy to read. All fonts are from Google fonts, which can be imported from their API and provide wide coverage to maintain consistent styling across various devices. A backup font, "Sans Serif," was also selected in case the primary font is not imported correctly.
+I carefully selected the Karla and Roboto Flex fonts for my social media app, with the goal of creating an elegant and calming visual theme, while ensuring easy readability and consistency across multiple devices. Karla, a warm and friendly humanist sans-serif font with rounded terminals, was chosen for its high legibility, even at small sizes, making it ideal for body text. Roboto Flex, a versatile modern sans-serif font, was selected for its ability to adapt well to both headings and display text, giving the app a unique and cohesive look.
 
-**Headings:** *''*
+In case there are any issues with the primary font choices, a reliable backup font, Sans-serif, has been selected to ensure consistent styling throughout the app. By leveraging Google fonts, which can be imported through their API, I can maintain consistent styling and readability across different devices.
 
-![]()
-![]()
+**Headings:** *'Roboto Flex' & 'Karla'*
+
+![Font Roboto Flex](src/docs/development/typography/font-roboto-flex.webp)
 
 
-**Body:** *''*
+**Body:** *'Karla'*
 
-![Font]()
+![Font Karla](src/docs/development/typography/font-karla.webp)
 
 
 ***
