@@ -568,69 +568,41 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 #
 
 1. Log in to [Heroku](https://dashboard.heroku.com/apps) or create an account.
-![Heroku Signup](docs/deployment/heroku/heroku-signup.webp)
+![Heroku Signup](src/docs/deployment/heroku/heroku-signup.webp)
 
 2. On your Heroku dashboard, click the button labelled **New** in the top right corner and from the drop-down menu select **Create new app**.
-![Heroku Dashboard](docs/deployment/heroku/heroku-dashboard.webp)
-![Create new app](docs/deployment/heroku/heroku-create-app.webp)
+![Heroku Dashboard](src/docs/deployment/heroku/heroku-dashboard.webp)
+![Create new app](src/docs/deployment/heroku/heroku-create-app.webp)
 
 3. Enter a **unique and meaningful app name** and **choose the region** which is best suited to your location.
-![Meaningful app-name](docs/deployment/heroku/heroku-meaningful-name.webp)
+![Meaningful app-name](src/docs/deployment/heroku/heroku-meaningful-name.webp)
 - Click on the **Create app** button.
 
-4. Select **Settings** from the tabs at the top of the app page.
-![Heroku app settings](docs/deployment/heroku/heroku-dashboard-settings.webp)
+4. Select **Deploy** from the tabs at the top of the app page.
+![Heroku app settings](src/docs/deployment/heroku/heroku-app-menu.webp)
 
-5. Click **Reveal Config Vars**.    
-![Heroku app settings](docs/testing/user-testing/heroku-config-vars.webp)
+5. Select **Connect to GitHub** from the deployment methods. 
+![Heroku app settings](src/docs/deployment/heroku/heroku-deployment-method.webp)
 
-6. Input all key-value pairs from the `env.py` file. Ensure `DEBUG` and `DISABLE_COLLECTSTATIC` are not included in the final production.
-![Heroku app settings](docs/testing/user-testing/heroku-config-var-setup.webp)
+6. Search for the repository to connect to by name.
+![Heroku add buildpack](src/docs/deployment/heroku/heroku-select-repository.webp)
 
-| KEY | VALUE |
-| --- | --- |
-|``DATABASE_URL``|=  ``****``  |
-|``SECRET_KEY``  |=  ``****``  |
-|``CLOUDINARY_URL`` |=  ``****``  |
-|``PORT``  |= `8000` |
-|``DISABLE_COLLECTSTATIC``  |=  ``1`` |
+7. Click **Connect**. Your app should now be connected to your GitHub account.
 
+![Heroku connected app](src/docs/deployment/heroku/heroku-connected-app.webp)
 
-7. Below your Config Vars in your app settings, click **Add build pack**.
-![Heroku add buildpack](docs/deployment/heroku/heroku-add-buildpack.webp)
+ 8. Select **Enable Automatic Deploys** for automatic deployments.
 
-8. Select **Python** from the list of build packs.
-![Heroku select buildpack](docs/deployment/heroku/heroku-select-buildpack.webp)
-- Remember to click **Save changes**.
-
-9. Select **Deploy** from the tabs at the top of the app page.
-![Heroku deploy](docs/deployment/heroku/heroku-deploy.webp)
-
-10. Select **Connect to GitHub** from the deployment methods.
-![Heroku deployment method](docs/testing/user-testing/heroku-deployment-method.webp)
-
-11. Search for the repository to connect to by name.
-![Heroku select repository](docs/deployment/heroku/heroku-select-repository.webp)
-
-12. Click **Connect**.
-![Heroku click connect](docs/deployment/heroku/heroku-connect-to-github.webp)
-
- - Your app should now be connected to your GitHub account.
-
-![Heroku connected app](docs/testing/user-testing/heroku-connected-app.webp)
-
- 13. Select **Enable Automatic Deploys** for automatic deployments.
-
-![Heroku automatic deploy](docs/deployment/heroku/heroku-automatic-deploys.webp)
+![Heroku automatic deploy](src/docs/deployment/heroku/heroku-automatic-deploys.webp)
 
 - If you would like to deploy manually, select **Deploy Branch**. If you manually deploy, you will need to re-deploy each time the repository is updated.
 
-![Heroku manual deploy](docs/deployment/heroku/heroku-manual-deploy.webp)
+![Heroku manual deploy](src/docs/deployment/heroku/heroku-manual-deploy.webp)
 
 - For the first time deploying to Heroku, you may have to deploy manually but if you select automatic deploys it will update from then onwards.
 
 14. Click **View** to view the deployed site.
-![Heroku successful deploy](docs/deployment/heroku/heroku-successful-deploy.webp)
+![Heroku successful deploy](src/docs/deployment/heroku/heroku-successful-deploy.webp)
 
 ***
 
