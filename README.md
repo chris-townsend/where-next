@@ -73,7 +73,7 @@ The target audience for Where next
 #
 
 ### User Stories
-
+#
 
 #### EPIC | **Navigation**
 
@@ -163,11 +163,11 @@ The target audience for Where next
 
 The following user stories were scoped out of the project due to time constraints and its intended that these user stories will be implemented at a later date. 
 
-- [3](https://github.com/chris-townsend/where-next/issues/3) - *As a **User,** I can **register for an account by using one of my social media accounts** so that **I can use an alternative method of signing up***
+[#3](https://github.com/chris-townsend/where-next/issues/3) - *As a **User,** I can **register for an account by using one of my social media accounts** so that **I can use an alternative method of signing up***
 
-- [10](https://github.com/chris-townsend/where-next/issues/10) - *As a **logged-in User**, I would like **the option to delete my account** so that **I can remove myself from the app.***
+[#10](https://github.com/chris-townsend/where-next/issues/10) - *As a **logged-in User**, I would like **the option to delete my account** so that **I can remove myself from the app.***
 
-- [24](https://github.com/chris-townsend/where-next/issues/24) - *As a **User**, I would like the ability to **print a post** so that **I can have a paper copy of the information I require***
+[#24](https://github.com/chris-townsend/where-next/issues/24) - *As a **User**, I would like the ability to **print a post** so that **I can have a paper copy of the information I require***
 
 [Back to top ⇧](#where-next)
 
@@ -282,9 +282,10 @@ Initial wireframes were created for the original ideas, and as functionality was
 
 #### Colour Scheme
 
-A light colour scheme was chosen to provide good contrast with the text and create a clean and visually pleasing look throughout the site. Careful consideration was given during the design process to establish a strong contrast between background colours and text, and to ensure that the site meets accessibility requirements.
+I chose a light colour scheme to ensure that there is good contrast with the text and to create a clean and visually appealing look across the site. During the design process, I carefully considered how to establish a strong contrast between background colours and text while ensuring that the site meets accessibility requirements. This attention to detail is crucial in creating a positive user experience for all visitors to the site.
 
-![Colour Palette]()
+![Colour Palette](src/docs/development/colour-scheme/coolors-colour-scheme.webp)
+
 *Colour palette from* [*Coolors*](https://coolors.co/)
 
 ***
@@ -316,11 +317,10 @@ In case there are any issues with the primary font choices, a reliable backup fo
 ## Agile Methodology
 
 GitHub projects were used to manage the development process using an agile approach. To view the project kanban board, please click on the link [here](https://github.com/users/chris-townsend/projects/7/views/1)
-![GitHub kanban board]()
+
+![GitHub kanban board](src/docs/development/agile/agile-kanban-board.webp)
 
 A GitHub Issue was created for each User Story, which was then allocated to a milestone (Epic). Each User Story has defined acceptance criteria to make it clear when the User Story has been completed. The acceptance criteria are further broken down into tasks to facilitate the User Story's execution. The issues were closed automatically when the pull request was linked to the issue, most of them were closed automatically but some were closed manually.
-
-![Guthub kanban board future features]()
 
 ***
 
@@ -519,30 +519,31 @@ Testing and results can be found [here](/TESTING.md)
 
 # Development
 
-This site was made using [GitHub](#github) & [Gitpod](https://www.gitpod.io/). The site was further developed using [Django](#django), a Python web framework.
+This site was made using [GitHub](#github) & [Gitpod](https://www.gitpod.io/). The site was further developed using [React](#react), a JavaScript front-end framework.
 
 ## GitHub
 
 ### Create the repository
 
-1. Sign in to GitHub and click the 'New' button at the top of the page------[Code Institute's Gitpod template](https://github.com/Code-Institute-Org/gitpod-full-template).
-![GitHub Code Institute template](docs/development/github/github-use-this-template.webp)
- - At the top of the repository, click **Use this template** followed by **Create a new repository**.
- ![GitHub Code Institute template](docs/development/github/github-create-new-repository.webp)
+1. Sign in to GitHub and click the *New* button at the top of the page.
+
+![GitHub Code Institute template](src/docs/development/github/github-new-repository.webp)
 
 *Alternatively:*
 
-1. Click the GitHub label in the top left of the nav section.
-![GitHub create repository](docs/development/github/github-label.webp)
+1. From your personal drop-down at the top right of the page, select *Your repositories*.
 
-2. Select **New** next to **Top Repositories**.     
-![GitHub click new repository](docs/development/github/github-new.webp)
+![GitHub create repository](src/docs/development/github/github-your-repository.webp)
 
-3. Select the **template** you wish to use.                
-![GitHub select template](docs/development/github/github-select-template.webp)
+2. Select **New** next to the *search repository* feature.     
+![GitHub click new repository](src/docs/development/github/github-repository-page.webp)
+
+3. If your using a **template**, pick from the drop-down menu. For this project, I'll be using no template.               
+![GitHub select template](src/docs/development/github/github-repository-template.webp)
 
 4. Give the repository a name and description and then click **Create repository**.
-![GitHub create repository](docs/development/github/github-create-repository.webp)
+![GitHub create repository](src/docs/development/github/github-repository-name.webp)
+![GitHub click create](src/docs/development/github/github-create-repository.webp)
 
 The repository has now been created and is ready for editing through the Gitpod terminal.
  
