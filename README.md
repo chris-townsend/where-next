@@ -564,8 +564,7 @@ The repository has now been created and is ready for editing through the Gitpod 
 
 To deploy this page to Heroku from its GitHub repository, the following steps were taken:
 
-### Create the Heroku App:
-#
+### Create the Heroku App
 
 1. Log in to [Heroku](https://dashboard.heroku.com/apps) or create an account.
 ![Heroku Signup](src/docs/deployment/heroku/heroku-signup.webp)
@@ -606,73 +605,32 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 
 ***
 
-### Create & attach the Elephant SQL database
-
-1. Log in to [ElephantSQL](https://customer.elephantsql.com/instance#) to access your dashboard.
-![Elephant SQL dashboard](docs/deployment/elephant-sql/elephant-sql-dashboard.webp)
-
-2. Click **Create New Instance** at the top right of the page.        
-![Elephant SQL new instance](docs/deployment/elephant-sql/elephant-create-new-instance.webp)
-
-3. Set up your **plan**.
-- Give your plan a **Name** (this is commonly the name of the project)
-- Select the **Tiny Turtle (Free)** plan
-- You can leave the **Tags** field blank
-
-![Elephant SQL setup plan](docs/deployment/elephant-sql/elephant-setup-plan.webp)
-
-4. Click **Select Region**.        
-![Elephant SQL select region](docs/deployment/elephant-sql/elephant-select-region.webp)
-
-5. Select a **data centre** near you.
-![Elephant SQL select data center](docs/deployment/elephant-sql/elephant-select-data-center.webp)
-
-6. Click **Review**.                 
-![Elephant SQL review data center](docs/deployment/elephant-sql/elephant-review-data.webp)
-
-7. Ensure your details are correct and then click **Create instance**.
-![Elephant SQL confirm instance](docs/deployment/elephant-sql/elephant-confirm-instance.webp)
-
-8. Return to the **ElephantSQL dashboard** and you should see your **database instance name** for this project.
-![Elephant SQL dashboard instance](docs/deployment/elephant-sql/elephant-dashboard-instance.webp)
-
-9. On your **ElephantSQL dashboard**, click on the **database instance name** for this project.  
-![Elephant SQL click instance](docs/deployment/elephant-sql/elephant-click-instance.webp)
-
-10. In the **URL section**, click the **copy icon** to copy the **database URL**.
-![Elephant SQL copy URL](docs/deployment/elephant-sql/elephant-copy-url.webp)
-
-11. Within your **Heroku app**, add `DATABASE_URL` as the `KEY` and paste the URL you just copied in **ElephantSQL** into the `VALUE` column. Your **ElephantSQL** database should now be connected to your **Heroku** app.
-![Elephant SQL add database URL ](docs/deployment/elephant-sql/elephant-add-database-url.webp)
-
-***
-
 ### Forking the GitHub Repository
 
 By forking the GitHub Repository you can make a copy of the original repository. You can view and/or make changes without affecting the original repository by using the following steps...
 
 **1.** Log in to GitHub and locate the [GitHub Repository](https://github.com/) you would like to fork.
 
-![GitHub Repository](docs/deployment/github/github-select-repository.webp)
+![GitHub Repository](src/docs/deployment/github/github-select-repository.webp)
 
 **2.** At the top of the Repository, just above the **Tabs**, locate the **Fork** Button and you should now have a copy of the repository in your account.
 
-![GitHub Fork](docs/deployment/github/github-fork-repository.webp)
+![GitHub Fork](src/docs/deployment/github/github-fork-repository.webp)
 
 ***
 
 ### Cloning this repository
 
 **1.** Log in to GitHub and locate the [GitHub Repository](https://github.com/).
-![GitHub Repository](docs/deployment/github/github-select-repository.webp)
+![GitHub Repository](src/docs/deployment/github/github-select-repository.webp)
 
-**2.** On the repository main page, click the drop-down menu called Code.
+**2.** On the repository main page, click the drop-down menu called **Code**.
 
-![GitHub Code Drowndown menu](docs/deployment/github/github-clone-repository.webp)
+![GitHub Code Drowndown menu](src/docs/deployment/github/github-clone-repository.webp)
 
 **3.** To clone the repository using HTTPS, copy the link.
 
-![GitHub copy URL](docs/deployment/github/github-copy-url.webp)
+![GitHub copy URL](src/docs/deployment/github/github-copy-url.webp)
 
 **4.** Open Git Bash
 
