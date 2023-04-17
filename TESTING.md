@@ -30,6 +30,15 @@
 
 *[As a User, I can access a navigation bar on every page so that I can easily view desired content](https://github.com/chris-townsend/where-next/issues/1)*
 
+**Logged out Navigation** 
+
+![Navigation bar for unauth user](src/docs/testing/user-testing/navigation-logged-out.webp)
+
+**Logged in Navigation**
+![Navigation bar for auth user](src/docs/testing/user-testing/navigation-logged-in.webp)
+![Side navigation bar for auth user](src/docs/testing/user-testing/side-navigation-logged-in.webp)
+
+
 *[As a User, I would like to use the app on my mobile, so that I don't have to rely on having my laptop/desktop with me](https://github.com/chris-townsend/where-next/issues/29)*
 
 #
@@ -39,13 +48,26 @@
 
 *[As a User, I can register for an account so that I can gain access to all the features that are available exclusively to registered users](https://github.com/chris-townsend/where-next/issues/2)*
 
+![Sign up page](src/docs/testing/user-testing/sign-up-page.webp)
+
 *[As a User, I can log into my account so that I can access functionality for logged in users](https://github.com/chris-townsend/where-next/issues/6)*
+
+![Sign in page](src/docs/testing/user-testing/sign-in-page.webp)
 
 *[As a User, I can safely log out of my account so that I can disconnect from the site](https://github.com/chris-townsend/where-next/issues/7)*
 
+![Sign out nav link](src/docs/testing/user-testing/sign-out-nav-link.webp)
+
+![Sign out modal](src/docs/testing/user-testing/sign-out-modal.webp)
+
 *[As a logged-in User, I can see my login status so that I know if I am logged in or out of my account](https://github.com/chris-townsend/where-next/issues/8)*
 
+![nav status](src/docs/testing/user-testing/nav-status.webp)
+
+
 *[As a logged-in User, I can change my password so that I can keep my account secure](https://github.com/chris-townsend/where-next/issues/11)*
+
+![change password page](src/docs/testing/user-testing/change-password-page.webp)
 
 #
 
