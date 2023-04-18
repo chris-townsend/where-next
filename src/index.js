@@ -13,18 +13,16 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   // Wrap the entire application in a <Router> component to enable routing
-  <React.StrictMode>
-    <Router>
-      {/* Wrap the app in the CurrentUserProvider to provide current user data */}
-      <CurrentUserProvider>
-        {/* Wrap the app in the ProfileDataProvider to provide profile data */}
-        <ProfileDataProvider>
-          {/* The main app component */}
-          <App />
-        </ProfileDataProvider>
-      </CurrentUserProvider>
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    {/* Wrap the app in the CurrentUserProvider to provide current user data */}
+    <CurrentUserProvider>
+      {/* Wrap the app in the ProfileDataProvider to provide profile data */}
+      <ProfileDataProvider>
+        {/* The main app component */}
+        <App />
+      </ProfileDataProvider>
+    </CurrentUserProvider>
+  </Router>,
   // Attach the app to the root element
   document.getElementById("root")
 );
