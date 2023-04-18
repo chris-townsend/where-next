@@ -8,6 +8,8 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
+// Utils
+import { removeTokenTimestamp } from "../utils/utils";
 // React Bootstrap components
 import { Nav, Navbar, Container, Modal, Button } from "react-bootstrap";
 // Components
@@ -34,6 +36,7 @@ const SideNavigationBar = () => {
       // Sending a POST request to log the user out
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null); // Setting the current user to null to log them out
+      removeTokenTimestamp(); // Remove local storage timestamp
     } catch (err) {
       console.log(err);
     }

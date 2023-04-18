@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 // API
 import axios from "axios";
 import { axiosRes, axiosReq } from "../api/axiosDefaults";
+import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
 
 // Create context for current user & export
 export const CurrentUserContext = createContext();
@@ -37,18 +38,23 @@ export const CurrentUserProvider = ({ children }) => {
   useMemo(() => {
     axiosReq.interceptors.request.use(
       async (config) => {
-        try {
-          await axios.post("/dj-rest-auth/token/refresh/");
-        } catch (err) {
-          // If the user was previously logged in, redirect to sign in page
-          setCurrentUser((prevCurrentUser) => {
-            if (prevCurrentUser) {
-              history.push("/signin");
-            }
-            return null;
-          });
-          return config;
+        if (shouldRefreshToken()) {
+          try {
+            await axios.post("/dj-rest-auth/token/refresh/");
+          } catch (err) {
+            // If the user was previously logged in, redirect to sign in page
+            setCurrentUser((prevCurrentUser) => {
+              if (prevCurrentUser) {
+                history.push("/signin");
+              }
+              return null;
+            });
+            // Remove local storage timestamp
+            removeTokenTimestamp();
+            return config;
+          }
         }
+
         return config;
       },
       (err) => {
@@ -70,6 +76,8 @@ export const CurrentUserProvider = ({ children }) => {
               }
               return null;
             });
+            // Remove local storage timestamp
+            removeTokenTimestamp();
           }
           return axios(err.config);
         }
