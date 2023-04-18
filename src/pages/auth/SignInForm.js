@@ -7,6 +7,8 @@ import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 // Hooks
 import useRedirect from "../../hooks/UseRedirect";
+// Utils
+import { setTokenTimestamp } from "../../utils/utils";
 // React Bootstrap components
 import {
   Image,
@@ -49,6 +51,8 @@ const SignInForm = () => {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       // Setting the current user with the data returned from the backend
       setCurrentUser(data.user);
+      // Extract expiry date for the access token & save to users local storage
+      setTokenTimestamp(data);
       // Navigating to the previous page in the navigation history
       history.goBack();
       // Displaying a success notification to the user
