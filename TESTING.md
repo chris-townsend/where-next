@@ -209,7 +209,7 @@
 
 ## Validator Testing
 
-![HTML w3c validator](docs/testing/html/html-w3c-validation.webp)
+![HTML w3c validator](src/docs/testing/html/html-w3c-validation.webp)
 
 The *[W3C HTML validator](https://validator.w3.org/)* was used to test all HTML pages, and **no errors** were reported in the final deployment.
 
@@ -227,8 +227,8 @@ The *[W3C HTML validator](https://validator.w3.org/)* was used to test all HTML 
 
 The *[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)* was used to validate the project, the results are shown below with **no errors reported.**
 
-![CSS w3c validator](docs/testing/css/css-w3c-validation.webp)
-![CSS Result](docs/testing/css/css-validation-pass.webp)
+![CSS w3c validator](src/docs/testing/css/css-w3c-validation.webp)
+![CSS Result]()
 
 - *[ CSS results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkitchen-tales.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)*
 
@@ -238,9 +238,7 @@ The *[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)* was used to vali
 
 *[JSHint](https://jshint.com/)* was used to check the JavaScript within the application
 
-![JSHint Logo](docs/testing/javascript/testing-jshint.webp)
-![JavaScript Code to test](docs/testing/javascript/testing-jshint-code.webp)
-![JShint test result](docs/testing/javascript/testing-jshint-result.webp)
+![JSHint Logo](src/docs/testing/javascript/testing-jshint.webp)
 
 
 ***
@@ -304,23 +302,21 @@ The process and outcomes of manual testing are described in depth in the followi
 | Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
 | ---             | ---                 |   :---:     |    :---:                  |    :---:    |
 |**Homepage**     |**Navbar**           |             |                           |             |
-|                 |*         *          |   *click*   |                           |  **pass**   |
-|                 |*Recipes link*       |   *click*   |                           |  **pass**   |
-|                 |*Kitchen Tales logo* |   *click*   | *Redirect to homepage*    |  **pass**   |
-|                 |*Search Recipes button*|   *click* | *Open `search_results` page*| **pass**  |
-|                 |                     |   *hover*   | *Display lighter colour* |**pass**|
-| **logged out**  |*MyAccount drop-down*|   *click*   | *Open drop-down menu*     |  **pass**   |  
-|                 |*Sign-in link*       |   *click*   | *Open `login` page*       |  **pass**   |
-|                 |*Register link*      |   *click*   | *Open `signup` page*      |  **pass**   |
-| **logged in**   |*MyAccount drop-down*|  *display*  | *Change to username & user icon*|**pass**|
-|                 |*Add-Recipe link*    |   *click*   | *Open `add_recipe` page*  |  **pass**   |
-|                 |*My-Recipes link*    |   *click*   | *Open `my_recipes` page*  |  **pass**   |
-|                 |*Saved-Recipes link* |   *click*   | *Open `my_starred_recipes` page*|**pass**|
-|                 |*Logout link*        |   *click*   | *Open `logout` page*      |  **pass**   |
-|                 |*All nav headings*   |   *hover*  |*Display darker text & underlined*| **pass** |
-|                 |                     |             |                                 |            |
-|**Mobile view**  |                     |             |                                 |           |
-|                 |**Navbar**           |             |                              |               |
+|                 |*Information icon*   |   *click*   | *Open information pop up modal*   |  **pass**   |
+|                 |*WHERE NEXT Logo*    |   *click*   | *Redirect to homepage*    |  **pass**   |
+| **logged out**  |*Sign-in link*       |   *click*   | *Open `SignInForm.js` page* |  **pass**   |
+|                 |*Sign-up link*       |   *click*   | *Open `SignUpForm.js` page*  |  **pass**   |
+| **logged in**   |*Avatar with Profile*|  *display*  | *Display the current users Avatar*|**pass**|
+|                 |                     |   *click*   | *Go to current users profile page*| **pass**|
+|                 |*Home link*    |   *click*         | *Redirect to homepage*  |  **pass**   |
+|                 |*Feed link*    |   *click*         | *Display Feed page of posts from followed users*  |  **pass**   |
+|                 |*Add Post link* |   *click*   | *Open `PostCreateForm.js` page*|**pass**|
+|                 |*Bookmarks link*        |   *click*   | *Display a page of posts which has been bookmarked by the current user*      |  **pass**   |
+|                 | *Groups link*       |  *click*    | *Open `GroupList.js`*             | **pass** |
+|                 | *Liked link*        |  *click*    | *Display a page of liked posts from the current user  | **pass**  |
+|                 | *Contact link*      |  *click*   | *Open `ContactCreateForm.js`*   | **pass**
+|                 | *Sign Out link*     |  *click*   | *Open sign out confirmation modal*  | **pass** |      
+|                 |*All nav headings*   |   *hover*  |*Display black text & lighter icon colour*| **pass** |
 
 
 ***
