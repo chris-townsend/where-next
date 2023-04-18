@@ -124,7 +124,7 @@ const GroupDetail = () => {
                       user={member.user}
                       height={45}
                       alt={member.username}
-                      key={member.id}
+                      key={`avatar-${member.id}`}
                     />
                   ))}
                 </div>

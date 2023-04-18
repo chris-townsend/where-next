@@ -1,5 +1,5 @@
 // React / router
-import React, { useState } from "react";
+import React from "react";
 import { useHistory, Link } from "react-router-dom";
 // API
 import { axiosRes } from "../../api/axiosDefaults";
@@ -34,8 +34,6 @@ const Post = (props) => {
     setPosts,
     groups_count,
   } = props;
-  // Setting the initial state of the errors object to an empty object
-  const [errors, setErrors] = useState({});
   // Get the current user from CurrentUserContext.js
   const currentUser = useCurrentUser();
   // Using the useHistory hook to handle navigation history
@@ -53,7 +51,6 @@ const Post = (props) => {
       // Display a success notification
       NotificationManager.info("Post Removed");
     } catch (error) {
-      setErrors(error.response?.data);
       // Display error notification
       NotificationManager.error(
         "There was an issue deleting your post",
@@ -81,7 +78,6 @@ const Post = (props) => {
       // Display success notification
       NotificationManager.success("Post Liked", "Success!");
     } catch (error) {
-      setErrors(error.response?.data);
       // Display error notification
       NotificationManager.error("There was an issue liking the post", "Error");
     }
@@ -102,7 +98,6 @@ const Post = (props) => {
       // Display a notification
       NotificationManager.info("Post Unliked");
     } catch (error) {
-      setErrors(error.response?.data);
       // Display error notification
       NotificationManager.error(
         "There was an issue unliking the post",
@@ -130,7 +125,6 @@ const Post = (props) => {
       // Displaying a success notification
       NotificationManager.success("Post Saved", "Success!");
     } catch (error) {
-      setErrors(error.response?.data);
       // Displaying a error notification
       NotificationManager.error("There was an issue saving the post", "Error");
     }
@@ -155,7 +149,6 @@ const Post = (props) => {
       // Display a notification
       NotificationManager.info("Post Removed from Bookmarks");
     } catch (error) {
-      setErrors(error.response?.data);
       // If error display error notification
       NotificationManager.error(
         "There was an issue removing the post",
