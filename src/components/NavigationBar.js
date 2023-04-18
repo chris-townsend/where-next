@@ -46,7 +46,7 @@ const NavigationBar = (props) => {
         >
           <Nav.Item className={styles.InfoIcon}>
             <NavLink to="/" onClick={handleShow}>
-              <i class="fa fa-info-circle fa-lg"></i>
+              <i className="fa fa-info-circle fa-lg"></i>
             </NavLink>
           </Nav.Item>
         </OverlayTrigger>
@@ -96,7 +96,7 @@ const NavigationBar = (props) => {
             className={`${styles.ModalButton} ${btnStyles.Bright}`}
             onClick={handleClose}
           >
-            <i class="far fa-times-circle fa-lg"></i>
+            <i className="far fa-times-circle fa-lg"></i>
           </Button>
           <h3 className={styles.Title}>Welcome..</h3>
           {/* Modal description */}
