@@ -46,6 +46,7 @@ const GroupCreateForm = () => {
       // Show a success notification
       NotificationManager.success("Group Created", "Success!");
     } catch (err) {
+      setErrors(err.response?.data);
       // Show an error notification if there was an issue creating the group
       NotificationManager.error(
         "There was an issue creating your group",
