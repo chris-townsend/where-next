@@ -302,11 +302,13 @@ The process and outcomes of manual testing are described in depth in the followi
 | Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
 | ---             | ---                 |   :---:     |    :---:                  |    :---:    |
 |**Homepage**     |**Navbar**           |             |                           |             |
-|                 |*Information icon*   |   *click*   | *Open information pop up modal*   |  **pass**   |
+|                 |*Information icon*   |   *hover*   | *Display 'Information'*   |  **pass**   |
+|                  |                      |  *click*   | *Open information pop up modal*   |  **pass**   |
 |                 |*WHERE NEXT Logo*    |   *click*   | *Redirect to homepage*    |  **pass**   |
 | **logged out**  |*Sign-in link*       |   *click*   | *Open `SignInForm.js` page* |  **pass**   |
 |                 |*Sign-up link*       |   *click*   | *Open `SignUpForm.js` page*  |  **pass**   |
 | **logged in**   |*Avatar with Profile*|  *display*  | *Display the current users Avatar*|**pass**|
+|                 |                     |   *hover*   | *'Profile' text changes colour* | **pass** |
 |                 |                     |   *click*   | *Go to current users profile page*| **pass**|
 |                 |*Home link*    |   *click*         | *Redirect to homepage*  |  **pass**   |
 |                 |*Feed link*    |   *click*         | *Display Feed page of posts from followed users*  |  **pass**   |
@@ -317,6 +319,54 @@ The process and outcomes of manual testing are described in depth in the followi
 |                 | *Contact link*      |  *click*   | *Open `ContactCreateForm.js`*   | **pass**
 |                 | *Sign Out link*     |  *click*   | *Open sign out confirmation modal*  | **pass** |      
 |                 |*All nav headings*   |   *hover*  |*Display black text & lighter icon colour*| **pass** |
+
+### *Posts Component*
+<br>
+
+| Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
+| ---             | ---                 |   :---:     |    :---:                  |    :---:    |
+|**Homepage**     | *Search bar*        |  *hover*    |*Search icon changes colour*  |  **pass**   |
+|                 |           | *type keyword* | *Loading spinner displayed until results* | **pass** |
+|                 |                     | *no-results* | *Display no results image with text* | **pass**|
+|**logged-out**   | **Post Component**  |             |                                       |         |
+|                 | *Post header*       | *display*   | *Post owner avatar & 'profile' text* | **pass** |
+|                 |                     | *display*   | *Post date*                | **pass**|
+|                 | *Avatar*            | *click*     | *Profile page of the post owner* | **pass**|
+|                 |                     | *hover*     | *text changes colour on 'profile' text* | **pass**|
+|                 | *Main post image*   | *hover*    | *pointer cursor*                       | **pass**|
+|                 |                     | *click*    |  *Redirct to post detail page*    | **pass**  |
+|                 | *Heart Icon*        | *hover*     |*Display 'Log in to like posts' text* | **pass**|
+|                 | *Comment Icon*      | *hover*     |*Display 'View Comments' text*      | **pass** |
+|                 |                     | *click*     | *Redirect to post detail page* | **pass**  |
+|                 | *Groups Icon*       | *hover*     | *Display 'Log in to create and join groups` text*|**pass**|
+|                 | *Bookmark Icon*     | *hover*     | *Display 'Please login to bookmark posts'*|**pass**|
+|**Post Detail page**| **Comments section**|          |                                     |           |
+|                    |                   | *display*  | *Avatar*    |**pass** |
+|                    |                    | *click*   | *Redirct to comment owners profile* | **pass** |
+|                    |                   | *display*  | *Comment date* | **pass**  |
+|                    |                   | *no-comments* *Display no comments message* | **pass** |
+| **logged-in**      | **Post Component**|            |                              |                |
+|                    | *Heart Icon*      | *hover*   | *If the currently logged in user is the owner of the post display 'Sorry, you can't like your own posts' text* | **pass** |
+|                    |                   | *hover*     |  *Display 'Click to like post' text if the logged in user is not the owner of the post* | **pass** |
+|                    |                   | *click*     | *Post saved to 'Liked' list* | **pass**  |
+|                    |                   |             | *Success notification - 'Post liked'* | **pass** |
+|                    | *Solid heart Icon* | *click*     | *Post removed from 'Liked' list* | **pass** |
+|                    |                    |             | *Notification - 'Post Unliked'*  | **pass**  |
+|                    | *Groups Icon*| *hover*   | *Display 'Add a group from the groups tab' text*|**pass**|
+|                    | *Bookmark Icon* | *hover* | *If the currently logged in user is the owner of the post display 'You can't bookmark your own post' text* | **pass** |
+|                    |                   | *hover*    | *Display 'Click to save post' text if the logged in user is not the owner of the post* | **pass** |
+|                    |                  | *click*    | *Post saved to 'Bookmarks' list* | **pass**   |
+|                    |                  |            | *Success notification - 'Post saved'* | **pass** |
+|                    | *Solid bookmark Icon* |*click* | *Post removed from 'Bookmarks' list* | **pass** |
+|                    |                       |        | *Notification - 'Post removed'* | **pass** |
+| **post-owner**     |  *Edit/Delete menu*   | *display* | *If the user is the owner of the post display edit/delete menu* | **pass** |
+|                    |                      | *hover*  |  *Pointer cursor* | **pass** |
+|                    |   *Edit icon*        | *hover*  | *Add background colour*  | **pass** |
+|                    |                      | *click*  | *Redirect to post edit page* | **pass** |
+|                    | *Delete icon*         | *hover*   | *Add background colour* | **pass** |
+|                    |                       | *click*   | *Post removed from database* | **pass** |
+|                    |                       |           | *Notification - 'Post removed'* | **pass** |
+
 
 
 ***
