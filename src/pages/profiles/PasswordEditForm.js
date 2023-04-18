@@ -55,6 +55,7 @@ const PasswordEditForm = () => {
       // Display success notification
       NotificationManager.success("Password Updated", "Success!");
     } catch (err) {
+      setErrors(err.response?.data);
       // Display error notification
       NotificationManager.error(
         "There was an issue updating your password",

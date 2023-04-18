@@ -58,6 +58,7 @@ const UsernameEditForm = () => {
       // Show a success notification
       NotificationManager.success("Username Updated", "Success!");
     } catch (err) {
+      setErrors(err.response?.data);
       // If there's an error, show an error notification
       NotificationManager.error(
         "There was an issue updating your username",
