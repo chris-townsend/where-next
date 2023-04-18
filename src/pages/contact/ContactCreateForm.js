@@ -56,6 +56,7 @@ const ContactCreateForm = () => {
         "Success!"
       );
     } catch (err) {
+      setErrors(err.response?.data);
       // Displaying an error notification to the user
       NotificationManager.error(
         "There was an issue sending your message",
