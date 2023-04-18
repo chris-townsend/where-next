@@ -76,15 +76,37 @@
 
 *[As a user, I can view posts, without having to sign-up to enjoy the site's content](https://github.com/chris-townsend/where-next/issues/4)*
 
+![Post page for logged out users](src/docs/testing/user-testing/posts-logged-out.webp)
+
 *[As a logged-in User, I can create posts so that I can add content to the site](https://github.com/chris-townsend/where-next/issues/5)*
+
+![Add post tab](src/docs/testing/user-testing/add-post-tab.webp)
+
+![Create post](src/docs/testing/user-testing/create-post.webp)
 
 *[As a logged-in User, I can edit my post so that I can fix or update my existing content](https://github.com/chris-townsend/where-next/issues/12)*
 
+![Edit post menu](src/docs/testing/user-testing/edit-post.webp)
+
+![Edit post page](src/docs/testing/user-testing/post-edit-page.webp)
+
 *[As a logged in User, I would like the ability to delete posts so that I can remove any post that I don't want to share](https://github.com/chris-townsend/where-next/issues/13)*
+
+![Delete post option](src/docs/testing/user-testing/post-delete-option.webp)
+
+![Delete post notification](src/docs/testing/user-testing/post-removed-notification.webp)
 
 *[As a logged-in User, I want to express my appreciation for posts that interest me by liking them, so that I can engage with the content and show support for the author](https://github.com/chris-townsend/where-next/issues/20)*
 
+![Like post button](src/docs/testing/user-testing/like-post-tab.webp)
+
+![Liked post](src/docs/testing/user-testing/liked-post.webp)
+
+![Liked post notification](src/docs/testing/user-testing/liked-post-notification.webp)
+
 *[As a User, I would like to see the newest posts at the top, ordered by most recently created so that I am up to date with the latest content](https://github.com/chris-townsend/where-next/issues/25)*
+
+![Newest posts at top](src/docs/testing/user-testing/posts-newest-top.webp)
 
 #
 
