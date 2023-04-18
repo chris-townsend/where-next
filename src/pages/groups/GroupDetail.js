@@ -32,7 +32,6 @@ const GroupDetail = () => {
         setGroup({ ...data, members: data.members, is_member: data.is_member });
         // checks if the user is a member of the group and update the state accordingly
         setIsJoined(data.is_member);
-        console.log({ ...data, members: data.members });
       } catch (err) {
         // For any errors, log it to the console for debugging purposes
         console.log(err);

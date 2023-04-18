@@ -32,7 +32,6 @@ const GroupList = () => {
       try {
         // Call the API endpoint using axiosReq.get()
         const { data } = await axiosReq.get("/groups/");
-        console.log(data);
         // If there are results in the data object, update the groups state variable with the results
         if (data.results) {
           setGroups(data.results);
@@ -116,7 +115,6 @@ const GroupList = () => {
                   description={group.description}
                   members={group.members}
                 />
-                {console.log("isOwner:", isOwner(group.id))}
                 {isOwner(group.id) ? (
                   <div className="d-flex justify-content-center">
                     <Button
