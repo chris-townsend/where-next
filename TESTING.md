@@ -238,10 +238,51 @@ The *[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)* was used to vali
 
 ### JavaScript
 
-*[JSHint](https://jshint.com/)* was used to check the JavaScript within the application
+*[JSHint](https://jshint.com/)* was used to check the JavaScript within the application, the results are shown below with all pages passing and **no errors reported.**
 
 ![JSHint Logo](src/docs/testing/javascript/testing-jshint.webp)
 
+| Folder        |     Page                      | Status        |              
+|  :---:        |     :---:                     |   :---:       |  
+|**Components** |                               |               |  
+|               |`Asset.js`                     |  **pass**     |
+|               |`Avatar.js`                    |  **pass**     |
+|               |`NavigationBar.js`             |  **pass**     |
+|               |`PostDropdownBar.js`           |  **pass**     |
+|               |`ProfileDropdownBar.js`        |  **pass**     |
+|               |`SideNavigationBar.js`         |  **pass**     |
+|**Contexts**   |                                               |
+|               |`CurrentUserContext.js`        |  **pass**     |
+|               |`ProfileDataContext.js`        |  **pass**     |
+|**Hooks**      |                                               |
+|               |`UseRedirect.js`               |  **pass**     |
+|**Pages**      |                                               |
+|  *auth*       |`SignInForm.js`                |  **pass**     |
+|               |`SignUpForm.js`                |  **pass**     |
+| *comments*    |`Comment.js`                   |  **pass**     |
+|               |`CommentCreateForm.js`         |  **pass**     |
+|               |`CommentEditForm.js`           |  **pass**     |
+| *contact*     |`ContactCreateForm.js`         |  **pass**     |
+| *groups*      |`Group.js`                     |  **pass**     |
+|               |`GroupCreateForm.js`           |  **pass**     |
+|               |`GroupDetail.js`               |  **pass**     |
+|               |`GroupList.js`                 |  **pass**     |
+| *posts*       |`Post.js`                      |  **pass**     |
+|               |`PostCreateForm.js`            |  **pass**     |
+|               |`PostEditForm.js`              |  **pass**     |
+|               |`PostPage.js`                  |  **pass**     |
+|               |`PostsPage.js`                 |  **pass**     |
+| *profiles*    |`PasswordEditForm.js`          |  **pass**     |
+|               |`PopularProfiles.js`           |  **pass**     |
+|               |`Profile.js`                   |  **pass**     |
+|               |`ProfileEditForm.js`           |  **pass**     |
+|               |`ProfilePage.js`               |  **pass**     |
+|               |`UsernameEditForm.js`          |  **pass**     |
+| **Utils**     |                                               |
+|               |`Utils.js`                     |  **pass**     |
+| **src**       |                               |               |
+|               |`App.js`                       |  **pass**     |
+|               |`index.js`                     |  **pass**     |
 
 ***
 
