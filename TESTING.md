@@ -367,6 +367,58 @@ The process and outcomes of manual testing are described in depth in the followi
 |                    |                       | *click*   | *Post removed from database* | **pass** |
 |                    |                       |           | *Notification - 'Post removed'* | **pass** |
 
+### *Add/Edit Post*
+<br>
+
+| Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
+| ---             | ---                 |   :---:     |    :---:                  |    :---:    |
+|**Add Post page**|                     |             |                           |              |
+|                 | *Add image*         | *click*     | *Opens your computer to select an image*| **pass**|
+|               | *Image selected* |  *display*  | *Selected image with a button to change image* |**pass**|
+|               |*Change image button*  |  *hover*    | *Change colour*           |   **pass** |
+|               |                       |  *click*    | *Opens your computer to select a new image*| **pass**|
+|               | *Title*                |   *check*   | *Title must be under 200 characters* | **pass** |
+|               |                        |             | *Field must not be empty* | **pass**
+|               | *Cancel button*        |  *hover*    |  *Change colour*           |  **pass** |
+|               |                        |  *click*    | *Redirect to homepage*   | **pass**     |
+|               | *Create button*        |  *hover*    | *Change colour*           | **pass**    |
+|               |                    |  *click*    | *With valid data - direct to new post page*| **pass**|
+|               |                     |      | *All fields required else error notification & specified error on input field*       | **pass** |
+|               |                       |    | *Success notifcation of a newly created post*|**pass**|
+|**Edit Post page**| *Image*      | *display*    | *Prepopulated image with 'Change Image' button*| **pass**|
+|                  | *Change image button* | *hover* | *Change colour* | **pass** |
+|                  |                       | *click* | *Opens your computer to select a new image* | **pass**|
+|          | *Image selected* | *display* | *New image is displayed to upload* | **pass**  |      
+|                  | *Title/Content*      | *display* | *Prepopulated data* | **pass**    |
+|             | *Cancel button*      | *hover* | *Change colour*     | **pass**    |
+|             |                      | *click* | *Redirect to post detail page* | **pass**    |
+|             | *Update button*      | *hover* |  *Change colour*    | **pass** |
+|             |                      | *click* | *With valid data - direct to updated post page*|**pass**|
+|             |                      |         | *Notification of updated post*  | **pass**|
+|             |                      | *empty field* | *Error notification & specified error on input field* | **pass**|
+ 
+
+### *Auth pages*
+<br>
+
+| Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
+| ---             | ---                 |   :---:     |    :---:                  |    :---:    |
+|**Sign up page**|                     |             |                           |              |
+
+
+
+
+### *Groups*
+<br>
+
+
+### *Contact*
+<br>
+
+###
+
+
+
 
 
 ***
