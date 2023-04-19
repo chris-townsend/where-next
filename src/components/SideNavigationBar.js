@@ -14,6 +14,8 @@ import { removeTokenTimestamp } from "../utils/utils";
 import { Nav, Navbar, Container, Modal, Button } from "react-bootstrap";
 // Components
 import NavigationBar from "./NavigationBar";
+// Notifications
+import { NotificationManager } from "react-notifications";
 // Styles
 import styles from "../styles/SideNavigationBar.module.css";
 import btnStyles from "../styles/Button.module.css";
@@ -37,8 +39,10 @@ const SideNavigationBar = () => {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null); // Setting the current user to null to log them out
       removeTokenTimestamp(); // Remove local storage timestamp
+      NotificationManager.info("You are now signed out"); // Show a success notification
     } catch (err) {
-      console.log(err);
+      // Show an error notification if there was an issue with sign out
+      NotificationManager.error("There was an issue signing you out", "Error");
     }
   };
   // Add post icon
