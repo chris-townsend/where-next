@@ -228,9 +228,9 @@ The *[W3C HTML validator](https://validator.w3.org/)* was used to test all HTML 
 The *[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)* was used to validate the project, the results are shown below with **no errors reported.**
 
 ![CSS w3c validator](src/docs/testing/css/css-w3c-validation.webp)
-![CSS Result]()
+![CSS Result](src/docs/testing/css/css-result-where-next.webp)
 
-- *[ CSS results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkitchen-tales.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)*
+- *[ CSS results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwhere-next-social.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)*
 
 ***
 
