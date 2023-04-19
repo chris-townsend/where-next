@@ -211,7 +211,7 @@
 
 ![HTML w3c validator](src/docs/testing/html/html-w3c-validation.webp)
 
-The *[W3C HTML validator](https://validator.w3.org/)* was used to test all HTML pages, and **no errors** were reported in the final deployment.
+The *[W3C HTML validator](https://validator.w3.org/)* was used to test the one HTML file and **no errors** were reported in the final deployment.
 
 ### HTML
 
