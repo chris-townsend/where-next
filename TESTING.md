@@ -208,18 +208,20 @@
 ***
 
 ## Validator Testing
+<br>
+
+### HTML
+
+| Page                   | Status           | URL       |
+| ---                    |   :---:          |  :---:    |
+|`index.html`            |   *pass*     | *[result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhere-next-social.herokuapp.com%2F)*  |  
+
 
 ![HTML w3c validator](src/docs/testing/html/html-w3c-validation.webp)
 
 The *[W3C HTML validator](https://validator.w3.org/)* was used to test the one HTML file and **no errors** were reported in the final deployment.
 
-### HTML
-
-| Page                   | Status      |              | URL         |
-| ---                    |   :---:     |    :---:     |    :---:    |
-|                        | *logged-in* | *logged-out* |             |
-|`index.html`            |   *pass*    |   *pass*     |  *[result](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fkitchen-tales.herokuapp.com%2Fadd_recipe%2F#l189c24)*        |  
-
+![HTML validator results](src/docs/testing/html/html-result-no-errors.webp)
 
 ***
 
