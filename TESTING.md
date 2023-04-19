@@ -396,15 +396,40 @@ The process and outcomes of manual testing are described in depth in the followi
 |             |                      | *click* | *With valid data - direct to updated post page*|**pass**|
 |             |                      |         | *Notification of updated post*  | **pass**|
 |             |                      | *empty field* | *Error notification & specified error on input field* | **pass**|
- 
+
 
 ### *Auth pages*
 <br>
 
 | Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
 | ---             | ---                 |   :---:     |    :---:                  |    :---:    |
-|**Sign up page**|                     |             |                           |              |
-
+|**Sign up page**| *Username input box* |   *click*   | *Clicking the username input box allows the user to input alphanumeric characters* | **pass**  |
+|                 |*Password input box* | *click* | *Clicking the password input box allows the user to input alphanumeric characters* | **pass**  |
+|                 |*Confirm password input box* | *display* | *Clicking the confirm password input box allows the user to input alphanumeric characters* | **pass**|
+|                 | *Sign up button*    | *hover* | *Change colour* | **pass** | 
+|                  |                     |*click*  | *If valid data - signup user and redirect to sign-in page* | **pass** |
+|                  |                    | *username-taken* | *Display error message* | **pass**|
+|                  |                     | *username field blank* | *Display error message* | **pass** | 
+|                  |                     |*password field blank* | *Display error message* | **pass** |
+|                  |                     |         |*Success notification* | **pass**  |
+|                 | *Sign-in link*       | *hover* | *Change colour* | **pass** |
+|                 |                      | *click* | *Redirect to sign-in page* | **pass** |
+|**Sign in page**| *Username input box* | *click*| *Clicking the username input box allows the user to input alphanumeric characters* | **pass** |
+|                | *Password input box* | *click* | *Clicking the password input box allows the user to input alphanumeric characters* | **pass**|
+|                | *Sign in button* | *hover* | *Change colour* | **pass** |
+|                |     | *click* | *If valid data - signin user and redirect to the home page* | **pass** |      
+|                |                  |*username field blank* | *Display error notification & message* | **pass** |
+|                |                  |*password field blank* | *Display error notifcation & message* | **pass** |
+|                | *Sign-up link* | *hover* | *Change colour* | **pass** | 
+|                |                | *click* | *Redirect to sign-up page* | **pass** | 
+| **Sign out tab/modal** |              | *click* | *Open sign out confirmation modal* | **pass** |
+|                | *Modal*        | *click outside box* | *Close modal* | **pass** |
+|                |                | *click modal close button* | *Close modal* | **pass** | 
+|                | *Cancel button*| *hover* | *Change colour* | **pass**|
+|                |                | *click* | *Return to homepage* | **pass** |
+|                | *Sign out button* | *hover* | *Change colour* | **pass** | 
+|                |                 | *click*   | *Log user out & return to homepage* |**pass**| 
+|                |                 |           | *Notification of successful logout* | **pass**| 
 
 
 
