@@ -133,7 +133,7 @@ const PostCreateForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+        <Col className="py-2 p-0 p-md-2" md={10} lg={11}>
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
@@ -174,12 +174,6 @@ const PostCreateForm = () => {
                 {message}
               </Alert>
             ))}
-          </Container>
-        </Col>
-        <Col md={8} lg={3} className="d-none d-md-block p-0 p-md-2 ml-5">
-          <Container
-            className={`${appStyles.Content} ${styles.InputContainer}`}
-          >
             <div>{textFields}</div>
           </Container>
         </Col>
