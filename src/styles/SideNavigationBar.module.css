@@ -89,6 +89,10 @@
     overflow-y: scroll;
   }
 
+  .NavLink {
+    display: block;
+  }
+
   ::-webkit-scrollbar {
     width: 2px;
   }

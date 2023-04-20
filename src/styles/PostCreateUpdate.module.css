@@ -1,6 +1,6 @@
 .Container {
     min-height: 343px;
-    margin-left: 105px;
+    margin-left: 110px;
     margin-top: 10px;
   }
 
@@ -15,14 +15,28 @@
 }
 
 .InputContainer {
-  margin-left: 55px;
+  margin-left: 60px;
   margin-top: 10px;
 }
 
 
 @media (max-width: 767px) {
   .Container {
-  margin-left: 70px;
-  max-width: fit-content;
+  margin-left: 75px;
+  max-width: 400px;
+
   }
+
+  .RowWidth {
+    margin-left: 70px;
+    margin-top: 10px;
+  }
+
+  .InputContainer {
+    margin-left: 25px;
+    margin-top: 10px;
+    max-width: 400px;
+  }
+
+
 }

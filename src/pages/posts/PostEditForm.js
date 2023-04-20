@@ -150,7 +150,7 @@ const PostEditForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+        <Col className="py-2 p-0 p-md-2" md={7} lg={10}>
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
@@ -182,7 +182,7 @@ const PostEditForm = () => {
             ))}
           </Container>
         </Col>
-        <Col md={8} lg={3} className="d-none d-md-block p-0 p-md-2 ml-5">
+        <Col md={7} lg={10} className=" d-md-block p-0 p-md-2 ml-5 mb-2">
           <Container
             className={`${appStyles.Content} ${styles.InputContainer}`}
           >
