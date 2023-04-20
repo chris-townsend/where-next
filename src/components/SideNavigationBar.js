@@ -54,7 +54,8 @@ const SideNavigationBar = () => {
         activeClassName={styles.Active}
         to="/posts/create"
       >
-        <i className="fas fa-plus-circle"></i> Add Post
+        <i className="fas fa-plus-circle"></i>{" "}
+        <span className="d-none d-md-inline">Add Post</span>
       </NavLink>
     </Nav.Item>
   );
@@ -71,13 +72,15 @@ const SideNavigationBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              <i className="fas fa-home"></i> Home
+              <i className="fas fa-home"></i>
+              <span className="d-none d-md-inline">Home</span>
             </NavLink>
           </Nav.Item>
           {/* Feed Icon */}
           <Nav.Item>
             <NavLink className={styles.NavLink} to="/feed">
-              <i className="fas fa-feed"></i> Feed
+              <i className="fas fa-feed"></i>
+              <span className="d-none d-md-inline">Feed</span>
             </NavLink>
           </Nav.Item>
           {/* Only show the post icon if the current user is logged in*/}
@@ -89,7 +92,8 @@ const SideNavigationBar = () => {
               activeClassName={styles.Active}
               to="/bookmarks"
             >
-              <i className="fas fa-bookmark"></i> Bookmarks
+              <i className="fas fa-bookmark"></i>{" "}
+              <span className="d-none d-md-inline">Bookmarks</span>
             </NavLink>
           </Nav.Item>
           {/* Groups Icon */}
@@ -99,7 +103,8 @@ const SideNavigationBar = () => {
               activeClassName={styles.Active}
               to="/groups"
             >
-              <i className="fas fa-users"></i> Groups
+              <i className="fas fa-users"></i>{" "}
+              <span className="d-none d-md-inline">Groups</span>
             </NavLink>
           </Nav.Item>
           {/* Liked posts (heart) Icon */}
@@ -109,7 +114,8 @@ const SideNavigationBar = () => {
               activeClassName={styles.Active}
               to="/liked"
             >
-              <i className="fas fa-heart"></i> Liked
+              <i className="fas fa-heart"></i>{" "}
+              <span className="d-none d-md-inline">Liked</span>
             </NavLink>
           </Nav.Item>
           {/* Contact Icon */}
@@ -119,7 +125,8 @@ const SideNavigationBar = () => {
               activeClassName={styles.Active}
               to="/contact/create"
             >
-              <i className="fas fa-envelope"></i> Contact
+              <i className="fas fa-envelope"></i>{" "}
+              <span className="d-none d-md-inline">Contact</span>
             </NavLink>
           </Nav.Item>
           <br />
@@ -127,7 +134,8 @@ const SideNavigationBar = () => {
           {/* Sign out Icon */}
           <Nav.Item>
             <NavLink className={styles.NavLink} to="/" onClick={handleShow}>
-              <i className="fas fa-sign-out"></i> Sign Out
+              <i className="fas fa-sign-out"></i>{" "}
+              <span className="d-none d-md-inline">Sign Out</span>
             </NavLink>
           </Nav.Item>
           {/* Import NavigationBar component for logged in/out users */}
