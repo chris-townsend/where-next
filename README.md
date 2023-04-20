@@ -466,6 +466,10 @@ In the future, there are several functionalities that I would like to implement.
 
 - [#24](https://github.com/chris-townsend/where-next/issues/24) The option to print a post.
 
+- [#10](https://github.com/chris-townsend/where-next/issues/10) The ability to delete my account.
+
+- [#44](https://github.com/chris-townsend/where-next/issues/44) Birthday reminders for followed users.
+
 ***
 
 ## Languages Used
@@ -510,12 +514,25 @@ In the future, there are several functionalities that I would like to implement.
 
 ***
 
-### Libraries 
+### Libraries & NPM packages
 
 [**React Bootstrap 4.6**](https://react-bootstrap-v4.netlify.app/) - React Bootstrap provides a popular framework for building responsive mobile-first sites with built-in CSS & Javascript libraries.
 
+[**axios**](https://axios-http.com/docs/intro) - Axios is a promise-based HTTP Client for node.js and the browser.
 
-[]() -
+[**jwt-decode**](https://jwt.io/) - Securely implement authentication with JSON Web Tokens.
+
+[**react-datepicker**](https://www.npmjs.com/package/react-datepicker) - A simple and reusable Datepicker component used for my date of birth field in a profile.
+
+[**react-dom**](https://legacy.reactjs.org/docs/react-dom.html) - React library for rendering components in the DOM.
+
+[**react-infinite-scroll-component**](https://www.npmjs.com/package/react-infinite-scroll-component) - React component for implementing infinite scrolling.
+
+[**react-notifications**](https://www.npmjs.com/package/react-notifications) - Library for displaying notifications.
+
+[**react-router-dom**](https://www.npmjs.com/package/react-router-dom) - React Router is a JavaScript framework that enables the creation of single-page web or mobile apps that allow navigating without refreshing the page.
+
+[**web-vitals**](https://www.npmjs.com/package/web-vitals) - Library for measuring web performance metrics.
 
 ***
 
