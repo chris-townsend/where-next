@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 // API
 import { axiosReq } from "../../api/axiosDefaults";
+// Hooks
+import useRedirect from "../../hooks/UseRedirect";
 // React Bootstrap components
 import { Form, Button, Col, Alert } from "react-bootstrap";
 // Notifications
@@ -17,6 +19,8 @@ const GroupCreateForm = () => {
   const [errors, setErrors] = useState({});
   // Using the useHistory hook to handle navigation history
   const history = useHistory();
+  // Redirect the user if the user is signed out and trys to vist this page
+  useRedirect("loggedOut");
   // Setting the initial state of the groupData object with empty strings for group_name and description
   const [groupData, setGroupData] = useState({
     group_name: "",

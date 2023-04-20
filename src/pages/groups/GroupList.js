@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // API
 import { axiosReq } from "../../api/axiosDefaults";
+// Hooks
+import useRedirect from "../../hooks/UseRedirect";
 // Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // React Bootstrap components
@@ -23,6 +25,8 @@ const GroupList = () => {
   // Define state variables
   const [groups, setGroups] = useState([]);
   const [nextPageUrl, setNextPageUrl] = useState(null);
+  // Redirect the user if the user is signed out and trys to vist this page
+  useRedirect("loggedOut");
   // Get the current user from CurrentUserContext.js
   const currentUser = useCurrentUser();
 

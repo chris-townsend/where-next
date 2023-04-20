@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // API
 import { axiosReq } from "../../api/axiosDefaults";
+// Hooks
+import useRedirect from "../../hooks/UseRedirect";
 // Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // React Bootstrap components
@@ -21,6 +23,8 @@ const GroupDetail = () => {
   const [isJoined, setIsJoined] = useState(false);
   // Getting the group ID from the URL using useParams hook from React Router
   const { id } = useParams();
+  // Redirect the user if the user is signed out and trys to vist this page
+  useRedirect("loggedOut");
   // Getting the current user from the CurrentUserContext
   const currentUser = useCurrentUser();
 
