@@ -22,12 +22,50 @@
     color: green;
   }
 
-  @media (max-width: 767px) {
+@media (max-width: 820px) {
+    .SearchIcon {
+    margin-left: 480px;
+    }
+    .RowWidth {
+      margin-left: 150px;
+      }
+  }
+
+@media (max-width: 767px) {
     .RowWidth {
     margin-left: 55px;
     }
-  
     .SearchIcon {
     margin-left: 380px;
+    }
+  }
+
+@media (max-width: 487px) {
+    .SearchIcon {
+    margin-left: 350px;
+    }
+  }
+
+@media (max-width: 450px) {
+    .SearchIcon {
+    margin-left: 320px;
+    }
+  }
+
+@media (max-width: 425px) {
+    .SearchIcon {
+    margin-left: 280px;
+    }
+  }
+
+@media (max-width: 384px) {
+    .SearchIcon {
+    margin-left: 257px;
+    }
+  }
+
+@media (max-width: 320px) {
+    .SearchIcon {
+    margin-left: 200px;
     }
   }
