@@ -21,3 +21,14 @@
     cursor: pointer;
     color: green;
   }
+
+  @media (max-width: 767px) {
+    .RowWidth {
+    margin-left: 55px;
+     
+    }
+  
+    .SearchIcon {
+    margin-left: 380px;
+    }
+  }
