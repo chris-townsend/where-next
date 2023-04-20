@@ -24,7 +24,6 @@
   .Container {
   margin-left: 75px;
   max-width: 400px;
-
   }
 
   .RowWidth {
@@ -37,6 +36,4 @@
     margin-top: 10px;
     max-width: 400px;
   }
-
-
 }

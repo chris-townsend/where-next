@@ -37,3 +37,13 @@
   background-color: aliceblue;
   height: 120px;
 }
+
+@media (max-width: 767px) {
+  .RowWidth {
+    margin-left: 65px;
+    margin-right: 15px;
+    margin-top: 10px;
+  }
+}
+
+

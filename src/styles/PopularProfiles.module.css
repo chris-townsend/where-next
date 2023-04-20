@@ -9,3 +9,9 @@
     height: 0.8px;
     background-image: linear-gradient(rgb(2, 121, 26), rgba(56, 198, 70, 0.842), rgba(18, 229, 85, 0));
 }
+
+@media (max-width: 767px) {
+    .Content mobile {
+        margin-left: 300px;
+    }
+  }

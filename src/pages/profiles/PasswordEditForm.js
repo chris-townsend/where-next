@@ -12,6 +12,7 @@ import { NotificationManager } from "react-notifications";
 // Styles
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import styles from "../../styles/ProfileEditForm.module.css";
 
 const PasswordEditForm = () => {
   // Setting the initial state of the errors object to an empty object
@@ -66,8 +67,8 @@ const PasswordEditForm = () => {
 
   return (
     <Row>
-      <Col className="py-2 mx-auto text-center mt-5" md={8}>
-        <Container className={appStyles.Content}>
+      <Col className="py-2 mx-auto text-center mt-5" md={6} lg={8}>
+        <Container className={`${appStyles.Content} ${styles.EditContainer}`}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Label>New password</Form.Label>

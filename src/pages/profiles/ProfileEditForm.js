@@ -383,7 +383,7 @@ const ProfileEditForm = () => {
           value={bio}
           onChange={handleChange}
           name="bio"
-          rows={7}
+          rows={6}
         />
       </Form.Group>
       {/* Displaying any bio errors */}
@@ -410,7 +410,7 @@ const ProfileEditForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="py-2 p-0 p-md-2 text-center" md={5} lg={5}>
+        <Col className="py-2 p-0 p-md-2 text-center" md={4} lg={5}>
           <Container className={`${appStyles.Content} ${styles.Container}`}>
             <Form.Group>
               {image && (

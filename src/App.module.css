@@ -88,4 +88,12 @@ i:hover {
   margin-bottom: 20px;
   border: 1.5px solid #8fbc8f;
 }
+
+@media (max-width: 767px) {
+  .ProfileContent {
+    margin-left: 20px;
+    margin-top: 10px;
+    max-width: 400px;
+  }
+}
   

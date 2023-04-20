@@ -202,7 +202,7 @@ function ProfilePage() {
   );
 
   return (
-    <Row>
+    <Row className={`${styles.RowWidth}`}>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         <Container className={appStyles.ProfileContent}>

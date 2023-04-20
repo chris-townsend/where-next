@@ -15,6 +15,7 @@ import { NotificationManager } from "react-notifications";
 // Styles
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import styles from "../../styles/ProfileEditForm.module.css";
 
 const UsernameEditForm = () => {
   // State to store the username entered in the form
@@ -69,9 +70,9 @@ const UsernameEditForm = () => {
 
   return (
     <Row>
-      <Col className="py-2 mx-auto text-center mt-5" md={8}>
-        <Container className={appStyles.Content}>
-          <Form onSubmit={handleSubmit} className="my-2">
+      <Col className="py-2 mx-auto text-center mt-5" md={6} lg={8}>
+        <Container className={`${appStyles.Content} ${styles.EditContainer}`}>
+          <Form onSubmit={handleSubmit} className="my-4">
             <Form.Group>
               <Form.Label>Change username</Form.Label>
               <Form.Control

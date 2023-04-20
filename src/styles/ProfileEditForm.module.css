@@ -8,3 +8,19 @@
     margin-left: 100px;
     margin-top: 10px;
 }
+
+@media (max-width: 767px) {
+  .Container {
+    margin-left: 75px;
+    margin-top: 10px;
+    max-width: 400px;
+  }
+  .TextFieldsContainer {
+    margin-left: 1px;
+  }
+  .EditContainer {
+    margin-left: 65px;
+    margin-top: 10px;
+    max-width: 400px;
+  }
+}
