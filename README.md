@@ -157,6 +157,12 @@ The target audience for Where next
 
 #### EPIC | Groups
 
+[#42](https://github.com/chris-townsend/where-next/issues/42) - *As a **logged-in User**, I want to **be able to create a new group** so that **I can connect with people who share my interests and plan trips together***
+
+[#43](https://github.com/chris-townsend/where-next/issues/43) - *As a **logged-in User**, I want to **be able to delete a group if it no longer aligns with my interests or travel plans** so that **I can focus on other groups that better suit my needs***
+
+[#41](https://github.com/chris-townsend/where-next/issues/41) - *As a **logged-in User**, I want to be able to **see a list of members in a group** so that **I can get to know other people and connect with them***
+
 #
 
 #### User stories not yet implemented
@@ -168,6 +174,8 @@ The following user stories were scoped out of the project due to time constraint
 [#10](https://github.com/chris-townsend/where-next/issues/10) - *As a **logged-in User**, I would like **the option to delete my account** so that **I can remove myself from the app.***
 
 [#24](https://github.com/chris-townsend/where-next/issues/24) - *As a **User**, I would like the ability to **print a post** so that **I can have a paper copy of the information I require***
+
+[#44](https://github.com/chris-townsend/where-next/issues/44) - *As a **logged-in User**, I want to **receive birthday alerts for my connections**, so that **I can send them a personalized birthday comment***
 
 [Back to top ⇧](#where-next)
 
