@@ -84,7 +84,7 @@ const GroupList = () => {
       <Container
         className={`${styles.Container} d-flex flex-column justify-content-center`}
       >
-        <Col className="py-2 p-0 p-md-2" md={5} lg={12}>
+        <Col className="py-2 p-0 p-md-2" md={8} lg={12}>
           {/* Link to create a new group */}
           <Link to="/groups/create">
             <Button

@@ -55,9 +55,9 @@ const GroupCreateForm = () => {
     }
   };
   const textFields = (
-    <div className="text-center">
+    <div className="text-center p-4">
       <Form.Group>
-        <Form.Label> Group Name:</Form.Label>
+        <Form.Label> Group Name</Form.Label>
         <Form.Control
           type="text"
           name="group_name"
@@ -72,7 +72,7 @@ const GroupCreateForm = () => {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>Description:</Form.Label>
+        <Form.Label>Description</Form.Label>
         <Form.Control
           type="text"
           name="description"
