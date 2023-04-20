@@ -201,6 +201,19 @@
 
 ### EPIC | *Groups*
 <br>
+
+*[As a User, I want to be able to create a new group so that I can connect with people who share my interests and plan trips together](https://github.com/chris-townsend/where-next/issues/42)*
+
+![Create group button](src/docs/testing/user-testing/groups-create-group.webp)
+
+![Create group form](src/docs/testing/user-testing/groups-create-group-form.webp)
+
+*[As a User, I want to be able to leave a group if it no longer aligns with my interests or travel plans so that I can focus on other groups that better suit my needs](https://github.com/chris-townsend/where-next/issues/43)*
+
+![Group detail page](src/docs/testing/user-testing/groups-detail-page.webp)
+
+*[As a User, I want to be able to see a list of members in a group so that I can get to know other people and connect with them](https://github.com/chris-townsend/where-next/issues/41)*
+
 #
 
 [Back to top ⇧](#contents)
@@ -208,7 +221,6 @@
 ***
 
 ## Validator Testing
-<br>
 
 ### HTML
 
