@@ -36,3 +36,15 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+@media (max-width: 767px) {
+    .Container {
+        margin-top: 20px;
+        margin-left: 60px;
+        max-width: 400px;
+    }
+    .ContactText {
+        line-height: 22px;
+        font-size: 18px;
+    }
+  }

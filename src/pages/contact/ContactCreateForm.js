@@ -6,7 +6,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 // Hooks
 import useRedirect from "../../hooks/UseRedirect";
 // React Bootstrap components
-import { Form, Button, Container, Alert } from "react-bootstrap";
+import { Form, Button, Col, Container, Alert } from "react-bootstrap";
 // Notifications
 import { NotificationManager } from "react-notifications";
 // Styles
@@ -119,14 +119,15 @@ const ContactCreateForm = () => {
       <Container
         className={`${styles.Container} d-flex flex-column justify-content-center pb-3 pt-2`}
       >
-        <h1 className={styles.ContactHeader}>Get In Touch With Us</h1>
-        <hr className={styles.ContactHr} />
-        <h2 className={`${styles.ContactText} text-center`}>
-          Have an enquiry? We would love to hear from you.. Please use the form
-          below
-        </h2>
-
-        <div>{textFields}</div>
+        <Col className="py-2 p-0 p-md-2" md={8} lg={12}>
+          <h1 className={styles.ContactHeader}>Get In Touch With Us</h1>
+          <hr className={styles.ContactHr} />
+          <h2 className={`${styles.ContactText} text-center`}>
+            Have an enquiry? We would love to hear from you.. Please use the
+            form below
+          </h2>
+          <div>{textFields}</div>
+        </Col>
       </Container>
       <br />
     </Form>
