@@ -314,6 +314,7 @@ I have run the website through Google Chrome's Lighthouse audit application and 
 | `GroupCreateForm.js` | ![lighthouse result desktop create group](src/docs/testing/lighthouse/desktop-create-group.webp)  |                                            |
 | `GroupDetail.js`| ![lighthouse result desktop create group](src/docs/testing/lighthouse/desktop-group-detail.webp) |                                              |
 | `ContactCreateForm.js`| ![lighthouse result desktop contact](src/docs/testing/lighthouse/desktop-contact.webp) |                                              |
+| `ProfilePage.js`| ![lighthouse result desktop profile page](src/docs/testing/lighthouse/desktop-profile-page.webp) |                                              |
 
 
 
