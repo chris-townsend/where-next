@@ -130,7 +130,8 @@ const SignInForm = () => {
         </Container>
         <Container className={`mt-2 text-center ${appStyles.Content}`}>
           <Link className={styles.SignInLink} to="/signup">
-            Don't have an account? <span>Sign up now!</span>
+            Don't have an account?{" "}
+            <span className={styles.SignUpLink}>Click here to sign up</span>
           </Link>
         </Container>
       </Col>

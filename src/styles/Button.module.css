@@ -29,6 +29,8 @@
 .Wide {
     padding: 10px 40px;
     width: 100%;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 .Bright {

@@ -136,7 +136,8 @@ const SignUpForm = () => {
         </Container>
         <Container className={`mt-2 text-center ${appStyles.Content}`}>
           <Link className={styles.SignInLink} to="/signin">
-            Already have an account? <span>Sign in</span>
+            Already have an account?{" "}
+            <span className={styles.SignIn}>Sign in</span>
           </Link>
         </Container>
       </Col>
@@ -149,6 +150,7 @@ const SignUpForm = () => {
           src={
             "https://res.cloudinary.com/diez1cpce/image/upload/v1678965518/sign-in-image_g1wwgu.jpg"
           }
+          alt="Map with camera, notepad and pencil"
         />
       </Col>
     </Row>

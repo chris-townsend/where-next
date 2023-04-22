@@ -22,7 +22,7 @@
 
 .Header {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 30px;
   text-align: center;
   letter-spacing: 0.2em;
@@ -35,8 +35,17 @@
   text-decoration: none;
   display: block;
   margin: auto;
+  font-weight: bold;
 }
 
 .SignInLink span {
   color: #238764;
+}
+
+.SignUpLink {
+  text-decoration: underline;
+}
+
+.SignIn {
+  text-decoration: underline;
 }
