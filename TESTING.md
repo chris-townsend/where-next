@@ -307,7 +307,9 @@ I have run the website through Google Chrome's Lighthouse audit application and 
 | Home page                | ![lighthouse result desktop home](src/docs/testing/lighthouse/desktop-home.webp)  
 | `SignInForm.js`               |![lighthouse result desktop sign-in](src/docs/testing/lighthouse/desktop-sign-in.webp)                      |![lighthouse result mobile 403](docs/testing/lighthouse/lighthouse-mobile-403.webp)                      |   
 | `SignUpForm.js`          |![lighthouse result desktop sign-up](src/docs/testing/lighthouse/desktop-sign-up.webp)                      |![lighthouse result mobile]()                      |
+| `PostsPage.js`               |![lighthouse result desktop post detail](src/docs/testing/lighthouse/desktop-posts-page.webp)                      |![lighthouse result mobile]()              | 
 | `PostCreateForm.js`               |![lighthouse result desktop add post](src/docs/testing/lighthouse/desktop-add-post.webp)                      |![lighthouse result mobile]()              | 
+| `PostEditForm.js`               |![lighthouse result desktop edit post](src/docs/testing/lighthouse/desktop-edit-post.webp)                      |![lighthouse result mobile]()              | 
 | `GroupList.js`        |![lighthouse result desktop group list](src/docs/testing/lighthouse/desktop-group-list.webp)         |![lighthouse result mobile]()          |
 | `GroupCreateForm.js` | ![lighthouse result desktop create group](src/docs/testing/lighthouse/desktop-create-group.webp)  |                                            |
 | `GroupDetail.js`| ![lighthouse result desktop create group](src/docs/testing/lighthouse/desktop-group-detail.webp) |                                              |

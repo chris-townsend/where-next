@@ -101,8 +101,9 @@ const PostEditForm = () => {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label htmlFor="title">Title</Form.Label>
         <Form.Control
+          id="title"
           type="text"
           name="title"
           value={title}
@@ -116,10 +117,11 @@ const PostEditForm = () => {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label htmlFor="content">Content</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
+          id="content"
           name="about"
           value={about}
           onChange={handleChange}
@@ -156,7 +158,12 @@ const PostEditForm = () => {
           >
             <Form.Group className="text-center">
               <figure>
-                <Image className={appStyles.Image} src={image} rounded />
+                <Image
+                  className={appStyles.Image}
+                  src={image}
+                  alt="User image"
+                  rounded
+                />
               </figure>
               <div>
                 <Form.Label
