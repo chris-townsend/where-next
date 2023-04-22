@@ -84,7 +84,7 @@ const PostCreateForm = () => {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label htmlFor="title">Title</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -99,7 +99,7 @@ const PostCreateForm = () => {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label htmlFor="content">Content</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}

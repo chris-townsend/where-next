@@ -304,8 +304,9 @@ I have run the website through Google Chrome's Lighthouse audit application and 
  
 | Page                     |    Desktop     |    Mobile    | 
 | ---                      |      :---:     |    :---:     | 
-| `403.html`               |![lighthouse result desktop 403](docs/testing/lighthouse/lighthouse-desktop-403.webp)                      |![lighthouse result mobile 403](docs/testing/lighthouse/lighthouse-mobile-403.webp)                      |   
-| `404.html`               |![lighthouse result desktop 404](docs/testing/lighthouse/lighthouse-desktop-404.webp)                      |![lighthouse result mobile 404](docs/testing/lighthouse/lighthouse-mobile-404.webp)                      |
+| Home page                | ![lighthouse result desktop home](src/docs/testing/lighthouse/desktop-home.webp)  
+| `SignInForm.js`               |![lighthouse result desktop sign-in](src/docs/testing/lighthouse/desktop-sign-in.webp)                      |![lighthouse result mobile 403](docs/testing/lighthouse/lighthouse-mobile-403.webp)                      |   
+| `SignUpForm.js`          |![lighthouse result desktop sign-up](src/docs/testing/lighthouse/desktop-sign-up.webp)                      |![lighthouse result mobile 404](docs/testing/lighthouse/lighthouse-mobile-404.webp)                      |
 | `500.html`               |![lighthouse result desktop 500](docs/testing/lighthouse/lighthouse-desktop-500.webp)                      |![lighthouse result mobile 500](docs/testing/lighthouse/lighthouse-mobile-500.webp)              | 
 | `add_recipe.html`        |![lighthouse result desktop add recipe](docs/testing/lighthouse/lighthouse-desktop-add-recipe.webp)         |![lighthouse result mobile add recipe](docs/testing/lighthouse/lighthouse-mobile-add-recipe.webp)          |
 
