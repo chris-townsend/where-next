@@ -46,7 +46,10 @@ const NavigationBar = (props) => {
         >
           <Nav.Item className={styles.InfoIcon}>
             <NavLink to="/" onClick={handleShow}>
-              <i className="fa fa-info-circle fa-lg"></i>
+              <i
+                className="fa fa-info-circle fa-lg"
+                alt="Information about Where Next"
+              ></i>
             </NavLink>
           </Nav.Item>
         </OverlayTrigger>
