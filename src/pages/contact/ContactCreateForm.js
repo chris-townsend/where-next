@@ -67,10 +67,13 @@ const ContactCreateForm = () => {
   const textFields = (
     <div className="text-center pt-0 pt-lg-4">
       <Form.Group>
-        <Form.Label className={appStyles.TextColor}>Add an Enquiry:</Form.Label>
+        <Form.Label className={appStyles.TextColor} htmlFor="subject">
+          Add an Enquiry:
+        </Form.Label>
         <Form.Control
           className={appStyles.Input}
           type="text"
+          id="subject"
           name="subject"
           value={subject}
           onChange={handleChange}
@@ -83,11 +86,14 @@ const ContactCreateForm = () => {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label className={appStyles.TextColor}>Message</Form.Label>
+        <Form.Label className={appStyles.TextColor} htmlFor="message">
+          Message
+        </Form.Label>
         <Form.Control
           className={appStyles.Input}
           as="textarea"
           rows={6}
+          id="message"
           name="message"
           value={message}
           onChange={handleChange}
