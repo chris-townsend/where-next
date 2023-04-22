@@ -15,12 +15,13 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 // Other pages
 import Post from "./Post";
-import PopularProfiles from "../profiles/PopularProfiles";
+import MostFollowed from "../profiles/MostFollowed";
 // Styles
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 // Images
 import NoResults from "../../assets/images/no-results.png";
+
 // State variables
 const PostsPage = ({ message, filter = "" }) => {
   const [posts, setPosts] = useState({ results: [] });
@@ -57,7 +58,7 @@ const PostsPage = ({ message, filter = "" }) => {
   return (
     <Row className={`${styles.RowWidth}`}>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile />
+        <MostFollowed mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchInput}
@@ -98,7 +99,7 @@ const PostsPage = ({ message, filter = "" }) => {
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         {/* Render PopularProfiles page */}
-        <PopularProfiles />
+        <MostFollowed />
         <br />
         Popular posts
       </Col>

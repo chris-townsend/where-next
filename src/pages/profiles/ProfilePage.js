@@ -19,7 +19,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { ProfileEditDropdown } from "../../components/ProfileDropdownBar";
 import Asset from "../../components/Asset";
 // Other pages
-import PopularProfiles from "./PopularProfiles";
+import MostFollowed from "./MostFollowed";
 import Post from "../posts/Post";
 // Images
 import NoResults from "../../assets/images/no-results.png";
@@ -205,7 +205,7 @@ function ProfilePage() {
   return (
     <Row className={`${styles.RowWidth}`}>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile />
+        <MostFollowed mobile />
         <Container className={appStyles.ProfileContent}>
           {hasLoaded ? (
             <>
@@ -218,7 +218,7 @@ function ProfilePage() {
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block mt-2 p-lg-2">
-        <PopularProfiles />
+        <MostFollowed />
       </Col>
     </Row>
   );

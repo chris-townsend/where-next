@@ -10,11 +10,11 @@ import Asset from "../../components/Asset";
 import Profile from "./Profile";
 // Styles
 import appStyles from "../../App.module.css";
-import styles from "../../styles/PopularProfiles.module.css";
+import styles from "../../styles/MostFollowed.module.css";
 
-const PopularProfiles = ({ mobile }) => {
+const MostFollowed = ({ mobile }) => {
   // Get popular profiles data from contexts
-  const { popularProfiles } = useProfileData();
+  const { mostFollowed } = useProfileData();
 
   return (
     <Container
@@ -23,21 +23,21 @@ const PopularProfiles = ({ mobile }) => {
       }`}
     >
       {/* Check if the popular profiles data has been loaded */}
-      {popularProfiles.results.length ? (
+      {mostFollowed.results.length ? (
         <>
-          <div className={`text-center mt-1 ${styles.PopularProfilesTitle}`}>
+          <div className={`text-center mt-1 ${styles.MostFollowedTitle}`}>
             {" "}
             Most followed
           </div>
           <hr className={styles.Hr} />
           {mobile ? (
             <div className="d-flex justify-content-around">
-              {popularProfiles.results.slice(0, 4).map((profile) => (
+              {mostFollowed.results.slice(0, 4).map((profile) => (
                 <Profile key={profile.id} profile={profile} mobile />
               ))}
             </div>
           ) : (
-            popularProfiles.results.map((profile) => (
+            mostFollowed.results.map((profile) => (
               <Profile key={profile.id} profile={profile} />
             ))
           )}
@@ -49,4 +49,4 @@ const PopularProfiles = ({ mobile }) => {
   );
 };
 
-export default PopularProfiles;
+export default MostFollowed;

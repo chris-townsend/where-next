@@ -23,7 +23,7 @@ export const ProfileDataProvider = ({ children }) => {
   // Initialize state for profile data
   const [profileData, setProfileData] = useState({
     pageProfile: { results: [] }, // initial state for the user's own profile page
-    popularProfiles: { results: [] }, // initial state for the list of popular profiles
+    mostFollowed: { results: [] }, // initial state for the list of popular profiles
   });
 
   // Get the current user from the CurrentUserContext
@@ -44,9 +44,9 @@ export const ProfileDataProvider = ({ children }) => {
             followHelper(profile, clickedProfile, data.id)
           ),
         },
-        popularProfiles: {
-          ...prevState.popularProfiles,
-          results: prevState.popularProfiles.results.map((profile) =>
+        mostFollowed: {
+          ...prevState.mostFollowed,
+          results: prevState.mostFollowed.results.map((profile) =>
             followHelper(profile, clickedProfile, data.id)
           ),
         },
@@ -75,9 +75,9 @@ export const ProfileDataProvider = ({ children }) => {
             unfollowHelper(profile, clickedProfile)
           ),
         },
-        popularProfiles: {
-          ...prevState.popularProfiles,
-          results: prevState.popularProfiles.results.map((profile) =>
+        mostFollowed: {
+          ...prevState.mostFollowed,
+          results: prevState.mostFollowed.results.map((profile) =>
             unfollowHelper(profile, clickedProfile)
           ),
         },
@@ -103,7 +103,7 @@ export const ProfileDataProvider = ({ children }) => {
         // Update the popularProfiles state with the fetched data
         setProfileData((prevState) => ({
           ...prevState,
-          popularProfiles: data,
+          mostFollowed: data,
         }));
       } catch (err) {
         console.log(err);
