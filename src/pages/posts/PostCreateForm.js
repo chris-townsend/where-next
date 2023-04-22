@@ -105,7 +105,7 @@ const PostCreateForm = () => {
           as="textarea"
           rows={6}
           id="content"
-          name="content"
+          name="about"
           value={about}
           onChange={handleChange}
         />
