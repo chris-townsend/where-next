@@ -14,7 +14,7 @@ const Group = (props) => {
         {/* Link to the group detail page */}
         <Link to={{ pathname: `/groups/${id}`, state: { group: props } }}>
           {/* Display the group name */}
-          <h3 className="text-center mt-2">{group_name}</h3>
+          <h4 className="text-center mt-2">{group_name}</h4>
         </Link>
         {/* Display the group description */}
         <p className="text-center">{description}</p>
