@@ -2,7 +2,7 @@
 
 Where Next is a full-stack project built using JavaScript and CSS. The goal is to create a functional and responsive website that enables users to create and share posts. The website will have full CRUD functionality, allowing users to edit and delete their posts. Each post page will have a comments section and options to like and bookmark posts to a bookmarks page. The website should follow UX design principles, and is accessible and easy to navigate, allowing users to find information and resources intuitively.
 
-![Am i responsive]()
+![Am i responsive](src/docs/testing/am-i-responsive/am-i-responsive.webp)
 
 The live link can be found here - [Where next](https://where-next-social.herokuapp.com/)
 
