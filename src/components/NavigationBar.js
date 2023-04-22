@@ -49,14 +49,16 @@ const NavigationBar = (props) => {
             className={styles.InfoIcon}
           >
             <NavLink to="/" onClick={handleShow}>
-              <i className="fa fa-info-circle fa-lg"></i>
+              <i
+                className="fa fa-info-circle fa-lg"
+              ></i>
             </NavLink>
           </Nav.Item>
         </OverlayTrigger>
         {/* Navbar toggle button */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav-toggle" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         {/* Navbar content */}
-        <Navbar.Collapse id="basic-navbar-nav-collapse">
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             {/* If the user is logged in */}
             {loggedIn ? (
