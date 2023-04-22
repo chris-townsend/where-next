@@ -143,6 +143,7 @@ const SignInForm = () => {
           src={
             "https://res.cloudinary.com/diez1cpce/image/upload/v1679133248/login-image_vqabap.jpg"
           }
+          alt="Map with pins"
         />
       </Col>
     </Row>
