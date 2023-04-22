@@ -54,9 +54,9 @@ const NavigationBar = (props) => {
           </Nav.Item>
         </OverlayTrigger>
         {/* Navbar toggle button */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav-toggle" />
         {/* Navbar content */}
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav-collapse">
           <Nav className="ml-auto">
             {/* If the user is logged in */}
             {loggedIn ? (
