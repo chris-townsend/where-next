@@ -44,12 +44,12 @@ const NavigationBar = (props) => {
           placement="top"
           overlay={<Tooltip>Information</Tooltip>}
         >
-          <Nav.Item className={styles.InfoIcon}>
+          <Nav.Item
+            alt="Click for information about Where Next"
+            className={styles.InfoIcon}
+          >
             <NavLink to="/" onClick={handleShow}>
-              <i
-                className="fa fa-info-circle fa-lg"
-                alt="Information about Where Next"
-              ></i>
+              <i className="fa fa-info-circle fa-lg"></i>
             </NavLink>
           </Nav.Item>
         </OverlayTrigger>
