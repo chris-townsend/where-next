@@ -310,6 +310,7 @@ I have run the website through Google Chrome's Lighthouse audit application and 
 | `PostCreateForm.js`               |![lighthouse result desktop add post](src/docs/testing/lighthouse/desktop-add-post.webp)                      |![lighthouse result mobile]()              | 
 | `GroupList.js`        |![lighthouse result desktop group list](src/docs/testing/lighthouse/desktop-group-list.webp)         |![lighthouse result mobile]()          |
 | `GroupCreateForm.js` | ![lighthouse result desktop create group](src/docs/testing/lighthouse/desktop-create-group.webp)  |                                            |
+| `GroupDetail.js`| ![lighthouse result desktop create group](src/docs/testing/lighthouse/desktop-group-detail.webp) |                                              |
 
 
 <br>
