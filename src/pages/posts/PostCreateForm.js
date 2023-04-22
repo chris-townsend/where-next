@@ -88,6 +88,7 @@ const PostCreateForm = () => {
         <Form.Control
           type="text"
           name="title"
+          label="title"
           value={title}
           onChange={handleChange}
         />
@@ -103,7 +104,8 @@ const PostCreateForm = () => {
         <Form.Control
           as="textarea"
           rows={6}
-          name="about"
+          label="content"
+          name="content"
           value={about}
           onChange={handleChange}
         />

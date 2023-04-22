@@ -57,6 +57,7 @@ const NavigationBar = (props) => {
         <Navbar.Toggle
           aria-controls="basic-navbar-nav-toggle"
           aria-label="Toggle Navigation"
+          aria-expanded="false"
         />
         {/* Navbar content */}
         <Navbar.Collapse id="basic-navbar-nav">
