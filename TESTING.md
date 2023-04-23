@@ -407,7 +407,7 @@ The process and outcomes of manual testing are described in depth in the followi
 |                    |                   | *display*  | *Avatar*    |**pass** |
 |                    |                    | *click*   | *Redirct to comment owners profile* | **pass** |
 |                    |                   | *display*  | *Comment date* | **pass**  |
-|                    |                   | *no-comments* *Display no comments message* | **pass** |
+|                    |        | *no comments* |   *Display no comments message* | **pass** |
 | **logged-in**      | **Post Component**|            |                              |                |
 |                    | *Heart Icon*      | *hover*   | *If the currently logged in user is the owner of the post display 'Sorry, you can't like your own posts' text* | **pass** |
 |                    |                   | *hover*     |  *Display 'Click to like post' text if the logged in user is not the owner of the post* | **pass** |
@@ -495,18 +495,56 @@ The process and outcomes of manual testing are described in depth in the followi
 |                |                 |           | *Notification of successful logout* | **pass**| 
 
 
-
 ### *Groups*
 <br>
+
+| Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
+| ---             | ---                 |   :---:     |    :---:                  |    :---:    |
+|**GroupList.js** |                     |             |                           |             | 
+|                 |*Create group button*| *display*   | *Create group button*   | **pass**  |
+|                 |                     | *hover*     | *Light background/Dark text*| **pass** |
+|                 |                     | *click*     | *Redirect to `GroupCreateForm.js`* | **pass** |
+|                 | *Groups*            | *display*   | *A list of user created groups*|**pass** |
+|                 |                     | *display*   | *If the user is the owner of the group, display 'Delete group' button* | **pass** |
+|                 |                     | *display*  | *If the user is not the owner of the group, display 'View group' button* | **pass** |
+|                 | *Group title*       | *hover*    | *Darker text* | **pass** | 
+|                 |                     | *click*    | *Redirect to `GroupDetail.js`* | **pass** | 
+|                 |  *View group button*   | *hover*    | *Light background/Dark text* | **pass**| 
+|                 |                     | *click*    | *Redirct to `GroupDetail.js`*| **pass** |
+|                 |  *Delete group button* | *hover* | *Light background/Dark text* | **pass** |
+|                 |                        | *click* | *Remove group from the database*| **pass**|
+|                 |                        |         | *Notification of removing group* | **pass** | 
+|**GroupCreateForm.js**|*Group Name input field*| *click* | *Clicking the group name input box allows the user to input alphanumeric characters*| **pass** |
+|                 |*Description input box* | *click* | *Clicking the description input box allows the user to input alphanumeric characters* | **pass**  |     
+|                | *Cancel button*        | *hover* | *Light background/Dark text* | **pass** | 
+|                |                        | *click* | *Redirect to `GroupList.js`*| **pass** |
+|                | *Create button*        | *hover* | *Light background/Dark text* | **pass** |
+|                |                        | *click* | *Empty field - Display error notification & specified error on input field* | **pass** | 
+|                |                        |         | *If valid title, form will submit & redirect user to new `GroupDetail.js` page* | **pass** | 
+|**GroupDetail.js**|                   |   *display* | *Group title, description and members of the group*| **pass** |
+|                  | *Members field*   | *display*  | *Avatar for a member of the group* | **pass** |
+|                  |                   | *display*  | *If no members, display no members text*| **pass**|
+|                  | *Join group button* | *hover* | *Light background/ Dark text* | **pass** |  
+|                  |                    | *click*  | *User joins group/ added as a member to the database* | **pass** |
+|                  |                    |          | *Success notification* | **pass** |
+|                  |                    |          | *User avatar updates in members section* | *Fail/ **pass** on page refresh*|
+|                  |*Leave group button*| *hover* | *Light background/ Dark text* | **pass** |
+|                  |                    | *click* | *User removed from group/database* | **pass** |
+|                  |                    |         | *Notification of left group*       | **pass** |
+|                  |                    |         | *User avatar removed from members section* | *Fail/ **pass** on page refresh*|
 
 
 ### *Contact*
 <br>
+| Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
+| ---             | ---                 |   :---:     |    :---:                  |    :---:    |
 
-###
 
 
-
+### *Profiles*
+<br>
+| Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
+| ---             | ---                 |   :---:     |    :---:                  |    :---:    |
 
 
 ***
