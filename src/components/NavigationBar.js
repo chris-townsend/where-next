@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 // Contexts
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+// Hooks
+import useOutsideClickToggle from "../hooks/useOutsideClickToggle";
 // React Bootstrap components
 import {
   Nav,
@@ -29,9 +31,17 @@ const NavigationBar = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  // using the custom hook 'UseOutsideClickToggle', which handles toggling the state
+  // based on clicks outside of the specified element.
+  const { expanded, setExpanded, ref } = useOutsideClickToggle();
 
   return (
-    <Navbar className={styles.NavigationBar} expand="lg" fixed="top">
+    <Navbar
+      expanded={expanded}
+      className={styles.NavigationBar}
+      expand="lg"
+      fixed="top"
+    >
       <Container>
         {/* WHERE NEXT logo with redirect to home */}
         <NavLink to="/">
@@ -55,6 +65,8 @@ const NavigationBar = (props) => {
         </OverlayTrigger>
         {/* Navbar toggle button */}
         <Navbar.Toggle
+          ref={ref}
+          onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav-toggle"
           aria-label="Toggle Navigation"
           aria-expanded="false"
