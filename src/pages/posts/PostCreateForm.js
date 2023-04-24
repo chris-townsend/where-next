@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 // API
 import { axiosReq } from "../../api/axiosDefaults";
 // Hooks
-import useRedirect from "../../hooks/UseRedirect";
+import useRedirect from "../../hooks/useRedirect";
 // React Bootstrap components
 import {
   Form,

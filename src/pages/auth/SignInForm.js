@@ -6,7 +6,7 @@ import axios from "axios";
 // Contexts
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 // Hooks
-import useRedirect from "../../hooks/UseRedirect";
+import useRedirect from "../../hooks/useRedirect";
 // Utils
 import { setTokenTimestamp } from "../../utils/utils";
 // React Bootstrap components
@@ -101,7 +101,9 @@ const SignInForm = () => {
             ))}
 
             <Form.Group controlId="password">
-              <Form.Label className="d-none" htmlFor="password">Password</Form.Label>
+              <Form.Label className="d-none" htmlFor="password">
+                Password
+              </Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Password"

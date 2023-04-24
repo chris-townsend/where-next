@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 // API
 import { axiosReq } from "../../api/axiosDefaults";
 // Hooks
-import useRedirect from "../../hooks/UseRedirect";
+import useRedirect from "../../hooks/useRedirect";
 // Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // React Bootstrap components
