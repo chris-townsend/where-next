@@ -268,6 +268,7 @@ The *[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)* was used to vali
 |               |`ProfileDataContext.js`        |  **pass**     |
 |**Hooks**      |                                               |
 |               |`UseRedirect.js`               |  **pass**     |
+|               |`useOutsideClickToggle.js`     |  **pass**     |
 |**Pages**      |                                               |
 |  *auth*       |`SignInForm.js`                |  **pass**     |
 |               |`SignUpForm.js`                |  **pass**     |
