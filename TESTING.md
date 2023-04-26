@@ -522,6 +522,7 @@ The process and outcomes of manual testing are described in depth in the followi
 |                | *Create button*        | *hover* | *Light background/Dark text* | **pass** |
 |                |                        | *click* | *Empty field - Display error notification & specified error on input field* | **pass** | 
 |                |                        |         | *If valid title, form will submit & redirect user to new `GroupDetail.js` page* | **pass** | 
+|                 |                     |            |*Success notification* | **pass**
 |**GroupDetail.js**|                   |   *display* | *Group title, description and members of the group*| **pass** |
 |                  | *Members field*   | *display*  | *Avatar for a member of the group* | **pass** |
 |                  |                   | *display*  | *If no members, display no members text*| **pass**|
@@ -537,15 +538,33 @@ The process and outcomes of manual testing are described in depth in the followi
 
 ### *Contact*
 <br>
+
 | Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
 | ---             | ---                 |   :---:     |    :---:                  |    :---:    |
-
+| **ContactCreateForm.js** | *'Add an Enquiry' input field* | *click* | *Clicking the input box allows the user to input alphanumeric characters* | **pass** |
+|                 | *'Message' input field* |*click* | *Clicking the input box allows the user to input alphanumeric characters* | **pass** |
+|                | *Cancel button*        | *hover* | *White background/Dark text* | **pass** | 
+|                |                        | *click* | *Redirect to Homepage*| **pass** |
+|                | *Send button*          | *hover* | *White background/Dark text* | **pass** |
+|                |                        | *click* | *Empty field - Display error notification & specified error on input field* | **pass** | 
+|                |                        |         | *If valid enquiry & message, form will submit & redirect user to homepage* | **pass** | 
+|                |                       |          | *Notification of message recieved* | **pass** |
 
 
 ### *Profiles*
 <br>
+
 | Page/Status     | Element             |   Action    | Expected Result           | Pass/Fail   |
 | ---             | ---                 |   :---:     |    :---:                  |    :---:    |
+| **ProfilePage.js** | *User Avatar* | *display* | *A users profile image* | **pass** |
+|                    | *Profile settings tab* | *display* | *Only if the user is the owner of the profile* | **pass** |
+|                    |                        | *hover* | *Display 'settings' | **pass** |
+|                    | *Posts Count*          | *display*| *Display a users total posts count* | **pass** |
+|                    | *Followers Count*      | *display* | *Display a users total followers count*|**pass**|
+|                    | *Following Count*      | *display* | *Display a users total following count* | **pass**|
+|                    |*Personal Information*  | *display* | *Display Name, Date of birth, Location, Favourite Location & Bio fields* | **pass** |
+|                    |                        | *display* | *If none selected, display icon* | **pass** |
+|                    | *Users posts*          | *display* | *Users posts using the Post component* | **pass**|
 
 
 ***
