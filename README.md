@@ -189,98 +189,112 @@ The website was designed with a minimalistic style to align with the site's obje
 
 #### Wireframes
 
-Initial wireframes were created for the original ideas, and as functionality was scaled back, these wireframes have also served as guidelines for the more basic features that remain in place for future development. The wireframes were designed using Balsamiq, with a mobile-first approach in mind.
+Initial wireframes were created for the original ideas, and as functionality was scaled back, these wireframes have also served as guidelines for the more basic features that remain in place for future development. The wireframes were designed using Balsamiq.
 
-*Please note that to view the wireframe images, you need to click on the arrow next to each title.*
-
-#### ***Mobile***
-
-<details>
-
- <summary>Homepage</summary>
-
-![Mobile - Homepage]()
-</details>
-
-<details>
-
- <summary>Feed</summary>
-
-![Mobile - Recipes]()
-</details>
-
-<details>
-
- <summary>Liked Posts</summary>
-
-![Mobile - Liked Posts]()
-</details>
-
-<details>
-
- <summary>Post Detail for the <i>author</i></summary>
-
-![Mobile - Post Detail for the author]()
-</details>
-
-<details>
-
- <summary>Post Detail for the <i>comment author</i></summary>
-
-![Mobile - Post Detail for the comment author]()
-</details>
-
-<details>
-
- <summary>My Bookmarked Posts</summary>
-
-![Mobile - My Bookmarked Posts]()
-</details>
-
-<details>
-
- <summary>Add Post</summary>
-
-![Mobile - Add Post]()
-</details>
-
-<details>
-
- <summary>Update Post</summary>
-
-![Mobile - Update Post]()
-</details>
-
-<details>
-
- <summary>Delete Post</summary>
-
-![Mobile - Delete Post]()
-</details>
-
-<details>
-
- <summary>Search Post</summary>
-
-![Mobile - Search Post]()
-</details>
-
-# 
+*Please note - to view the wireframe images, you need to click on the arrow next to each title.*
 
 #### ***Desktop***
 
 <details>
 
- <summary>Homepage</summary>
+ <summary>Homepage <i>logged out</i></summary>
 
-![Desktop - Homepage]()
+![Desktop - Homepage logged-out](src/docs/wireframes/desktop/homepage-logged-out.webp)
 </details>
 
 <details>
 
-<summary>Post Detail</summary>
+ <summary>Homepage <i>logged in</i></summary>
 
-![Desktop - Post detail]()
+![Desktop - Homepage logged-in](src/docs/wireframes/desktop/homepage-logged-in.webp)
+</details>
+
+<details>
+
+ <summary>Post Detail</summary>
+
+![Desktop - Post Detail](src/docs/wireframes/desktop/post-detail.webp)
+</details>
+
+<details>
+
+ <summary>Post Detail for the <i>owner</i></summary>
+
+![Desktop - Post Detail for the owner](src/docs/wireframes/desktop/post-detail-owner.webp)
+</details>
+
+<details>
+
+ <summary>Create post</summary>
+
+![Desktop - Create post](src/docs/wireframes/desktop/create-post.webp)
+</details>
+
+<details>
+
+ <summary>Group List</summary>
+
+![Desktop - Group list](src/docs/wireframes/desktop/group-list.webp)
+</details>
+
+<details>
+
+ <summary>Create Group</summary>
+
+![Desktop - Create Group](src/docs/wireframes/desktop/create-group.webp)
+</details>
+
+<details>
+
+ <summary>Group Detail</summary>
+
+![Desktop - Group Detail](src/docs/wireframes/desktop/group-detail.webp)
+</details>
+
+<details>
+
+ <summary>Contact Page</summary>
+
+![Desktop - Contact page](src/docs/wireframes/desktop/contact.webp)
+</details>
+
+<details>
+
+ <summary>Profile</summary>
+
+![Desktop - Profile](src/docs/wireframes/desktop/profile.webp)
+</details>
+
+<details>
+
+ <summary>Profile for the <i>owner</i></summary>
+
+![Desktop - Profile for the owner](src/docs/wireframes/desktop/profile-owner.webp)
+</details>
+
+<details>
+
+ <summary>Change password</summary>
+
+![Desktop - Change password](src/docs/wireframes/desktop/change-password.webp)
+</details>
+
+# 
+
+#### ***Mobile***
+
+<details>
+
+ <summary>Homepage <i>logged out</i></summary>
+
+![Mobile - Homepage logged out](src/docs/wireframes/mobile/mobile-logged-out.webp)
+</details>
+
+<details>
+
+<summary>Homepage <i>logged in</i></summary>
+
+![Mobile - Homepage logged in]()
 </details>
 
 
