@@ -1,12 +1,18 @@
 # Where next
 
-Where Next is a full-stack project built using JavaScript and CSS. The goal is to create a functional and responsive website that enables users to create and share posts. The website will have full CRUD functionality, allowing users to edit and delete their posts. Each post page will have a comments section and options to like and bookmark posts to a bookmarks page. The website should follow UX design principles, and is accessible and easy to navigate, allowing users to find information and resources intuitively.
+Where Next is a full-stack project, created using JavaScript, CSS & HTML and built on the React front-end framework. The project's primary objective is to deliver a highly functional and responsive website that empowers users to create and share their posts effortlessly. Through its comprehensive CRUD functionality, users can easily modify and delete their posts as needed. Furthermore, each post page features a dynamic comments section and intuitive options to like and bookmark posts for later reference. The platform also allows users to form groups and gives users the opportunity to join/leave, as well as follow and unfollow each other, facilitating a seamless and enjoyable experience. Moreover, the website is carefully designed with UX principles in mind, ensuring its accessibility and intuitive navigation. This, in turn, enhances user satisfaction and enables users to effortlessly discover the information and resources they need.
 
 ![Am i responsive](src/docs/testing/am-i-responsive/am-i-responsive.webp)
 
-The live link can be found here - [Where next](https://where-next-social.herokuapp.com/)
+The live link can be found [**here**](https://where-next-social.herokuapp.com/)
+
+To view the backend *API repository*, please click [**here**](https://github.com/chris-townsend/drf-api-where-next)
+
+<br>
 
 *Please note: To open any external links in a new browser tab, please press **CTRL + Click***
+
+# 
 
 ## Contents
 
