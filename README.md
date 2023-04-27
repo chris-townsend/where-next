@@ -375,93 +375,136 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 **Logo**
 
-- A customised logo was created using [Logo.com](https://logo.com/) by  which is a free logo generator.
+- A customised logo was created using [Logo.com](https://logo.com/) which is a free logo generator.
 
-![Where next logo]()
+![Where next logo](src/docs/features/images/where-next-logo.webp)
 
 - The logo is prominently positioned in the top-left corner of the navigation bar. It is linked to the homepage to make it easy for users to navigate back to the main page of the website.
 
 **Navigation Bar**
 
+- The navigation bar is present on all pages of the website and allows for easy navigation. The Navbar includes a logo and links to various pages. The links on the Navbar will change depending on whether the user is logged into their account or not.
+
 
 #### *User is not logged in Navbar*
 
-![Navigation section]()
-
-![Navigation section unauthorized]()
+![Navigation section logged out user](src/docs/testing/user-testing/navigation-logged-out.webp)
 
 #### *User logged-in Navbar*
 
+![Navigation section logged in user](src/docs/testing/user-testing/navigation-logged-in.webp)
 
-![]()
+![Navigation section logged in user](src/docs/testing/user-testing/side-navigation-logged-in.webp)
 
-![]()
+- If a user is logged in, their profile avatar will be displayed in the navigation bar and also a side navigation menu will appear. This menu provides a logged-in user with the ability to manage and save posts, create and join groups & sign out of their account.
 
 ### Home Page
 
-![Homepage]()
+![Homepage](src/docs/features/images/homepage-logged-in.webp)
 
-
-### Newsletter Page
 
 ### User Account Pages
 
 **Sign Up**
 
-![Register form]()
+![Register form](src/docs/testing/user-testing/sign-up-page.webp)
 
-**Log In**
+**Sign In**
 
-![Login section]()
+![Login section](src/docs/testing/user-testing/sign-in-page.webp)
 
 
-**Log Out**
+**Sign Out**
 
-![Logout section]()
+![Sign out nav link](src/docs/testing/user-testing/sign-out-nav-link.webp)
 
+![Sign out modal](src/docs/testing/user-testing/sign-out-modal.webp)
 
 ### Post Detail Page
 
-
 **Post Action Buttons**
-![Post action buttons]()
+
+![Post action buttons](src/docs/features/images/post-edit-menu.webp)
 
 - On the post detail page, if the logged-in user is the owner of the post, they will have the option to edit or delete the post by the presence of a menu which consists of an edit and delete icon.
 
-**Post Detail Page**
-![]()
-![]()
+### Edit Post
 
-**Comments Section**
-![]()
-![]()
+![Edit post page](src/docs/testing/user-testing/post-edit-page.webp)
 
+### Add Post
 
-### Update Comment
-![]()
+![Add post tab](src/docs/testing/user-testing/add-post-tab.webp)
 
-### Delete Comment
-![]()
-
-### Add Post Form
-![]()
-
-### Update Post Form
-![]()
-
-![]()
+![Create post](src/docs/testing/user-testing/create-post.webp)
 
 ### Delete Post
-![]()
+
+![Delete post option](src/docs/testing/user-testing/post-delete-option.webp)
+
+![Delete post notification](src/docs/testing/user-testing/post-removed-notification.webp)
+
+**Comments Section**
+
+![Comment section for unauth user](src/docs/testing/user-testing/comments-logged-out.webp)
+
+### Update Comment
+
+![Comment edit menu](src/docs/testing/user-testing/comment-edit-menu.webp)
+
+![Update comment box](src/docs/testing/user-testing/comment-update.webp)
+
+### Delete Comment
+
+![Delete comment icon](src/docs/testing/user-testing/comment-delete-icon.webp)
+
+![Delete comment notification](src/docs/testing/user-testing/comment-removed-notification.webp)
 
 ### My Feed Page
-![]()
+
+- A user's feed will compose of posts which the user is following. The feed page has the same styling as Home, Bookmarks and Liked as it uses the Post component. The Infinite scroll component is used to continously display posts, allowing the user to not have to change page to view more posts.
+
+![Feed tab](src/docs/features/images/feed-tab.webp)
 
 
 ### My Bookmarks Page
-![]()
+![Bookmarks tab](src/docs/features/images/bookmarks-tab.webp)
 
-- The Bookmarks page displays a user's collection of bookmarked posts, easily identified by a shining star icon on the recipe detail page. By simply clicking the star icon, a recipe can be saved to the user's personal Bookmarks page. The layout of this page is consistent with the other post pages, with the added convenience of Infinitescroll feature being able to browse through eigh
+![Bookmark Post](src/docs/testing/user-testing/bookmark-post.webp)
+
+- The Bookmarks page displays a user's collection of bookmarked posts, easily identified by a bookmark icon on the post component. By simply clicking the bookmark icon, a post can be saved to the user's personal Bookmarks page. The layout of this page is consistent with the other post pages, with the added convenience of the Infinite scroll component so that users don't have to change pages to view more posts.
+
+### Profile Page
+
+![Profile page](src/docs/testing/user-testing/avatar.webp)
+
+![Profile personal info](src/docs/features/images/profile-personal-info.webp)
+
+![Profile posts](src/docs/features/images/profile-posts.webp)
+
+![Profile settings](src/docs/testing/user-testing/profile-settings.webp)
+
+### Edit Profile
+
+![Profile edit tab](src/docs/features/images/profile-edit-tab.webp)
+
+![Profile edit page](src/docs/features/images/profile-edit-page.webp)
+![Profile edit page](src/docs/features/images/profile-edit-page-2.webp)
+
+### Change Username
+
+![Profile change username](src/docs/features/images/profile-change-username.webp)
+
+### Change password
+
+![Profile change password](src/docs/features/images/profile-change-password.webp)
+
+### Contact Page
+
+![Contact page](src/docs/testing/user-testing/contact-page.webp)
+![Contact page buttons](src/docs/testing/user-testing/contact-page-btn.webp)
+
+![Contact notification](src/docs/testing/user-testing/contact-notification.webp)
 
 ### Error Page
 
