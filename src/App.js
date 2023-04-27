@@ -32,6 +32,7 @@ import GroupDetail from "./pages/groups/GroupDetail";
 // Notifications
 import { NotificationContainer } from "react-notifications";
 import "react-notifications/lib/notifications.css";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   // getting the current user from the CurrentUserContext
@@ -134,7 +135,7 @@ function App() {
             render={() => <ContactCreateForm />}
           />
           {/* Defining the route for the 404 page */}
-          <Route render={() => <p> 404 Page not found</p>} />
+          <Route render={() => <PageNotFound />} />
         </Switch>
       </Container>
     </div>

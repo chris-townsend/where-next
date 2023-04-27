@@ -1,0 +1,12 @@
+.PageNotFound {
+    padding: 9px;
+    margin-left: 100px;
+    background-color: white;
+}
+
+.PageNotFound img {
+    width: 600px;
+    height: 420px;
+    object-fit: fit;
+}
+
