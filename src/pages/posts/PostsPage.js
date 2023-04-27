@@ -104,7 +104,6 @@ const PostsPage = ({ message, filter = "" }) => {
         {/* Render PopularProfiles page */}
         <MostFollowed />
         <br />
-        Popular posts
       </Col>
     </Row>
   );

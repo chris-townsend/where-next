@@ -565,6 +565,7 @@ The process and outcomes of manual testing are described in depth in the followi
 |                    |*Personal Information*  | *display* | *Display Name, Date of birth, Location, Favourite Location & Bio fields* | **pass** |
 |                    |                        | *display* | *If none selected, display icon* | **pass** |
 |                    | *Users posts*          | *display* | *Users posts using the Post component* | **pass**|
+|
 
 
 ***
