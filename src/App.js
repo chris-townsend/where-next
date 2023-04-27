@@ -29,10 +29,11 @@ import PasswordEditForm from "./pages/profiles/PasswordEditForm";
 import GroupCreateForm from "./pages/groups/GroupCreateForm";
 import GroupList from "./pages/groups/GroupList";
 import GroupDetail from "./pages/groups/GroupDetail";
+// 404 page
+import PageNotFound from "./components/PageNotFound";
 // Notifications
 import { NotificationContainer } from "react-notifications";
 import "react-notifications/lib/notifications.css";
-import PageNotFound from "./components/PageNotFound";
 
 function App() {
   // getting the current user from the CurrentUserContext
