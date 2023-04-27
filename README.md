@@ -28,7 +28,8 @@ The live link can be found here - [Where next](https://where-next-social.herokua
     + [Database Security](#database-security)
   * [Features](#features)
     - [Features Left to Implement](#future-features)
-  * [Re-use of Components](#components)  
+  * [Re-use of Components](#components) 
+  * [Hooks](#hooks) 
     - [Languages Used](#languages-used)
   - [Technologies Used](#programs-frameworks--libraries-used)
     - [Programs](#programs)
@@ -581,6 +582,18 @@ The Post component receives several props that contain information about a post 
 ### React Infinite Scroll component
 
 React Infinite Scroll is used to load content continuously as the user scrolls down a webpage. This feature works by loading new content into the webpage when the user reaches the bottom of the page, without requiring the user to manually click a *Load More* button. In my app, the React Infinite Scroll feature is being used to display a list of posts, groups, and comments. When a user scrolls down the page, the application automatically loads new posts, groups, and comments from the server and displays them in the list. This means that the user can continue scrolling indefinitely and the application will keep loading new content as needed, without requiring the user to refresh the page or click a button to load more content. This feature provides a seamless user experience, as the user can easily browse through a large amount of content without interruptions or delays.
+
+***
+
+## Hooks
+
+### `useOutsideClickToggle.js`
+
+This custom hook allows you to toggle a component's state based on clicks outside of it. It is useful for things like menus or popovers that need to be dismissed when the user clicks outside of them. I am using this hook in my `NavigationBar.js` component to automatically close the Navbar.Toggle Bootstrap component for small screen sizes. When the user clicks on the menu, it toggles the expanded state using the setExpanded function. The expanded value is then used to conditionally render the menu items. When the user clicks outside of the menu, the `useOutsideClickToggle` hook automatically updates the expanded state to false, hiding the menu.
+
+### `useRedirect.js`
+
+The useRedirect hook is a custom React hook that uses the React Router and Axios libraries to handle navigation and API requests. Its primary function is to redirect the user based on their authentication status, ensuring that they are directed to the appropriate page based on whether they are logged in or out. When called, the hook sends a POST request to refresh the authentication token using the axios library. If the user is logged in, they will be redirected to the home page using the useHistory hook from the React Router library. If there is an error refreshing the token or the user is logged out, they will also be redirected to the home page. This hook streamlines navigation in my React app and simplifies the logic for handling authentication.
 
 ***
 
