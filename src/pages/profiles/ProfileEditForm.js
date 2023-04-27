@@ -9,15 +9,13 @@ import {
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
 // React Bootstrap components
-import {
-  Form,
-  Button,
-  Image,
-  Row,
-  Col,
-  Container,
-  Alert,
-} from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Image from "react-bootstrap/Image";
 // React components
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";

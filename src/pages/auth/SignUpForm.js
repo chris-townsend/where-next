@@ -6,15 +6,13 @@ import axios from "axios";
 // Hooks
 import useRedirect from "../../hooks/useRedirect";
 // React Bootstrap components
-import {
-  Image,
-  Col,
-  Row,
-  Container,
-  Form,
-  Button,
-  Alert,
-} from "react-bootstrap";
+import Image from "react-bootstrap/Image";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 // Styles
 import appStyles from "../../App.module.css";
 import styles from "../../styles/SignInUpForm.module.css";

@@ -5,7 +5,7 @@ import "./api/axiosDefaults";
 // Contexts
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 // React Bootstrap components
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 // Components
 import NavigationBar from "./components/NavigationBar";
 import SideNavigationBar from "./components/SideNavigationBar";

@@ -8,7 +8,11 @@ import useRedirect from "../../hooks/useRedirect";
 // Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // React Bootstrap components
-import { Row, Col, Card, Container, Button } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 // Components
 import Avatar from "../../components/Avatar";
 // Notifications

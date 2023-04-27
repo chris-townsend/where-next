@@ -3,7 +3,7 @@ import React from "react";
 // Contexts
 import { useProfileData } from "../../contexts/ProfileDataContext";
 // React Bootstrap components
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 // Components
 import Asset from "../../components/Asset";
 // Other pages

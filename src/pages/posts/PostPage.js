@@ -8,7 +8,9 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // Utils
 import { fetchMoreData } from "../../utils/utils";
 // React Bootstrap components
-import { Col, Row, Container } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 // React components
 import InfiniteScroll from "react-infinite-scroll-component";
 // Components

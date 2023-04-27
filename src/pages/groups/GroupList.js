@@ -8,7 +8,11 @@ import useRedirect from "../../hooks/useRedirect";
 // Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // React Bootstrap components
-import { Button, Row, Col, Container, Card } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 // React infinite scroll component
 import InfiniteScroll from "react-infinite-scroll-component";
 // Components

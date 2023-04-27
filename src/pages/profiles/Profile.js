@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // React Bootstrap components
-import { Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 // Components
 import Avatar from "../../components/Avatar";
 // Styles

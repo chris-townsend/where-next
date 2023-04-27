@@ -6,7 +6,11 @@ import { axiosReq } from "../../api/axiosDefaults";
 // Hooks
 import useRedirect from "../../hooks/useRedirect";
 // React Bootstrap components
-import { Form, Button, Col, Container, Alert } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
 // Notifications
 import { NotificationManager } from "react-notifications";
 // Styles

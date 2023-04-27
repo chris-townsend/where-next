@@ -12,7 +12,11 @@ import {
 // Utils
 import { fetchMoreData } from "../../utils/utils";
 // React Bootstrap components
-import { Col, Row, Container, Button, Image } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 // React components
 import InfiniteScroll from "react-infinite-scroll-component";
 // Components

@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 // API
 import { axiosRes } from "../../api/axiosDefaults";
 // React Bootstrap components
-import { Form, InputGroup } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 // Components
 import Avatar from "../../components/Avatar";
 // Notifications

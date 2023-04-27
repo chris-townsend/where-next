@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // React Bootstrap components
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 
 const Group = (props) => {
   // Destructure the props object

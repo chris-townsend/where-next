@@ -6,7 +6,10 @@ import { axiosRes } from "../../api/axiosDefaults";
 // Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // React Bootstrap components
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 // Components
 import { PostDropdownBar } from "../../components/PostDropdownBar";
 import Avatar from "../../components/Avatar";

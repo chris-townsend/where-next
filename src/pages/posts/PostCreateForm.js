@@ -6,15 +6,13 @@ import { axiosReq } from "../../api/axiosDefaults";
 // Hooks
 import useRedirect from "../../hooks/useRedirect";
 // React Bootstrap components
-import {
-  Form,
-  Button,
-  Row,
-  Col,
-  Container,
-  Image,
-  Alert,
-} from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import Alert from "react-bootstrap/Alert";
 // Components
 import Asset from "../../components/Asset";
 // Images

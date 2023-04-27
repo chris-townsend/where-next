@@ -6,7 +6,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 // Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // React Bootstrap components
-import { Media } from "react-bootstrap";
+import Media from "react-bootstrap/Media";
 // Components
 import { PostDropdownBar } from "../../components/PostDropdownBar";
 import Avatar from "../../components/Avatar";
