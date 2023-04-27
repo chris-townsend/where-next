@@ -49,7 +49,7 @@ function PostPage() {
         // update comments state with fetched comments
         setComments(comments);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 

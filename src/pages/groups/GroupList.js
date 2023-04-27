@@ -47,7 +47,7 @@ const GroupList = () => {
         }
       } catch (err) {
         // For any errors, log it to the console for debugging purposes
-        console.log(err);
+        // console.log(err);
       }
     };
     // Call the fetchGroups function
@@ -74,11 +74,10 @@ const GroupList = () => {
   const fetchMoreGroups = async () => {
     try {
       const { data } = await axiosReq.get(nextPageUrl);
-      console.log(data);
       setGroups([...groups, ...data.results]);
       setNextPageUrl(data.next);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
   // Check if the current user is the owner of a group

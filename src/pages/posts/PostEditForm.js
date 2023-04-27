@@ -35,7 +35,7 @@ const PostEditForm = () => {
         // If the user is not the owner of the post, redirect to the home page
         is_owner ? setPostData({ title, about, image }) : history.push("/");
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     handleMount();

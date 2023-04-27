@@ -43,7 +43,7 @@ const PostsPage = ({ message, filter = "" }) => {
         // Set hasLoaded state variable to true
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 

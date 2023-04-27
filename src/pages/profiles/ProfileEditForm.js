@@ -76,7 +76,7 @@ const ProfileEditForm = () => {
           });
           setDateOfBirth(new Date(date_of_birth));
         } catch (err) {
-          console.log(err);
+          // console.log(err);
           history.push("/");
         }
       } else {

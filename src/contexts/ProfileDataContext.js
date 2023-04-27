@@ -106,7 +106,7 @@ export const ProfileDataProvider = ({ children }) => {
           mostFollowed: data,
         }));
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     handleMount();

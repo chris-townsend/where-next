@@ -42,7 +42,7 @@ const GroupDetail = () => {
         setIsJoined(data.is_member);
       } catch (err) {
         // For any errors, log it to the console for debugging purposes
-        console.log(err);
+        // console.log(err);
       }
     };
 
