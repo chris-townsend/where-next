@@ -62,7 +62,7 @@ Where Next is a social media app designed for individuals who are passionate abo
 
 ### Epics 
 
-6 Epics were created as Milestones which were then further developed into 34 User Stories. The details on each epic, along with the user stories linked to each one can be found [here](https://github.com/chris-townsend/where-next/milestones).
+6 Epics were created as Milestones which were then further developed into 35 User Stories. The details on each epic, along with the user stories linked to each one can be found [here](https://github.com/chris-townsend/where-next/milestones).
 
 
 [EPIC 1](https://github.com/chris-townsend/where-next/milestone/1) **Navigation**
