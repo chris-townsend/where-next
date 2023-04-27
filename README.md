@@ -51,7 +51,7 @@ The live link can be found here - [Where next](https://where-next-social.herokua
 
 ## User Experience (UX)
 
-The target audience for Where next
+Where Next is a social media app designed for individuals who are passionate about traveling and exploring new destinations. As an active and tech-savvy audience, users are looking for a platform that caters specifically to their travel interests. With Where Next, users can join a vibrant community of like-minded individuals to share their travel experiences, connect with others, and gain inspiration for their next adventure. Whether creating captivating posts, bookmarking favorite destinations, or editing their profiles, users can curate and showcase their travels in a dynamic and engaging way. Ultimately, Where Next provides an immersive and interactive space where travel enthusiasts can come together to explore the world.
 
 ### Epics 
 
