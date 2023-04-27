@@ -123,7 +123,7 @@ const GroupDetail = () => {
               <h2>Members</h2>
               {/* Map over the members array and display the members in the group using the Avatar component*/}
               {group.members.length > 0 ? (
-                <div className="d-flex justify-content-center">
+                <div className={`d-flex justify-content-center`}>
                   {group.members.map((member) => (
                     <Avatar
                       src={member.image}
