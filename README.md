@@ -28,6 +28,7 @@ The live link can be found here - [Where next](https://where-next-social.herokua
     + [Database Security](#database-security)
   * [Features](#features)
     - [Features Left to Implement](#future-features)
+  * [Re-use of Components](#components)  
     - [Languages Used](#languages-used)
   - [Technologies Used](#programs-frameworks--libraries-used)
     - [Programs](#programs)
@@ -527,8 +528,6 @@ A warning message will appear to the user when inaccurate or empty data is enter
 ![404 page display](src/docs/features/images/404-page.webp)
 ![404 return to home button](src/docs/features/images/404-button.webp)
 
-
-
 ***
 
 ### Future Features
@@ -543,6 +542,45 @@ In the future, there are several functionalities that I would like to implement.
 - [#10](https://github.com/chris-townsend/where-next/issues/10) The ability to delete my account.
 
 - [#44](https://github.com/chris-townsend/where-next/issues/44) Birthday reminders for followed users.
+
+***
+
+## Components
+
+### `Asset.js`
+
+*Asset.js* is a versatile and reusable component that is used throughout my app to display a loading spinner in a visually appealing way. With customizable props such as spinner, src, and message, the component can be easily adapted to suit different use cases and design requirements. When the spinner prop is set to true, the component displays a rotating Earth animation to indicate that content is being loaded. When the src prop is present, the component displays an image with customizable alt text provided by the message prop. When the message prop is present, the component displays a paragraph of text below the image.
+
+![Spinner](src/assets/images/earth-spinner.gif)
+
+![Asset spinner](src/docs/features/images/asset-spinner.webp)
+
+
+### `Avatar.js`
+
+The *Avatar.js* component is designed to display user avatars with a high degree of flexibility and reusability. By separating the avatar display from other components and pages, it enables more efficient code organization and easier maintenance. With customizable height and an optional text overlay, the Avatar component can adapt to different page designs and layouts, allowing for seamless integration into different parts of the site. Additionally, by including a timestamp in the image source, the Avatar component ensures that the image is always up-to-date and reloaded from the server when necessary. This feature helps prevent the browser from caching outdated images and ultimately contributes to improved site performance.
+
+![Avatar](src/docs/features/images/avatar.webp)
+
+### `PostDropdownBar.js`
+
+*PostDropdownBar.js* is a reusable component that renders a dropdown bar with edit and delete options for posts. It is built using React and React Bootstrap components, and styled using CSS. The component consists of a custom DropdownMenu component that renders a menu icon *(fas fa-ellipsis-v)*, and a Bootstrap Dropdown component that contains the dropdown menu items. The menu items include an Edit post option and a Delete post option, each with an associated icon. The component is designed to be flexible and customizable, allowing to easily integrate it elsewhere and modify its behavior and appearance as needed. This component is being used within `Comment.js` to allow users to edit and delete their own comments.
+
+![Post dropdown menu](src/docs/features/images/post-dropdown.webp)
+
+### `ProfileDropdownBar.js` 
+
+The *ProfileEditDropdown* component renders a dropdown bar that allows a user to edit their profile, including changing their username or password. It uses the React Router's useHistory hook to navigate to different pages when the user clicks on a dropdown item. The dropdown menu is aligned to the left using the drop prop from the React Bootstrap Dropdown component. The ProfileDropdown component is used to display the dropdown menu icon, which is a fas fa-ellipsis-h font awesome icon. An OverlayTrigger component is used to display the text **"Settings"** when the user hovers over the icon. The dropdown items include an option to edit the user's profile, change their username, or change their password. The Dropdown.Item components include icons to represent each option, such as a pencil icon for editing the profile or a key icon for changing the password. When the user clicks on a dropdown item, the history.push method is called to navigate to the corresponding page.
+
+![Profile dropdown menu](src/docs/features/images/profile-component.webp)
+
+### `Post.js` 
+
+The Post component receives several props that contain information about a post such as its id, owner, title, image, comments_count, likes_count, and more. The component also uses the useCurrentUser hook from a custom context called CurrentUserContext to retrieve the current user. The Post component renders a Bootstrap Card component that contains information about the post including its owner, title, image, and the number of comments, likes, and groups it has. It also renders the `Avatar.js` component and the `PostDropdownBar.js` component that is only displayed if the current user is the owner of the post and is viewing it on the post detail page. The Post component contains several functions that handle different events like deleting a post, editing a post, liking a post, unliking a post, bookmarking a post, and unbookmarking a post. These functions make API calls using axiosRes. When the user likes or unlikes a post or bookmarks or unbookmarks a post, the Post component updates the posts state by calling the setPosts function passed down as a prop to the component. It updates the likes_count, like_id, book mark_count, and bookmark_id properties of the post object in the posts state. This component is used to display posts on the *'Feed'*, *'Bookmarks'* and *'Liked'* pages.
+
+### React Infinite Scroll component
+
+React Infinite Scroll is used to load content continuously as the user scrolls down a webpage. This feature works by loading new content into the webpage when the user reaches the bottom of the page, without requiring the user to manually click a *Load More* button. In my app, the React Infinite Scroll feature is being used to display a list of posts, groups, and comments. When a user scrolls down the page, the application automatically loads new posts, groups, and comments from the server and displays them in the list. This means that the user can continue scrolling indefinitely and the application will keep loading new content as needed, without requiring the user to refresh the page or click a button to load more content. This feature provides a seamless user experience, as the user can easily browse through a large amount of content without interruptions or delays.
 
 ***
 
