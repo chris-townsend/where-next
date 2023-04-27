@@ -820,6 +820,7 @@ By forking the GitHub Repository you can make a copy of the original repository.
 
 ## Acknowledgements
 
+- I'd like to take a moment to thank my mentor **Gareth** for his help in fixing a bug with my `Post.js` component. His insights and guidance were incredibly valuable and I appreciate the time and effort he took to assist me.
 
 <br>
 
