@@ -39,7 +39,6 @@ The live link can be found here - [Where next](https://where-next-social.herokua
     - [React](#react)
   * [Deployment](#deployment)
     - [Heroku](#heroku)
-    - [ElephantSQL](#elephant-sql)
     - [Forking the GitHub Repository](#forking-the-github-repository)
     - [Making a local clone](#cloning-this-repository)
   * [Credits](#credits)
