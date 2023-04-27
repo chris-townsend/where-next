@@ -76,7 +76,7 @@ const CommentEditForm = (props) => {
           disabled={!content.trim()}
           type="submit"
         >
-          save
+          update
         </button>
       </div>
     </Form>
