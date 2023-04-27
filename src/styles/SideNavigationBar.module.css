@@ -21,11 +21,11 @@
     color: #417461;
     text-decoration: none;
     display: block;
-  }
+}
   
 .SideNavigation a:hover {
     color: #000;
-  }
+}
 
 .NavLink  {
     padding: 10px;
