@@ -8,7 +8,7 @@ import styles from "../styles/PostDropdownBar.module.css";
 const DropdownMenu = React.forwardRef(({ onClick }, ref) => (
   // Dropdown menu icon
   <i
-    className={`${styles.Menu} fas fa-ellipsis-v `}
+    className={`${styles.Menu} fas fa-ellipsis-v`}
     ref={ref}
     onClick={(e) => {
       e.preventDefault();
