@@ -11,7 +11,11 @@ import {
 // Utils
 import { removeTokenTimestamp } from "../utils/utils";
 // React Bootstrap components
-import { Nav, Navbar, Container, Modal, Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Modal from "react-bootstrap/Modal";
 // Components
 import NavigationBar from "./NavigationBar";
 // Notifications

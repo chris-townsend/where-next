@@ -2,7 +2,9 @@
 import React from "react";
 import { useHistory } from "react-router";
 // React Bootstrap components
-import { Dropdown, OverlayTrigger, Tooltip } from "react-bootstrap";
+import Tooltip from "react-bootstrap/Tooltip";
+import Dropdown from "react-bootstrap/Dropdown";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 // Styles
 import styles from "../styles/PostDropdownBar.module.css";
 
