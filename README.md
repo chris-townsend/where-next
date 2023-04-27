@@ -524,7 +524,10 @@ A warning message will appear to the user when inaccurate or empty data is enter
 ### Error Page
 
 - ***404** Page Not Found* - The page you're trying to access doesn't exist.
-![]()
+
+![404 page display](src/docs/features/images/404-page.webp)
+![404 return to home button](src/docs/features/images/404-button.webp)
+
 
 
 ***
