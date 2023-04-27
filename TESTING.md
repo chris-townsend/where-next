@@ -7,7 +7,6 @@
   * [CSS](#css)
   * [Javascript](#javascript)
   * [Lighthouse](#lighthouse)
-  * [WAVE accessibility tool](#wave-accessibility-evaluation-tool)
 - [Browser Testing](#browser-testing)
 - [Device Testing](#device-testing)
   * [Mobile](#mobile)
@@ -301,33 +300,26 @@ The *[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)* was used to vali
 
 ### Lighthouse 
 
-I have run the website through Google Chrome's Lighthouse audit application and the results are shown below:
+I have run the website through Google Chrome's Lighthouse audit application and the results are shown below.
+Mobile testing has been performed too and reported similar results to desktop but with a lower performace score. With more time I would change the contrast slightly on some of the text throughout the site so that it boosts the accessability score higher.
  
-| Page                     |    Desktop     |    Mobile    | 
-| ---                      |      :---:     |    :---:     | 
+| Page                     |    Desktop     | 
+| ---                      |      :---:     |
 | Home page                | ![lighthouse result desktop home](src/docs/testing/lighthouse/desktop-home.webp)  
-| `SignInForm.js`               |![lighthouse result desktop sign-in](src/docs/testing/lighthouse/desktop-sign-in.webp)                      |![lighthouse result mobile 403](docs/testing/lighthouse/lighthouse-mobile-403.webp)                      |   
-| `SignUpForm.js`          |![lighthouse result desktop sign-up](src/docs/testing/lighthouse/desktop-sign-up.webp)                      |![lighthouse result mobile]()                      |
-| `PostsPage.js`               |![lighthouse result desktop post detail](src/docs/testing/lighthouse/desktop-posts-page.webp)                      |![lighthouse result mobile]()              | 
-| `PostCreateForm.js`               |![lighthouse result desktop add post](src/docs/testing/lighthouse/desktop-add-post.webp)                      |![lighthouse result mobile]()              | 
-| `PostEditForm.js`               |![lighthouse result desktop edit post](src/docs/testing/lighthouse/desktop-edit-post.webp)                      |![lighthouse result mobile]()              | 
-| `GroupList.js`        |![lighthouse result desktop group list](src/docs/testing/lighthouse/desktop-group-list.webp)         |![lighthouse result mobile]()          |
+| `SignInForm.js`               |![lighthouse result desktop sign-in](src/docs/testing/lighthouse/desktop-sign-in.webp)                      |                     |   
+| `SignUpForm.js`          |![lighthouse result desktop sign-up](src/docs/testing/lighthouse/desktop-sign-up.webp)                      |
+| `PostsPage.js`               |![lighthouse result desktop post detail](src/docs/testing/lighthouse/desktop-posts-page.webp)                      |
+| `PostCreateForm.js`               |![lighthouse result desktop add post](src/docs/testing/lighthouse/desktop-add-post.webp)                      |
+| `PostEditForm.js`               |![lighthouse result desktop edit post](src/docs/testing/lighthouse/desktop-edit-post.webp)                      |
+| `GroupList.js`        |![lighthouse result desktop group list](src/docs/testing/lighthouse/desktop-group-list.webp)         |
 | `GroupCreateForm.js` | ![lighthouse result desktop create group](src/docs/testing/lighthouse/desktop-create-group.webp)  |                                            |
 | `GroupDetail.js`| ![lighthouse result desktop create group](src/docs/testing/lighthouse/desktop-group-detail.webp) |                                              |
 | `ContactCreateForm.js`| ![lighthouse result desktop contact](src/docs/testing/lighthouse/desktop-contact.webp) |                                              |
 | `ProfilePage.js`| ![lighthouse result desktop profile page](src/docs/testing/lighthouse/desktop-profile-page.webp) |                                              |
 
-
-
 <br>
 
 ***
-
-### WAVE accessibility evaluation tool
-
-Most pages of the site were tested through the [WAVE evaluation tool](https://wave.webaim.org/), The results are documented as images in the [`docs/testing/accessibility/`]() directory.
-
- <br>
 
 [Back to top ⇧](#contents)
 
@@ -345,14 +337,7 @@ The website has been viewed on a variety of devices such as Desktop, Laptop, iPa
 
 ### Mobile 
 
-All pages have been tested through Google's [Mobile friendly test](https://search.google.com/test/mobile-friendly), the results are displayed below:
-
-
-| Page                     |    Result      |  URL    |
-| ---                      |      :---:     |   :---: |
-| ` `               |    *pass*      |    -    |
-| ` `               |    *pass*      |    -    |
-
+The site has been tested through Google's [Mobile friendly test](https://search.google.com/test/mobile-friendly) with all pages passing.
 
 ***
 
@@ -627,23 +612,12 @@ The process and outcomes of manual testing are described in depth in the followi
 
 Several unit tests were written to test 
 
-<details>
-
- **<summary>Coverage report</summary>**
-
-![Automated testing coverage report](docs/testing/automated/coverage-report.webp)
-
-</details>
-
-<br>
-
-*Coverage report generated from* [*Coverage.py*](https://coverage.readthedocs.io/en/7.1.0/)
 
 ***
 
 ## Bugs
 
-Issues were created on GitHub and noted with a `bug` label.
+Issues were created on GitHub and noted with a `bug` label. To view the group of bugs on GitHub, please click [here](https://github.com/chris-townsend/where-next/milestone/5)
 <br>
 
 ### Fixed Bugs
@@ -694,7 +668,7 @@ Issues were created on GitHub and noted with a `bug` label.
 
 ### Unfixed Bugs
 
-1. 
+1. [Avatar only displays on page update when joining/leaving a group](https://github.com/chris-townsend/where-next/issues/46)
  
 <br>
 
