@@ -1,4 +1,4 @@
-# Where next
+# **_Where Next - Your Travel & Social Media Site_**
 
 Where Next is a full-stack project, created using JavaScript, CSS & HTML and built on the React front-end framework. The project's primary objective is to deliver a highly functional and responsive website that empowers users to create and share their posts effortlessly. Through its comprehensive CRUD functionality, users can easily modify and delete their posts as needed. Furthermore, each post page features a dynamic comments section and intuitive options to like and bookmark posts for later reference. The platform also allows users to form groups and gives users the opportunity to join/leave, as well as follow and unfollow each other, facilitating a seamless and enjoyable experience. Moreover, the website is carefully designed with UX principles in mind, ensuring its accessibility and intuitive navigation. This, in turn, enhances user satisfaction and enables users to effortlessly discover the information and resources they need.
 
