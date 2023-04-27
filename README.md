@@ -499,12 +499,27 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ![Profile change password](src/docs/features/images/profile-change-password.webp)
 
+### Groups
+
+![Groups tab](src/docs/features/images/groups-tab.webp)
+
+![Group List page](src/docs/testing/user-testing/groups-create-group.webp)
+
+**Create Group**
+
+![Create group page](src/docs/testing/user-testing/groups-create-group-form.webp)
+
+**Group Detail page**
+
+![Group detail page](src/docs/testing/user-testing/group-detail-page.webp)
+
 ### Contact Page
 
 ![Contact page](src/docs/testing/user-testing/contact-page.webp)
 ![Contact page buttons](src/docs/testing/user-testing/contact-page-btn.webp)
 
 ![Contact notification](src/docs/testing/user-testing/contact-notification.webp)
+
 
 ### Error Page
 
