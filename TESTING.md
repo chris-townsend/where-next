@@ -559,13 +559,66 @@ The process and outcomes of manual testing are described in depth in the followi
 | **ProfilePage.js** | *User Avatar* | *display* | *A users profile image* | **pass** |
 |                    | *Profile settings tab* | *display* | *Only if the user is the owner of the profile* | **pass** |
 |                    |                        | *hover* | *Display 'settings' | **pass** |
-|                    | *Posts Count*          | *display*| *Display a users total posts count* | **pass** |
+|**logged-out**     | *Posts Count*          | *display*| *Display a users total posts count* | **pass** |
 |                    | *Followers Count*      | *display* | *Display a users total followers count*|**pass**|
 |                    | *Following Count*      | *display* | *Display a users total following count* | **pass**|
 |                    |*Personal Information*  | *display* | *Display Name, Date of birth, Location, Favourite Location & Bio fields* | **pass** |
-|                    |                        | *display* | *If none selected, display icon* | **pass** |
+|                    |                        | *display* | *If nothing selected, display icon* | **pass** |
 |                    | *Users posts*          | *display* | *Users posts using the Post component* | **pass**|
-|
+|                    |                        |*display* | *If a user has not uploaded any images display No results found text & image* | **pass** | 
+|**logged-in** |  *Posts Count*   | *display*| *Display a users total posts count* | **pass** |
+|              |                  |           | *When a user adds a new post, the users posts count increments by one* | **pass** |
+|                    | *Followers Count*      | *display* | *Display a users total followers count*|**pass**|
+|                    | *Following Count*      | *display* | *Display a users total following count* | **pass**|
+|                    |                        |           | *When a user follows a user from the most followed component the following count increments by one* | **pass**|
+|                    | *Follow Button*        | *display* | *If the user is not the owner of the profile, display a follow button* | **pass** |
+|                    |                        | *hover* |   *White background/ Dark text | **pass** | 
+|                    |                        |*click*  | *User is followed & the users followers count increments by 1* | **pass** |
+|                    |                        |         | *Database is updated* | **pass** |
+|                    |                        |         | *Success notification* | **pass** |
+|                    |                        |         | *Button changes to unfollow* |**pass**|
+|                    | *Unfollow Button*        | *display* | *If the user is not the owner of the profile, display a follow button* | **pass** |
+|                    |                        | *hover* |   *White background/ Dark text | **pass** | 
+|                    |                        |*click*  | *User is unfollowed & the users followers count decrements by 1* | **pass** |
+|                    |                        |         | *Database is updated* | **pass** |
+|                    |                        |         | *Notification* | **pass** |
+|                    |                        |         | *Button changes to follow* |**pass**|
+|                    |*Personal Information*  | *display* | *Display Name, Date of birth, Location, Favourite Location & Bio fields* | **pass** |
+|                    |                        | *display* | *If nothing selected, display icon* | **pass** |
+|                    | *Users posts*          | *display* | *Users posts using the Post component* | **pass**|
+|                    |                        |*display* | *If a user has not uploaded any images display No results found text & image* | **pass** | 
+|                    | *Profile settings tab* | *click* | *Profile dropdown menu opens* | **pass** |
+|                    |  *Edit profile tab*    | *hover* | *Dark background* | **pass**|
+|                    |                        | *click* | *Open edit profile page*| **pass** |
+|                    | *Change password tab*  | *hover* | *Dark background* | **pass** |
+|                    |                        | *click* | *Open change password page* | **pass** |
+|                    | *Change username tab*  | *hover* | *Dark background* | **pass** | 
+|                    |                        | *click* | *Open change username tab* | **pass** |
+|**EditProfilePage.js**| *Name input field*   | *click* | *Clicking the input box allows the user to input alphanumeric characters* | **pass** |
+|                     |*Location dropdown field* | *click* |*Open dropdown list of countries*| **pass** |
+|                     |                        |           | *A user is able to select a country* | **pass**|
+|                     |*Favourite Location input field*| *click* | *Clicking the input box allows the user to input alphanumeric characters* | **pass** |
+|                     | *Date of birth field*| *click* | *Open React datepicker component* | **pass** |
+|                     |                      |         | *A user can select a date upon clicking a date and it will minimize with the date selected*| **pass**|
+|                     | *Bio input field* | *click* | *Clicking the input box allows the user to input alphanumeric characters* | **pass** |
+|                     | *Image input field*| *display* | *If the user has already selected an image, prepopulate with the previous image selected* | **pass** |
+|                     |                     | display* | *Button to select an image from your computer*| **pass** |
+|                     | *Image select button* | *click* | *Open computer to select image* | **pass** |
+|                     |                      | *display*| *When a user selects an image, it is displayed*| **pass**|
+|                     |*Cancel button* | *hover* | *White background/ Dark text*| **pass** |
+|                     |                | *click* | *Redirect to profile page* | **pass** |
+|                     |*Save button* | *hover* | *White background/ Dark text*| **pass** |  
+|                     |              | *click* | *With valid data, the profile is updated*| **pass**|
+|                     |              |         | *Success notification* | **pass** |
+| 
+|**Change Username page** | *Change username field* | *click* | *Clicking the input box allows the user to input alphanumeric characters* | **pass** |
+|                       | *Cancel button* | *hover* | *White background/ Dark text*| **pass** | 
+|                       |                 | *click*| *Redirct to profile page* | **pass** |
+|                        | *Save button*  | *hover* | *White background/ Dark text*| **pass** | 
+|                       |                 | *click*| *If correct inputted data, update username and return to profile page* | **pass** |   
+|                        |                |         |*Success notification*  | **pass** |
+|                        |                |         | *If the same username exists display error at input field and error notification* | **pass** |
+|                        |               |          | *If the field is left empty display error notification*| **pass** |
 
 
 ***
