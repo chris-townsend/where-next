@@ -48,7 +48,6 @@ function PostPage() {
         setPost({ results: [post] });
         // update comments state with fetched comments
         setComments(comments);
-        console.log(post);
       } catch (err) {
         console.log(err);
       }
