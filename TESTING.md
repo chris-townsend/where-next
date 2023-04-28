@@ -48,20 +48,20 @@
 
 #
 
-### EPIC | *User Account Mangement*
+### EPIC | *User Account Management*
 <br>
 
 *[As a User, I can register for an account so that I can gain access to all the features that are available exclusively to registered users](https://github.com/chris-townsend/where-next/issues/2)*
 
 ![Sign up page](src/docs/testing/user-testing/sign-up-page.webp)
 
-*[As a User, I can log into my account so that I can access functionality for logged in users](https://github.com/chris-townsend/where-next/issues/6)*
+*[As a User, I can log into my account so that I can access functionality for logged-in users](https://github.com/chris-townsend/where-next/issues/6)*
 
 ![Sign in page](src/docs/testing/user-testing/sign-in-page.webp)
 
 *[As a User, I can safely log out of my account so that I can disconnect from the site](https://github.com/chris-townsend/where-next/issues/7)*
 
-- A pop-up modal has been implemented to confirm sign out, providing an extra layer of protection for the user's account and preventing accidental logouts. The modal displays a message asking the user if they really want to sign out, with options to confirm or cancel.
+- A pop-up modal has been implemented to confirm sign-out, providing an extra layer of protection for the user's account and preventing accidental logouts. The modal displays a message asking the user if they really want to sign out, with options to confirm or cancel.
 
 ![Sign out nav link](src/docs/testing/user-testing/sign-out-nav-link.webp)
 
@@ -182,7 +182,7 @@
 
 *[As a logged-in User, I can customise my profile with an avatar so that my profile is easy to identify within the site](https://github.com/chris-townsend/where-next/issues/15)*
 
-- A users avatar can be customized from the `ProfileDropdownBar.js` and selecting *Edit Profile*.
+- A user's avatar can be customized from the `ProfileDropdownBar.js` and selecting *Edit Profile*.
 
 ![Profile page](src/docs/testing/user-testing/avatar.webp)
 
@@ -216,7 +216,7 @@
 
 *[As a User, I can search for posts or profiles by keyword so that I can find what I'm looking for more efficiently](https://github.com/chris-townsend/where-next/issues/21)*
 
-- The search functionality of the app enables users to look up posts and profiles. While currently limited to these options, it is planned to include group search functionality in the future. A loading spinner image of an earth is displayed until the posts are loaded.
+- The search functionality of the app enables users to look up posts and profiles. While currently limited to these options, it is planned to include group search functionality in the future. A loading spinner image of the earth is displayed until the posts are loaded.
 
 ![Search spinner](src/docs/testing/user-testing/search-spinner.webp)
 
@@ -266,7 +266,7 @@
 
 *[As a User, I want to be able to see a list of members in a group so that I can get to know other people and connect with them](https://github.com/chris-townsend/where-next/issues/41)*
 
-- Group members are displayed with their avatars using the Avatar.js component. While the implementation is not ideal, as the original plan was to use the Profile component, the Avatar component allows for easy display of members. Future improvements include adding the ability for users to click on a member's avatar to be taken to their profile page, and adding the ability to follow/unfollow members directly from the group detail page.
+- Group members are displayed with their avatars using the Avatar.js component. While the implementation is not ideal, as the original plan was to use the Profile component, the Avatar component allows for easy display of members. Future improvements include adding the ability for users to click on a member's avatar to be taken to their profile page and adding the ability to follow/unfollow members directly from the group detail page.
 
 ![Group detail page](src/docs/testing/user-testing/group-detail-page.webp)
 
@@ -358,7 +358,7 @@ The *[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)* was used to vali
 ### Lighthouse 
 
 I have run the website through Google Chrome's Lighthouse audit application and the results are shown below.
-Mobile testing has been performed too and reported similar results to desktop but with a lower performace score. With more time I would change the contrast slightly on some of the text throughout the site so that it boosts the accessability score higher.
+Mobile testing has been performed too and reported similar results to the desktop but with a lower performance score. With more time I would change the contrast slightly on some of the text throughout the site so that it boosts the accessibility score higher.
  
 | Page                     |    Desktop     | 
 | ---                      |      :---:     |
@@ -452,14 +452,14 @@ The process and outcomes of manual testing are described in depth in the followi
 |                    |                   | *display*  | *Comment date* | **pass**  |
 |                    |        | *no comments* |   *Display no comments message* | **pass** |
 | **logged-in**      | **Post Component**|            |                              |                |
-|                    | *Heart Icon*      | *hover*   | *If the currently logged in user is the owner of the post display 'Sorry, you can't like your own posts' text* | **pass** |
+|                    | *Heart Icon*      | *hover*   | *If the currently logged-in user is the owner of the post display 'Sorry, you can't like your own posts' text* | **pass** |
 |                    |                   | *hover*     |  *Display 'Click to like post' text if the logged in user is not the owner of the post* | **pass** |
 |                    |                   | *click*     | *Post saved to 'Liked' list* | **pass**  |
 |                    |                   |             | *Success notification - 'Post liked'* | **pass** |
 |                    | *Solid heart Icon* | *click*     | *Post removed from 'Liked' list* | **pass** |
 |                    |                    |             | *Notification - 'Post Unliked'*  | **pass**  |
 |                    | *Groups Icon*| *hover*   | *Display 'Add a group from the groups tab' text*|**pass**|
-|                    | *Bookmark Icon* | *hover* | *If the currently logged in user is the owner of the post display 'You can't bookmark your own post' text* | **pass** |
+|                    | *Bookmark Icon* | *hover* | *If the currently logged-in user is the owner of the post display 'You can't bookmark your own post' text* | **pass** |
 |                    |                   | *hover*    | *Display 'Click to save post' text if the logged in user is not the owner of the post* | **pass** |
 |                    |                  | *click*    | *Post saved to 'Bookmarks' list* | **pass**   |
 |                    |                  |            | *Success notification - 'Post saved'* | **pass** |
@@ -688,7 +688,7 @@ Issues were created on GitHub and noted with a `bug` label. To view the group of
 
 *resolved - [70f350a](https://github.com/chris-townsend/where-next/commit/70f350a17fa195b11ada98f0996a13ab062072ca)*
 
-3. [Posts not listed until a key is typed into the search bar](https://github.com/chris-townsend/where-next/issues/33)
+3. [Posts are not listed until a key is typed into the search bar](https://github.com/chris-townsend/where-next/issues/33)
 
 *resolved - [8376d42](https://github.com/chris-townsend/where-next/commit/8376d42f0ec4ecd4156538ffca087cf183b0d130)*
 
