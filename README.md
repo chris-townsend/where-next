@@ -28,7 +28,6 @@ To view the backend *API repository*, please click [**here**](https://github.com
       - [Typography](#typography)
   * [Agile Methodology](#agile-methodology)
   * [Security Features](#security-features-and-defensive-design)
-    + [User Authentication](#user-authentication)
     + [Form Validation](#form-validation)
   * [Features](#features)
     - [Features Left to Implement](#future-features)
@@ -48,7 +47,6 @@ To view the backend *API repository*, please click [**here**](https://github.com
     - [Making a local clone](#cloning-this-repository)
   * [Credits](#credits)
     + [Content](#content)
-    + [Media](#media)
   * [Acknowledgements](#acknowledgements)
 
 ***
@@ -344,13 +342,9 @@ A GitHub Issue was created for each User Story, which was then allocated to a mi
 
 ## Security Features and Defensive Design
 
-### User Authentication
-
-
 ### Form Validation
 
 A warning message will appear to the user when inaccurate or empty data is entered into a form, identifying the specific field that caused the issue. This prevents the form from being submitted until the issue is resolved, ensuring that only accurate and complete data is processed.
-
 
 [Back to top ⇧](#contents)
 
@@ -830,31 +824,25 @@ By forking the GitHub Repository you can make a copy of the original repository.
 
 ### Content 
 
+I have utilized a considerable amount of content throughout the site, taking inspiration from Code Institute's moments walkthrough. However, I have made various modifications to the project to personalize it and ensure that it meets the requirements. While I maintained certain aspects that worked well, I made sure to add my own unique touch to the project. Overall, I found the experience of putting this project together to be thoroughly enjoyable.
+
 - [Django REST framework docs](https://www.django-rest-framework.org/)
 
 - [React Bootstrap 4.6 docs](https://react-bootstrap-v4.netlify.app/)
 
-- [Code Institute - *'Moments'* walkthrough project](https://github.com/Code-Institute-Solutions/moments)
+- [React datepicker docs](https://www.npmjs.com/package/react-datepicker)
 
-- [-]()
+- [Code Institute - *'Moments'* walkthrough project](https://github.com/Code-Institute-Solutions/moments)
 
 #
 
-### Media
-
-- Photo by *-*:
-
-- Photo by *-*: 
-
-- Photo by *-*:
-
-- Photo by *-*: 
-
-***
+*** 
 
 ## Acknowledgements
 
-- I'd like to take a moment to thank my mentor **Gareth** for his help in fixing a bug with my `Post.js` component. His insights and guidance were incredibly valuable and I appreciate the time and effort he took to assist me.
+- I'd like to thank my mentor **Gareth** for his help in fixing a bug with my `Post.js` component. His insights and guidance were incredibly valuable.
+
+- Student support at *Code Institute* for getting advice and guidance while building my project.
 
 <br>
 
