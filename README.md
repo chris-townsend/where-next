@@ -297,14 +297,6 @@ Initial wireframes were created for the original ideas, and as functionality was
 ![Mobile - Homepage logged out](src/docs/wireframes/mobile/mobile-logged-out.webp)
 </details>
 
-<details>
-
-<summary>Homepage <i>logged in</i></summary>
-
-![Mobile - Homepage logged in]()
-</details>
-
-
 <br>
 
 ***
@@ -353,13 +345,6 @@ A GitHub Issue was created for each User Story, which was then allocated to a mi
 
 ***
 
-## Data Model
-
-![Database Schema]()
-
-*Database schema from [drawSQL](https://drawsql.app/)*
-
-
 ## Security Features and Defensive Design
 
 ### User Authentication
@@ -368,8 +353,6 @@ A GitHub Issue was created for each User Story, which was then allocated to a mi
 ### Form Validation
 
 A warning message will appear to the user when inaccurate or empty data is entered into a form, identifying the specific field that caused the issue. This prevents the form from being submitted until the issue is resolved, ensuring that only accurate and complete data is processed.
-
-### Database Security
 
 
 [Back to top ⇧](#contents)
@@ -397,6 +380,8 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ![Navigation section logged out user](src/docs/testing/user-testing/navigation-logged-out.webp)
 
+- The information icon is visible at all times, and when the user hovers over it, a tooltip displays the word 'Information', providing a clear and concise way for users to access additional information.
+
 #### *User logged-in Navbar*
 
 ![Navigation section logged in user](src/docs/testing/user-testing/navigation-logged-in.webp)
@@ -407,10 +392,17 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ### Home Page
 
+- The homepage offers a variety of features for both logged-in and logged-out users, including the search functionality which allows users to search for posts and profiles. To improve the user experience, a loading spinner appears while the user is typing their search query. In the event that no search results are found, an image accompanied by the text 'No results found' is displayed to help users quickly understand the outcome of their search.
+
 ![Homepage](src/docs/features/images/homepage-logged-in.webp)
 
+**Search Functionality**
+
+![Search bar](src/docs/features/images/search-no-result.webp)
 
 ### User Account Pages
+
+- The authentication pages are based on the *'moments walkthrough'* provided by Code Institute, with minor adjustments made to suit the needs of my project. The authentication process works seamlessly and meets the requirements I had in mind for my project.
 
 **Sign Up**
 
@@ -422,6 +414,8 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 
 **Sign Out**
+
+- When the user clicks on the sign-out tab in the side navigation bar, a pop-up sign-out modal appears, providing users with a clear confirmation option to sign out of their account. This feature ensures a smooth and secure user experience, enhancing the usability of the application.
 
 ![Sign out nav link](src/docs/testing/user-testing/sign-out-nav-link.webp)
 
@@ -437,9 +431,13 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ### Edit Post
 
+- Clicking on the edit icon for a post will display the post with the prepopulated data, allowing users to easily make edits and updates to their content.
+
 ![Edit post page](src/docs/testing/user-testing/post-edit-page.webp)
 
 ### Add Post
+
+- Users can easily add new posts by accessing the 'Add Post' tab located in the side navigation bar, providing a simple and streamlined way to create content.
 
 ![Add post tab](src/docs/testing/user-testing/add-post-tab.webp)
 
@@ -447,15 +445,21 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ### Delete Post
 
+- By clicking on the delete icon in the Post Edit dropdown menu, users can easily remove their posts from the database.
+
 ![Delete post option](src/docs/testing/user-testing/post-delete-option.webp)
 
 ![Delete post notification](src/docs/testing/user-testing/post-removed-notification.webp)
 
 **Comments Section**
 
+- The comments section on a post detail page is accessible to both logged-in and logged-out users. However, in order to create a comment, users must be signed in, as the comment input field is only displayed to authenticated users. This ensures a secure and efficient commenting process for users.
+
 ![Comment section for unauth user](src/docs/testing/user-testing/comments-logged-out.webp)
 
 ### Update Comment
+
+- The process of updating a comment has been made even more user-friendly through the implementation of the Post dropdown menu component. This feature provides users with the ability to easily update or delete their own comments. By clicking on the edit icon, the comment data is automatically prepopulated, making the editing process seamless and efficient.
 
 ![Comment edit menu](src/docs/testing/user-testing/comment-edit-menu.webp)
 
@@ -475,15 +479,25 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 
 ### My Bookmarks Page
+
+- The Bookmarks page displays a user's collection of bookmarked posts, easily identified by a bookmark icon on the post component. By simply clicking the bookmark icon, a post can be saved to the user's personal Bookmarks page. The layout of this page is consistent with the other post pages, with the added convenience of the Infinite scroll component so that users don't have to change pages to view more posts.
+
 ![Bookmarks tab](src/docs/features/images/bookmarks-tab.webp)
 
 ![Bookmark Post](src/docs/testing/user-testing/bookmark-post.webp)
 
-- The Bookmarks page displays a user's collection of bookmarked posts, easily identified by a bookmark icon on the post component. By simply clicking the bookmark icon, a post can be saved to the user's personal Bookmarks page. The layout of this page is consistent with the other post pages, with the added convenience of the Infinite scroll component so that users don't have to change pages to view more posts.
 
 ### Profile Page
 
+- The user profile page features an avatar image, along with the total number of posts, followers, and following count. This functionality has been thoroughly tested to ensure that the counts accurately increment and decrement in response to various user actions, such as following a user or adding a new post.
+
+- To enhance the user experience, a React datepicker has been integrated, allowing users to easily select a date from a calendar instead of manually entering it. While the implementation of this feature posed some challenges, such as converting the selected date string to properly store the data in the backend, it ultimately proved to be a valuable addition to the application.
+
 ![Profile page](src/docs/testing/user-testing/avatar.webp)
+
+- The profile page of a user displays their personal information, including their name, date of birth, location, favorite location, and bio. If the user is the owner of the profile, an edit profile dropdown menu is displayed, giving them the option to update their profile page, change their username, and change their password. Additionally, the location field provides a drop-down menu that allows users to select their country of residence, making it easy to update their location information.
+
+- The user's posts are displayed below their personal information using the `Post.js` component. If the user has not uploaded any posts, a message and image stating *No posts yet* will be displayed, providing the user with feedback and encouraging them to create posts.
 
 ![Profile personal info](src/docs/features/images/profile-personal-info.webp)
 
@@ -493,6 +507,8 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ### Edit Profile
 
+- For an improved user experience, the edit profile page comes with prepopulated data, making it easier for users to quickly update their profile information without having to re-enter existing data.
+
 ![Profile edit tab](src/docs/features/images/profile-edit-tab.webp)
 
 ![Profile edit page](src/docs/features/images/profile-edit-page.webp)
@@ -500,13 +516,19 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ### Change Username
 
+- For an improved user experience, the change username functionality comes prepopulated with the user's current username.
+
 ![Profile change username](src/docs/features/images/profile-change-username.webp)
 
 ### Change password
 
+- To enhance the security of users' accounts, the application provides an option for users to change their password, giving them greater control over the protection of their personal information.
+
 ![Profile change password](src/docs/features/images/profile-change-password.webp)
 
 ### Groups
+
+- Authenticated users can access the Groups section, which displays a list of existing groups and provides the option to create a new group
 
 ![Groups tab](src/docs/features/images/groups-tab.webp)
 
@@ -514,13 +536,19 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 **Create Group**
 
+- The *Create Group* button is prominently displayed at the top of the Groups list page and its colour changes on hover, ensuring easy access for users who wish to create a new group.
+
 ![Create group page](src/docs/testing/user-testing/groups-create-group-form.webp)
 
 **Group Detail page**
 
+- The group detail page showcases important information such as the group's title, description, and the total number of members. Initially, I intended to use the `Profile.js` component to display a user's avatar with the follow buttons available to make it easier for users to follow other members of the group. However, this proved to be quite challenging, and I had to use the Avatar component instead. If I had more time, I would have liked to add more fields such as an image when creating a group and the option to edit the group instead of just the delete option. A future feature would be to get the Profile component working for displaying user information within the group page.
+
 ![Group detail page](src/docs/testing/user-testing/group-detail-page.webp)
 
 ### Contact Page
+
+- The contact tab provides users with the option to send a message to the backend API. As a future improvement, a dropdown menu can be added to allow users to select the type of inquiry they wish to make, making the process more streamlined and efficient. A notification pop-up feature has also been added to let the user know that their message has been received.
 
 ![Contact page](src/docs/testing/user-testing/contact-page.webp)
 ![Contact page buttons](src/docs/testing/user-testing/contact-page-btn.webp)
@@ -530,10 +558,16 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ### Error Page
 
+- A custom 404 error page has been implemented to improve the user experience in cases where the user enters an incorrect URL. This page provides a clear and user-friendly message, guiding the user back to the website's homepage and helping them find the information they are looking for.
+
 - ***404** Page Not Found* - The page you're trying to access doesn't exist.
 
 ![404 page display](src/docs/features/images/404-page.webp)
 ![404 return to home button](src/docs/features/images/404-button.webp)
+
+### Notifications
+ 
+ - React notifications have been used in the app to enhance the user experience by providing real-time feedback and alerts to the user. This has contributed to a better user experience as users are immediately notified of any changes or actions taken within the app, such as successful logins, errors or notifications for removing content. By providing these notifications, users can stay informed and engaged with the app, leading to a smoother and more seamless experience. Additionally, the use of notifications also adds an element of interactivity and visual appeal to the app, making it more engaging and dynamic for users.
 
 ***
 
