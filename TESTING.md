@@ -376,8 +376,6 @@ Mobile testing has been performed too and reported similar results to the deskto
 
 <br>
 
-***
-
 [Back to top ⇧](#contents)
 
 ***
@@ -666,7 +664,7 @@ The process and outcomes of manual testing are described in depth in the followi
 
 ## Automated Testing
 
-Several unit tests were written to test 
+Unfortunately, due to time constraints, automated testing could not be implemented for this project. However, it will be addressed and added as a future update.
 
 
 ***
