@@ -595,7 +595,6 @@ The process and outcomes of manual testing are described in depth in the followi
 |                     |*Save button* | *hover* | *White background/ Dark text*| **pass** |  
 |                     |              | *click* | *With valid data, the profile is updated*| **pass**|
 |                     |              |         | *Success notification* | **pass** |
-| 
 |**Change Username page** | *Change username field* | *click* | *Clicking the input box allows the user to input alphanumeric characters* | **pass** |
 |                       | *Cancel button* | *hover* | *White background/ Dark text*| **pass** | 
 |                       |                 | *click*| *Redirct to profile page* | **pass** |
