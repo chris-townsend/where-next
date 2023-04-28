@@ -42,7 +42,6 @@ To view the backend *API repository*, please click [**here**](https://github.com
   * [Testing](#testing)
   - [Development](#development)
     - [GitHub](#github)
-    - [React](#react)
   * [Deployment](#deployment)
     - [Heroku](#heroku)
     - [Forking the GitHub Repository](#forking-the-github-repository)
@@ -739,13 +738,6 @@ This site was made using [GitHub](#github) & [Gitpod](https://www.gitpod.io/). T
 
 The repository has now been created and is ready for editing through the Gitpod terminal.
  
-***
-
-[Back to top ⇧](#contents)
-
-## React
-
-
 ***
 
 [Back to top ⇧](#contents)
