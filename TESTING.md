@@ -29,6 +29,8 @@
 
 *[As a User, I can access a navigation bar on every page so that I can easily view desired content](https://github.com/chris-townsend/where-next/issues/1)*
 
+- The navigation bar in the app is an essential tool that is available on all pages. It provides easy access to the main sections of the app, making it simple for users to navigate and find what they need. For users who are not logged in, the navigation bar has been kept minimalistic and straightforward, with no home tab as the logo serves as a way to return to the homepage. This design ensures that the user interface remains clean and uncluttered, allowing users to focus on the important aspects of the app without unnecessary distractions.
+
 **Logged out Navigation** 
 
 ![Navigation bar for unauth user](src/docs/testing/user-testing/navigation-logged-out.webp)
@@ -39,6 +41,10 @@
 
 
 *[As a User, I would like to use the app on my mobile, so that I don't have to rely on having my laptop/desktop with me](https://github.com/chris-townsend/where-next/issues/29)*
+
+- Extensive testing has been carried out to ensure that the app is optimized for mobile devices, providing a seamless and user-friendly experience to users accessing the app from their smartphones or tablets.
+
+![Homepage mobile](src/docs/testing/user-testing/homepage-mobile.webp)
 
 #
 
@@ -55,16 +61,22 @@
 
 *[As a User, I can safely log out of my account so that I can disconnect from the site](https://github.com/chris-townsend/where-next/issues/7)*
 
+- A pop-up modal has been implemented to confirm sign out, providing an extra layer of protection for the user's account and preventing accidental logouts. The modal displays a message asking the user if they really want to sign out, with options to confirm or cancel.
+
 ![Sign out nav link](src/docs/testing/user-testing/sign-out-nav-link.webp)
 
 ![Sign out modal](src/docs/testing/user-testing/sign-out-modal.webp)
 
 *[As a logged-in User, I can see my login status so that I know if I am logged in or out of my account](https://github.com/chris-townsend/where-next/issues/8)*
 
+- When a user is logged in, the navigation status is easily recognizable as the side navigation bar is present, and the top navigation bar displays the user's avatar along with the label *Profile*.
+
 ![nav status](src/docs/testing/user-testing/nav-status.webp)
 
 
 *[As a logged-in User, I can change my password so that I can keep my account secure](https://github.com/chris-townsend/where-next/issues/11)*
+
+- Users can change their password by accessing the personal profile dropdown menu from their profile page. The password change functionality includes validation checks to ensure that the new password meets the required criteria, contributing to a more secure experience for users.
 
 ![change password page](src/docs/testing/user-testing/change-password-page.webp)
 
@@ -75,9 +87,13 @@
 
 *[As a user, I can view posts, without having to sign-up to enjoy the site's content](https://github.com/chris-townsend/where-next/issues/4)*
 
+- Users can view posts without having to sign up, but certain member benefits such as liking, bookmarking, and commenting are only available to authenticated users. To prompt users to sign in, tooltips appear when hovering over these icons, encouraging them to log in to take advantage of the full range of features.
+
 ![Post page for logged out users](src/docs/testing/user-testing/posts-logged-out.webp)
 
 *[As a logged-in User, I can create posts so that I can add content to the site](https://github.com/chris-townsend/where-next/issues/5)*
+
+- The Add Post tab allows users to easily create a post by selecting an image, title, and content. Once submitted, users are presented with a success notification to confirm that their post has been successfully created. This streamlined process encourages users to engage with the app and contribute their own content, ultimately enhancing the overall user experience.
 
 ![Add post tab](src/docs/testing/user-testing/add-post-tab.webp)
 
@@ -85,17 +101,23 @@
 
 *[As a logged-in User, I can edit my post so that I can fix or update my existing content](https://github.com/chris-townsend/where-next/issues/12)*
 
+- The app allows users to edit their posts easily by using the post dropdown menu, which includes an edit and delete icon. Clicking the edit icon will take the user to the edit post page with the prepopulated data, allowing for quick and convenient editing.
+
 ![Edit post menu](src/docs/testing/user-testing/edit-post.webp)
 
 ![Edit post page](src/docs/testing/user-testing/post-edit-page.webp)
 
 *[As a logged in User, I would like the ability to delete posts so that I can remove any post that I don't want to share](https://github.com/chris-townsend/where-next/issues/13)*
 
+- Users can easily remove their posts by clicking on the delete icon present in the post dropdown menu. Upon deletion, users will receive a notification confirming the action.
+
 ![Delete post option](src/docs/testing/user-testing/post-delete-option.webp)
 
 ![Delete post notification](src/docs/testing/user-testing/post-removed-notification.webp)
 
 *[As a logged-in User, I want to express my appreciation for posts that interest me by liking them, so that I can engage with the content and show support for the author](https://github.com/chris-townsend/where-next/issues/20)*
+
+- The app provides a feature for logged-in users to like posts, which can be done by clicking the heart icon on a post or post detail page. To enhance user experience, tooltips with the text "Click to like post" have been added for intuitiveness. However, the feature also includes measures to prevent the owner of a post from liking their own post. When a user likes a post, they will receive a success notification, and the post will be added to their "Liked" list, which can be viewed by clicking the "Liked" tab in the side navigation bar. Users can also unlike a post by clicking the solid heart icon, which will trigger a notification informing them of their action.
 
 ![Like post button](src/docs/testing/user-testing/like-post-tab.webp)
 
@@ -104,6 +126,8 @@
 ![Liked post notification](src/docs/testing/user-testing/liked-post-notification.webp)
 
 *[As a User, I would like to see the newest posts at the top, ordered by most recently created so that I am up to date with the latest content](https://github.com/chris-townsend/where-next/issues/25)*
+
+- The app has been designed to prioritize the newest posts by displaying them at the top of the feed, ensuring that users are presented with the most recent content first.
 
 ![Newest posts at top](src/docs/testing/user-testing/posts-newest-top.webp)
 
@@ -114,13 +138,18 @@
 
 *[As a User, I can view comments on posts so that I can read other user's feedback](https://github.com/chris-townsend/where-next/issues/9)*
 
+- While anyone can view comments on posts, only authenticated users can write comments. The comment input box is not visible to users who are not logged in, but they can still read existing comments.
+
 ![Comment section for unauth user](src/docs/testing/user-testing/comments-logged-out.webp)
 
 *[As a logged-in User, I want to be able to leave comments on a post, so that I can express my opinions or ideas related to the post](https://github.com/chris-townsend/where-next/issues/18)*
 
+
 ![Comment section for auth user](src/docs/testing/user-testing/comments-section-logged-in.webp)
 
 *[As a logged-in User who is the owner of the comment, I can update my comment so that I can fix any mistakes](https://github.com/chris-townsend/where-next/issues/22)*
+
+- To enable users to manage their own comments, the app uses the `PostDropdownBar` component which allows authenticated users to edit and delete their comments easily.
 
 ![Comment edit menu](src/docs/testing/user-testing/comment-edit-menu.webp)
 
@@ -134,6 +163,8 @@
 
 *[As a User, I can see the date of when the comment has been published so that I know how old the comment is](https://github.com/chris-townsend/where-next/issues/27)*
 
+- In the backend repository, I have imported *naturaltime* to display a more user-friendly timestamp indicating when a comment has been added.
+
 ![Comment date](src/docs/testing/user-testing/comment-date.webp)
 
 #
@@ -143,17 +174,23 @@
 
 *[As a User, I can view other user's profiles so that I can see their bio and learn more about them](https://github.com/chris-townsend/where-next/issues/14)*
 
+- All users can view profile pages. If a user has not filled out any fields, a cross icon will be displayed instead.
+
 ![Post header](src/docs/testing/user-testing/post-header.webp)
 
 ![Comment profile access](src/docs/testing/user-testing/profile-access-comment.webp)
 
 *[As a logged-in User, I can customise my profile with an avatar so that my profile is easy to identify within the site](https://github.com/chris-townsend/where-next/issues/15)*
 
+- A users avatar can be customized from the `ProfileDropdownBar.js` and selecting *Edit Profile*.
+
 ![Profile page](src/docs/testing/user-testing/avatar.webp)
 
 ![Profile avatar](src/docs/testing/user-testing/profile-avatar.webp)
 
 *[As a logged-in User, I would like the ability to update my profile so that I can keep my information up to date](https://github.com/chris-townsend/where-next/issues/16)*
+
+- A user profile can be edited from the `ProfileDropdownBar.js` and selecting *Edit Profile*.
 
 ![Profile settings](src/docs/testing/user-testing/profile-settings.webp)
 
@@ -162,6 +199,8 @@
 
 *[As a logged-in User, I would like the ability to follow/unfollow users so I can keep track of their content and revisit their profiles easily](https://github.com/chris-townsend/where-next/issues/17)*
 
+- The follow functionality implemented in the app was inspired by Code Institute's 'Moments' walkthrough.
+
 ![Most followed profiles](src/docs/testing/user-testing/profiles-most-followed.webp)
 
 ![Follow profile](src/docs/testing/user-testing/follow-profile.webp)
@@ -169,11 +208,15 @@
 
 *[As a logged-in User, I can save a post to a personal list so that I can easily return to it later](https://github.com/chris-townsend/where-next/issues/19)*
 
+- Users can bookmark posts by clicking on the bookmark icon, but owners of the post are not able to bookmark their own posts.
+
 ![Bookmark post](src/docs/testing/user-testing/bookmark-post.webp)
 
 ![Bookmark post notification](src/docs/testing/user-testing/bookmark-post-notification.webp)
 
 *[As a User, I can search for posts or profiles by keyword so that I can find what I'm looking for more efficiently](https://github.com/chris-townsend/where-next/issues/21)*
+
+- The search functionality of the app enables users to look up posts and profiles. While currently limited to these options, it is planned to include group search functionality in the future. A loading spinner image of an earth is displayed until the posts are loaded.
 
 ![Search spinner](src/docs/testing/user-testing/search-spinner.webp)
 
@@ -181,9 +224,13 @@
 
 *[As a User, I can keep scrolling through my feed of posts which load automatically, so that I don't have to change pages](https://github.com/chris-townsend/where-next/issues/26)*
 
+- React infinite scroll has been implemented to improve the user experience of navigating through the app. Instead of having to load a new page for more posts, users can simply scroll down to view more content. This not only saves time but also makes the app feel more seamless and intuitive.
+
 ![Posts infinite scroll](src/docs/testing/user-testing/posts-infinite-scroll.webp)
 
 *[As a User, I can contact the site owner so that I can request any information that I might need](https://github.com/chris-townsend/where-next/issues/28)*
+
+- A contact page has been implemented to allow authenticated users to send messages to the backend. Users can provide feedback, report issues, or make inquiries about the app's features and functionalities. A notification is displayed to the user when they successfully send a message with valid data.
 
 ![Contact page](src/docs/testing/user-testing/contact-page.webp)
 ![Contact page buttons](src/docs/testing/user-testing/contact-page-btn.webp)
@@ -191,6 +238,8 @@
 ![Contact notification](src/docs/testing/user-testing/contact-notification.webp)
 
 *[As a Site owner, I can add a favicon so that the site looks more distinguishable](https://github.com/chris-townsend/where-next/issues/30)*
+
+- A favicon featuring an earth image has been added to the app to enhance its visual appeal and provide a cohesive theme with the rest of the design. This small but noticeable detail helps improve the user experience by adding a touch of professionalism and aesthetics.
 
 ![Page tab](src/docs/testing/user-testing/favicon-tab.webp)
 
@@ -203,15 +252,23 @@
 
 *[As a User, I want to be able to create a new group so that I can connect with people who share my interests and plan trips together](https://github.com/chris-townsend/where-next/issues/42)*
 
+- The process of creating a group is simple and intuitive. Users can access the 'Groups' tab in the side navigation bar and click on the 'Create Group' button to initiate the process.
+
 ![Create group button](src/docs/testing/user-testing/groups-create-group.webp)
 
 ![Create group form](src/docs/testing/user-testing/groups-create-group-form.webp)
 
-*[As a User, I want to be able to leave a group if it no longer aligns with my interests or travel plans so that I can focus on other groups that better suit my needs](https://github.com/chris-townsend/where-next/issues/43)*
+*[As a User, I want to be able to delete a group if it no longer aligns with my interests or travel plans so that I can focus on other groups that better suit my needs](https://github.com/chris-townsend/where-next/issues/43)*
 
-![Group detail page](src/docs/testing/user-testing/groups-detail-page.webp)
+- A group owner can delete their group by navigating to the group list page and clicking on the 'Delete group' button. If a user is not the owner of the group, the 'View group' option will be displayed instead. While the option to edit a group is not currently available, it could be implemented in the future using the PostDropdownBar component for consistency with other features.
+
+![Group delete option](src/docs/testing/user-testing/group-delete-option.webp)
 
 *[As a User, I want to be able to see a list of members in a group so that I can get to know other people and connect with them](https://github.com/chris-townsend/where-next/issues/41)*
+
+- Group members are displayed with their avatars using the Avatar.js component. While the implementation is not ideal, as the original plan was to use the Profile component, the Avatar component allows for easy display of members. Future improvements include adding the ability for users to click on a member's avatar to be taken to their profile page, and adding the ability to follow/unfollow members directly from the group detail page.
+
+![Group detail page](src/docs/testing/user-testing/group-detail-page.webp)
 
 #
 
