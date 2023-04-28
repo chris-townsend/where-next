@@ -184,7 +184,7 @@ The following user stories were scoped out of the project due to time constraint
 
 [#44](https://github.com/chris-townsend/where-next/issues/44) - *As a **logged-in User**, I want to **receive birthday alerts for my connections**, so that **I can send them a personalized birthday comment***
 
-[Back to top ⇧](#where-next)
+[Back to top ⇧](#contents)
 
 ***
 
@@ -372,7 +372,7 @@ A warning message will appear to the user when inaccurate or empty data is enter
 ### Database Security
 
 
-[Back to top ⇧](#kitchen-tales)
+[Back to top ⇧](#contents)
 
 ***
 
@@ -552,6 +552,8 @@ In the future, there are several functionalities that I would like to implement.
 
 ***
 
+[Back to top ⇧](#contents)
+
 ## Components
 
 ### `Asset.js`
@@ -590,6 +592,8 @@ The Post component receives several props that contain information about a post 
 React Infinite Scroll is used to load content continuously as the user scrolls down a webpage. This feature works by loading new content into the webpage when the user reaches the bottom of the page, without requiring the user to manually click a *Load More* button. In my app, the React Infinite Scroll feature is being used to display a list of posts, groups, and comments. When a user scrolls down the page, the application automatically loads new posts, groups, and comments from the server and displays them in the list. This means that the user can continue scrolling indefinitely and the application will keep loading new content as needed, without requiring the user to refresh the page or click a button to load more content. This feature provides a seamless user experience, as the user can easily browse through a large amount of content without interruptions or delays.
 
 ***
+
+[Back to top ⇧](#contents)
 
 ## Hooks
 
@@ -705,14 +709,14 @@ The repository has now been created and is ready for editing through the Gitpod 
  
 ***
 
-[Back to top ⇧](#where-next)
+[Back to top ⇧](#contents)
 
 ## React
 
 
 ***
 
-[Back to top ⇧](#where-next)
+[Back to top ⇧](#contents)
 
 # Deployment
 
@@ -830,4 +834,4 @@ By forking the GitHub Repository you can make a copy of the original repository.
 
 <br>
 
-[Back to top ⇧](#where-next)
+[Back to top ⇧](#contents)
