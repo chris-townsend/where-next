@@ -1,6 +1,6 @@
 # **_Where Next - Your Travel & Social Media Site_**
 
-Where Next is a full-stack project, created using JavaScript, CSS & HTML and built on the React front-end framework. The project's primary objective is to deliver a highly functional and responsive website that empowers users to create and share their posts effortlessly. Through its comprehensive CRUD functionality, users can easily modify and delete their posts as needed. Furthermore, each post page features a dynamic comments section and intuitive options to like and bookmark posts for later reference. The platform also allows users to form groups and gives users the opportunity to join/leave, as well as follow and unfollow each other, facilitating a seamless and enjoyable experience. Moreover, the website is carefully designed with UX principles in mind, ensuring its accessibility and intuitive navigation. This, in turn, enhances user satisfaction and enables users to effortlessly discover the information and resources they need.
+Where Next is a full-stack project, created using JavaScript, CSS & HTML and built on the React front-end framework. The project's primary objective is to deliver a highly functional and responsive website that empowers users to create and share their posts effortlessly. Through its comprehensive CRUD functionality, users can easily modify and delete their posts as needed. Furthermore, each post page features a dynamic comments section and intuitive options to like and bookmark posts for later reference. The platform also allows users to form groups and allows users to join/leave, as well as follow and unfollow each other, facilitating a seamless and enjoyable experience. Moreover, the website is carefully designed with UX principles in mind, ensuring its accessibility and intuitive navigation. This, in turn, enhances user satisfaction and enables users to effortlessly discover the information and resources they need.
 
 ![Am i responsive](src/docs/testing/am-i-responsive/am-i-responsive.webp)
 
@@ -56,7 +56,7 @@ To view the backend *API repository*, please click [**here**](https://github.com
 
 ## User Experience (UX)
 
-Where Next is a social media app designed for individuals who are passionate about traveling and exploring new destinations. As an active and tech-savvy audience, users are looking for a platform that caters specifically to their travel interests. With Where Next, users can join a vibrant community of like-minded individuals to share their travel experiences, connect with others, and gain inspiration for their next adventure. Whether creating captivating posts, bookmarking favorite destinations, or editing their profiles, users can curate and showcase their travels in a dynamic and engaging way. Ultimately, Where Next provides an immersive and interactive space where travel enthusiasts can come together to explore the world.
+Where Next is a social media app designed for individuals who are passionate about travelling and exploring new destinations. As an active and tech-savvy audience, users are looking for a platform that caters specifically to their travel interests. With Where Next, users can join a vibrant community of like-minded individuals to share their travel experiences, connect with others, and gain inspiration for their next adventure. Whether creating captivating posts, bookmarking favourite destinations, or editing their profiles, users can curate and showcase their travels dynamically and engagingly. Ultimately, Where Next provides an immersive and interactive space where travel enthusiasts can come together to explore the world.
 
 ### Epics 
 
@@ -301,7 +301,7 @@ Initial wireframes were created for the original ideas, and as functionality was
 
 #### Colour Scheme
 
-I chose a light colour scheme to ensure that there is good contrast with the text and to create a clean and visually appealing look across the site. During the design process, I carefully considered how to establish a strong contrast between background colours and text while ensuring that the site meets accessibility requirements. This attention to detail is crucial in creating a positive user experience for all visitors to the site.
+I chose a light colour scheme to ensure that there is a good contrast with the text and to create a clean and visually appealing look across the site. During the design process, I carefully considered how to establish a strong contrast between background colours and text while ensuring that the site meets accessibility requirements. This attention to detail is crucial in creating a positive user experience for all visitors to the site.
 
 ![Colour Palette](src/docs/development/colour-scheme/coolors-colour-scheme.webp)
 
@@ -317,7 +317,7 @@ The imagery used throughout the site is intended to inspire users to explore and
 
 #### Typography 
 
-I carefully selected the Karla and Roboto Flex fonts for my social media app, with the goal of creating an elegant and calming visual theme, while ensuring easy readability and consistency across multiple devices. Karla, a warm and friendly humanist sans-serif font with rounded terminals, was chosen for its high legibility, even at small sizes, making it ideal for body text. Roboto Flex, a versatile modern sans-serif font, was selected for its ability to adapt well to both headings and display text, giving the app a unique and cohesive look.
+I carefully selected the Karla and Roboto Flex fonts for my social media app, intending to create an elegant and calming visual theme, while ensuring easy readability and consistency across multiple devices. Karla, a warm and friendly humanist sans-serif font with rounded terminals, was chosen for its high legibility, even at small sizes, making it ideal for body text. Roboto Flex, a versatile modern sans-serif font, was selected for its ability to adapt well to both headings and display text, giving the app a unique and cohesive look.
 
 In case there are any issues with the primary font choices, a reliable backup font, Sans-serif, has been selected to ensure consistent styling throughout the app. By leveraging Google fonts, which can be imported through their API, I can maintain consistent styling and readability across different devices.
 
@@ -374,7 +374,7 @@ A warning message will appear to the user when inaccurate or empty data is enter
 - The navigation bar is present on all pages of the website and allows for easy navigation. The Navbar includes a logo and links to various pages. The links on the Navbar will change depending on whether the user is logged into their account or not.
 
 
-#### *User is not logged in Navbar*
+#### *User has not logged in Navbar*
 
 ![Navigation section logged out user](src/docs/testing/user-testing/navigation-logged-out.webp)
 
@@ -390,7 +390,7 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ### Home Page
 
-- The homepage offers a variety of features for both logged-in and logged-out users, including the search functionality which allows users to search for posts and profiles. To improve the user experience, a loading spinner appears while the user is typing their search query. In the event that no search results are found, an image accompanied by the text 'No results found' is displayed to help users quickly understand the outcome of their search.
+- The homepage offers a variety of features for both logged-in and logged-out users, including the search functionality which allows users to search for posts and profiles. To improve the user experience, a loading spinner appears while the user is typing their search query. If no search results are found, an image accompanied by the text 'No results found' is displayed to help users quickly understand the outcome of their search.
 
 ![Homepage](src/docs/features/images/homepage-logged-in.webp)
 
@@ -451,13 +451,13 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 **Comments Section**
 
-- The comments section on a post detail page is accessible to both logged-in and logged-out users. However, in order to create a comment, users must be signed in, as the comment input field is only displayed to authenticated users. This ensures a secure and efficient commenting process for users.
+- The comments section on a post detail page is accessible to both logged-in and logged-out users. However, to create a comment, users must be signed in, as the comment input field is only displayed to authenticated users. This ensures a secure and efficient commenting process for users.
 
 ![Comment section for unauth user](src/docs/testing/user-testing/comments-logged-out.webp)
 
 ### Update Comment
 
-- The process of updating a comment has been made even more user-friendly through the implementation of the Post dropdown menu component. This feature provides users with the ability to easily update or delete their own comments. By clicking on the edit icon, the comment data is automatically prepopulated, making the editing process seamless and efficient.
+- The process of updating a comment has been made even more user-friendly through the implementation of the Post dropdown menu component. This feature provides users with the ability to easily update or delete their comments. By clicking on the edit icon, the comment data is automatically prepopulated, making the editing process seamless and efficient.
 
 ![Comment edit menu](src/docs/testing/user-testing/comment-edit-menu.webp)
 
@@ -471,7 +471,7 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ### My Feed Page
 
-- A user's feed will compose of posts which the user is following. The feed page has the same styling as Home, Bookmarks and Liked as it uses the Post component. The Infinite scroll component is used to continously display posts, allowing the user to not have to change page to view more posts.
+- A user's feed will compose of posts which the user is following. The feed page has the same styling as Home, Bookmarks and Liked as it uses the Post component. The Infinite scroll component is used to continuously display posts, allowing the user to not have to change pages to view more posts.
 
 ![Feed tab](src/docs/features/images/feed-tab.webp)
 
@@ -487,13 +487,13 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 ### Profile Page
 
-- The user profile page features an avatar image, along with the total number of posts, followers, and following count. This functionality has been thoroughly tested to ensure that the counts accurately increment and decrement in response to various user actions, such as following a user or adding a new post.
+- The user profile page features an avatar image, along with the total number of posts, followers, and the following count. This functionality has been thoroughly tested to ensure that the counts accurately increment and decrement in response to various user actions, such as following a user or adding a new post.
 
-- To enhance the user experience, a React datepicker has been integrated, allowing users to easily select a date from a calendar instead of manually entering it. While the implementation of this feature posed some challenges, such as converting the selected date string to properly store the data in the backend, it ultimately proved to be a valuable addition to the application.
+- To enhance the user experience, a React date picker has been integrated, allowing users to easily select a date from a calendar instead of manually entering it. While the implementation of this feature posed some challenges, such as converting the selected date string to properly store the data in the backend, it ultimately proved to be a valuable addition to the application.
 
 ![Profile page](src/docs/testing/user-testing/avatar.webp)
 
-- The profile page of a user displays their personal information, including their name, date of birth, location, favorite location, and bio. If the user is the owner of the profile, an edit profile dropdown menu is displayed, giving them the option to update their profile page, change their username, and change their password. Additionally, the location field provides a drop-down menu that allows users to select their country of residence, making it easy to update their location information.
+- The profile page of a user displays their personal information, including their name, date of birth, location, favourite location, and bio. If the user is the owner of the profile, an edit profile dropdown menu is displayed, giving them the option to update their profile page, change their username, and change their password. Additionally, the location field provides a drop-down menu that allows users to select their country of residence, making it easy to update their location information.
 
 - The user's posts are displayed below their personal information using the `Post.js` component. If the user has not uploaded any posts, a message and image stating *No posts yet* will be displayed, providing the user with feedback and encouraging them to create posts.
 
@@ -540,7 +540,7 @@ A warning message will appear to the user when inaccurate or empty data is enter
 
 **Group Detail page**
 
-- The group detail page showcases important information such as the group's title, description, and the total number of members. Initially, I intended to use the `Profile.js` component to display a user's avatar with the follow buttons available to make it easier for users to follow other members of the group. However, this proved to be quite challenging, and I had to use the Avatar component instead. If I had more time, I would have liked to add more fields such as an image when creating a group and the option to edit the group instead of just the delete option. A future feature would be to get the Profile component working for displaying user information within the group page.
+- The group detail page showcases important information such as the group's title, description, and total number of members. Initially, I intended to use the `Profile.js` component to display a user's avatar with the following buttons available to make it easier for users to follow other members of the group. However, this proved to be quite challenging, and I had to use the Avatar component instead. If I had more time, I would have liked to add more fields such as an image when creating a group and the option to edit the group instead of just the delete option. A future feature would be to get the Profile component working for displaying user information within the group page.
 
 ![Group detail page](src/docs/testing/user-testing/group-detail-page.webp)
 
@@ -599,13 +599,13 @@ In the future, there are several functionalities that I would like to implement.
 
 ### `Avatar.js`
 
-The *Avatar.js* component is designed to display user avatars with a high degree of flexibility and reusability. By separating the avatar display from other components and pages, it enables more efficient code organization and easier maintenance. With customizable height and an optional text overlay, the Avatar component can adapt to different page designs and layouts, allowing for seamless integration into different parts of the site. Additionally, by including a timestamp in the image source, the Avatar component ensures that the image is always up-to-date and reloaded from the server when necessary. This feature helps prevent the browser from caching outdated images and ultimately contributes to improved site performance.
+The *Avatar.js* component is designed to display user avatars with a high degree of flexibility and reusability. Separating the avatar display from other components and pages enables more efficient code organization and easier maintenance. With customizable height and an optional text overlay, the Avatar component can adapt to different page designs and layouts, allowing for seamless integration into different parts of the site. Additionally, by including a timestamp in the image source, the Avatar component ensures that the image is always up-to-date and reloaded from the server when necessary. This feature helps prevent the browser from caching outdated images and ultimately contributes to improved site performance.
 
 ![Avatar](src/docs/features/images/avatar.webp)
 
 ### `PostDropdownBar.js`
 
-*PostDropdownBar.js* is a reusable component that renders a dropdown bar with edit and delete options for posts. It is built using React and React Bootstrap components, and styled using CSS. The component consists of a custom DropdownMenu component that renders a menu icon *(fas fa-ellipsis-v)*, and a Bootstrap Dropdown component that contains the dropdown menu items. The menu items include an Edit post option and a Delete post option, each with an associated icon. The component is designed to be flexible and customizable, allowing to easily integrate it elsewhere and modify its behavior and appearance as needed. This component is being used within `Comment.js` to allow users to edit and delete their own comments.
+*PostDropdownBar.js* is a reusable component that renders a dropdown bar with edit and delete options for posts. It is built using React and React Bootstrap components and styled using CSS. The component consists of a custom DropdownMenu component that renders a menu icon *(fas fa-ellipsis-v)*, and a Bootstrap Dropdown component that contains the dropdown menu items. The menu items include an Edit post option and a Delete post option, each with an associated icon. The component is designed to be flexible and customizable, allowing it to easily integrate elsewhere and modify its behaviour and appearance as needed. This component is being used within `Comment.js` to allow users to edit and delete their comments.
 
 ![Post dropdown menu](src/docs/features/images/post-dropdown.webp)
 
@@ -617,7 +617,7 @@ The *ProfileEditDropdown* component renders a dropdown bar that allows a user to
 
 ### `Post.js` 
 
-The Post component receives several props that contain information about a post such as its id, owner, title, image, comments_count, likes_count, and more. The component also uses the useCurrentUser hook from a custom context called CurrentUserContext to retrieve the current user. The Post component renders a Bootstrap Card component that contains information about the post including its owner, title, image, and the number of comments, likes, and groups it has. It also renders the `Avatar.js` component and the `PostDropdownBar.js` component that is only displayed if the current user is the owner of the post and is viewing it on the post detail page. The Post component contains several functions that handle different events like deleting a post, editing a post, liking a post, unliking a post, bookmarking a post, and unbookmarking a post. These functions make API calls using axiosRes. When the user likes or unlikes a post or bookmarks or unbookmarks a post, the Post component updates the posts state by calling the setPosts function passed down as a prop to the component. It updates the likes_count, like_id, book mark_count, and bookmark_id properties of the post object in the posts state. This component is used to display posts on the *'Feed'*, *'Bookmarks'* and *'Liked'* pages.
+The Post component receives several props that contain information about a post such as its id, owner, title, image, comments_count, likes_count, and more. The component also uses the useCurrentUser hook from a custom context called CurrentUserContext to retrieve the current user. The Post component renders a Bootstrap Card component that contains information about the post including its owner, title, image, and the number of comments, likes, and groups it has. It also renders the `Avatar.js` component and the `PostDropdownBar.js` component which is only displayed if the current user is the owner of the post and is viewing it on the post detail page. The Post component contains several functions that handle different events like deleting a post, editing a post, liking a post, unliking a post, bookmarking a post, and unbookmarking a post. These functions make API calls using axiosRes. When the user likes or unlikes a post or bookmarks or unbookmark a post, the Post component updates the posts state by calling the setPosts function passed down as a prop to the component. It updates the likes_count, like_id, book mark_count, and bookmark_id properties of the post object in the posts state. This component is used to display posts on the *'Feed'*, *'Bookmarks'* and *'Liked'* pages.
 
 ### React Infinite Scroll component
 
@@ -635,7 +635,7 @@ This custom hook allows you to toggle a component's state based on clicks outsid
 
 ### `useRedirect.js`
 
-The useRedirect hook is a custom React hook that uses the React Router and Axios libraries to handle navigation and API requests. Its primary function is to redirect the user based on their authentication status, ensuring that they are directed to the appropriate page based on whether they are logged in or out. When called, the hook sends a POST request to refresh the authentication token using the axios library. If the user is logged in, they will be redirected to the home page using the useHistory hook from the React Router library. If there is an error refreshing the token or the user is logged out, they will also be redirected to the home page. This hook streamlines navigation in my React app and simplifies the logic for handling authentication.
+The useRedirect hook is a custom React hook that uses the React Router and Axios libraries to handle navigation and API requests. Its primary function is to redirect the user based on their authentication status, ensuring that they are directed to the appropriate page based on whether they are logged in or out. When called, the hook sends a POST request to refresh the authentication token using the Axios library. If the user is logged in, they will be redirected to the home page using the useHistory hook from the React Router library. If there is an error refreshing the token or the user is logged out, they will also be redirected to the home page. This hook streamlines navigation in my React app and simplifies the logic for handling authentication.
 
 ***
 
@@ -669,7 +669,7 @@ The useRedirect hook is a custom React hook that uses the React Router and Axios
 
 [**JSHint Validator**](https://jshint.com/) - Jshint was used to validate the JavaScript code. It shows any warnings and errors within my code. 
 
-[**Cloudinary**](https://imgpile.com/) - A cloud hosting website, used for hosting my images.
+[**Cloudinary**](https://imgpile.com/) - A cloud-hosting website, used for hosting my images.
 
 [**DrawSQL**](https://drawsql.app/) - DrawSQL is a database diagram tool which was used to visualize relationship diagrams for my databases.
 
@@ -697,7 +697,7 @@ The useRedirect hook is a custom React hook that uses the React Router and Axios
 
 [**react-notifications**](https://www.npmjs.com/package/react-notifications) - Library for displaying notifications.
 
-[**react-router-dom**](https://www.npmjs.com/package/react-router-dom) - React Router is a JavaScript framework that enables the creation of single-page web or mobile apps that allow navigating without refreshing the page.
+[**react-router-dom**](https://www.npmjs.com/package/react-router-dom) - React Router is a JavaScript framework that enables the creation of single-page web or mobile apps that allows navigating without refreshing the page.
 
 [**web-vitals**](https://www.npmjs.com/package/web-vitals) - Library for measuring web performance metrics.
 
@@ -723,7 +723,7 @@ This site was made using [GitHub](#github) & [Gitpod](https://www.gitpod.io/). T
 
 *Alternatively:*
 
-1. From your personal drop-down at the top right of the page, select *Your repositories*.
+1. From your drop-down at the top right of the page, select *Your repositories*.
 
 ![GitHub create repository](src/docs/development/github/github-your-repository.webp)
 
